@@ -13,6 +13,8 @@
     {% block corecss %}
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block add_css %}
@@ -32,13 +34,14 @@
   </head>
   <body>
     <header class="container-fluid fixed-top">
-      <div class="row">
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-lg-left">
+      <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
           <a href="{% url 'home' %}" class="nav-link nav-logo ">
-            <h4 class="logo text-black my-0">Improved Design</h4>
+            <h2 class="logo text-black my-0">Improved Design</h2>
+          </a>
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-         
+          
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
           <ul class="list-inline list-unstyled text-center text-lg-right my-0">
@@ -76,7 +79,7 @@
                     </div>
                 </a>
             </li>
-        </ul>
+          </ul>
         </div>
       </div>
     </header>
