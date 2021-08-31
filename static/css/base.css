@@ -15,6 +15,11 @@ body {
     background: #ffffff;
 }
 
+/* Fonts */
+.banner-font {
+    font-size: 1rem;
+}
+
 .discover-btn:hover,
 .discover-btn:focus,
 .discover-btn:active {
