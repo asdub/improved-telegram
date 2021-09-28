@@ -71,7 +71,7 @@ body {
     border: 1px solid black !important;
 }
 
-/* -- Products Page */
+/* Products Page */
 .overlay {
     height: 100%;
 	width: 100%;
@@ -80,6 +80,10 @@ body {
 	position: fixed;
 	background: white;
 	z-index: -1;
+}
+
+.card {
+    text-align: center;
 }
 
 .card-img-top {
@@ -121,5 +125,16 @@ body {
         width: 350px;
         height: 350px;
         object-fit: cover;
+    }
+}
+
+/* Add padding to header container in mobile view */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
     }
 }
