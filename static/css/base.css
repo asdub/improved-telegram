@@ -82,6 +82,12 @@ body {
 	z-index: -1;
 }
 
+.card-img-top {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -89,6 +95,12 @@ body {
   .container {
     max-width: 80%;
   }
+
+  .card-img-top {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
 }
 
 /* fixed top navbar only on medium and up */
@@ -103,5 +115,11 @@ body {
 
     .header-container {
         padding-top: 164px;
+    }
+
+    .card-img-top {
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
     }
 }
