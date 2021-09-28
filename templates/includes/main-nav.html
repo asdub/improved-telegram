@@ -19,9 +19,10 @@
                 All Services
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Type</a>
-                <a href="{% url 'products' %}?category=custom,leaflet,icons,poster,logo" class="dropdown-item">View All Services</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Type</a>
+                <a href="{% url 'products' %}" class="dropdown-item">View All Services</a>
             </div>
         </li>
     </ul>

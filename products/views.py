@@ -24,7 +24,7 @@ def all_products(request):
             if not query:
                 messages.error(request, "Please check your search term and try again.")
                 return redirect(reverse('products'))
-            
+
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
@@ -33,7 +33,7 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
     }
-    
+
     return render(request, 'products/products.html', context)
 
 
@@ -45,5 +45,5 @@ def product_detail(request, product_id):
     context = {
         'product': product,
     }
-    
+
     return render(request, 'products/product_detail.html', context)
