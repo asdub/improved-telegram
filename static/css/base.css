@@ -72,7 +72,7 @@ body {
 }
 
 /* Navigation */
-.dropdown-menu.show {
+.search-bar-dropdown.show {
     display: flex;
 }
 
