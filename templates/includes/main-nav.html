@@ -1,13 +1,27 @@
 <div id="main-nav" class="navbar collapse navbar-collapse">
     <ul class="navbar-nav w-auto mx-auto">
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="category-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Design Services
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="category-link">
+                <a href="" class="dropdown-item">Custom Design</a>
+                <a href="" class="dropdown-item">Leaflet Design</a>
+                <a href="" class="dropdown-item">Icon Design</a>
+                <a href="" class="dropdown-item">Poster Design</a>
+                <a href="" class="dropdown-item">Logo Design</a>
+            </div>
+        </li>
+
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Our Services
+                All Services
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="" class="dropdown-item">By Price</a>
                 <a href="" class="dropdown-item ">By Type</a>
-                <a href="" class="dropdown-item">View All Products</a>
+                <a href="{% url 'products' %}" class="dropdown-item">View All Products</a>
             </div>
         </li>
     </ul>
