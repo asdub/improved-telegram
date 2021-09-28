@@ -77,6 +77,10 @@ body {
     border: 1px solid black !important;
 }
 
+.text-info {
+    color: #ff7200 !important;
+}
+
 /* Navigation */
 .search-bar-dropdown.show {
     display: flex;
