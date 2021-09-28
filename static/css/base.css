@@ -71,6 +71,11 @@ body {
     border: 1px solid black !important;
 }
 
+/* Navigation */
+.dropdown-menu.show {
+    display: flex;
+}
+
 /* Products Page */
 .overlay {
     height: 100%;
