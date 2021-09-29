@@ -59,12 +59,12 @@
                                 </div>
                                 <div class="col-12">
                                     <label for="artwork_request">Detail your requirements:</label>
-                                    <textarea class="form-control rounded-1 w-100" id="artwork_request" rows="3"></textarea>
+                                    <textarea class="form-control rounded-1 w-100" name="artwork_request" id="id_artwork_request" rows="3"></textarea>
                                 </div>
                                 <hr>
                                 <div class="col-12">
                                     <p class="mt-3">Size:</p>
-                                    <select class="form-control rounded-1 w-50" name="product_size" id='id_product_size'>
+                                    <select class="form-control form-select rounded-1 w-50" name="product_size" id='id_product_size'>
                                         <option value="A0">A0</option>
                                         <option value="A1">A1</option>
                                         <option value="A2">A2</option>
@@ -79,26 +79,22 @@
                                 <hr>
                                 <div class="col-12">
                                     <label for="product_text_content">Provide text content for artwork:</label>
-                                    <textarea class="form-control rounded-1 w-100" id="product_text_content" rows="3"></textarea>
+                                    <textarea class="form-control rounded-1 w-100"  name="product_text_content" id="id_product_text_content" rows="3"></textarea>
                                 </div>
                                 <hr>
                                 <div class="col-12">
-                                    <input class="form-check-input" type="radio" name="artworkColour" id="full_colour" value="full_colour" checked>
+                                    <input class="form-check-input" type="radio" name="artwork_colour" id="full_colour" value="full_colour" checked>
                                     <label class="form-check-label" for="full_colour">
                                       Full Colour
                                     </label>
                                 </div>
                                 <div class="col-12">
-                                    <input class="form-check-input" type="radio" name="artworkColour" id="black_white" value="black_white">
+                                    <input class="form-check-input" type="radio" name="artwork_colour" id="black_white" value="black_white">
                                     <label class="form-check-label" for="black_white">
                                       Black & White
                                     </label>
                                 </div>
                                 <hr>
-                                <div class="form-group">
-                                    <label for="customer_upload">Provide any exisiting graphics for use</label>
-                                    <input type="file" class="form-control-file" id="customer_upload">
-                                </div>
                                 <div class="col-12">
                                     <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
                                         <span class="icon">
