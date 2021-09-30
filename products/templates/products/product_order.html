@@ -15,7 +15,7 @@
 {% block content %}
 <div class="overlay"></div>
     <div class="container-fluid">
-        <form method="POST">
+        <form action="{% url 'order_form' %}" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
             <input type="submit" value="Save">

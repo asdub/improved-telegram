@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from bag.views import order_form
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +24,4 @@ urlpatterns = [
     path('', include('home.urls')),
     path('services/', include('products.urls')),
     path('orders/', include('bag.urls')),
-    path('yourorder/', order_form),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
