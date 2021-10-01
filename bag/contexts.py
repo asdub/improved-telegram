@@ -12,9 +12,9 @@ def bag_contents(request):
     if order is not None:
         for data in order:
             product = get_object_or_404(Product, pk=data['item_id'])
-            total += int(data['quantity']) * product.price
             if data['product_size'] == 'A0':
                 data['final_price'] = int(product.price) + 50
+                data['order_list'].append('A0 Size artwork, additional €50.00')
             elif data['product_size'] == 'A1':
                 data['final_price'] = int(product.price) + 45
             elif data['product_size'] == 'A2':
@@ -31,12 +31,12 @@ def bag_contents(request):
                 data['final_price'] = int(product.price) - 25
             else:
                 data['final_price'] = int(product.price)
-          
+
             if data['artwork_colour'] == 'Full Colour':
-                data['final_price'] = int(product.price) - 25
-                
-            printthis = data['final_price']
-            print(f' FINAL--->>> {printthis}')
+                data['final_price'] = int(data['final_price']) + 25
+            total += int(data['quantity']) * int(data['final_price'])
+            printthis = data['order_list']
+            print(f' ORDER--->>> {printthis}')
             data['subtotal'] = int(data['quantity']) * data['final_price']
             data['product'] = product
 
