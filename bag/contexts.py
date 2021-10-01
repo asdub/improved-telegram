@@ -23,7 +23,7 @@ def bag_contents(request):
         for data in order:
             product = get_object_or_404(Product, pk=data['item_id'])
             total += int(data['quantity']) * product.price
-
+            data['subtotal'] = int(data['quantity']) * product.price
             data['product'] = product
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
