@@ -20,7 +20,9 @@ def add_to_order(request, item_id):
             "artwork_request": request.POST.get("artwork_request"),
             "product_size": request.POST.get("product_size"),
             "product_text_content": request.POST.get("product_text_content"),
-            "artwork_colour": request.POST.get("artwork_colour")
+            "artwork_colour": request.POST.get("artwork_colour"),
+            "final_price": 0,
+            "order_list": None
         }
 
     if order is not None:

@@ -10,6 +10,10 @@ body {
     font-family: 'Roboto';
 }
 
+em {
+    font-size: 80%;
+}
+
 /* Buttons */
 .discover-btn {
     background: #ffffff;
@@ -95,6 +99,13 @@ body {
 	position: fixed;
 	background: white;
 	z-index: -1;
+}
+
+/* Cart/ Bag */
+
+.custom-detail-text {
+    display: flex;
+    flex-direction: column;
 }
 
 .card {

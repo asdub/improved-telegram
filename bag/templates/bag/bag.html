@@ -49,7 +49,7 @@
                                         <p class="my-0 small text-muted"><strong>Colour:</strong> {{ item.artwork_colour }}</p>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">€{{ item.product.price }}</p>
+                                        <p class="my-0">€{{ item.final_price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
                                         <p class="my-0">{{ item.quantity }}</p>
@@ -59,12 +59,18 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="p-3 w-25">
-                                        <span>Your Request:</span>
-                                        <p class="my-0 small text-muted"> {{ item.artwork_request }}</p>
+                                    <td colspan="5" class="p-3 w-25">
+                                        <span>Your Customisations:</span>
+                                        <div class="dropdown-divider"></div>
+                                        <p class="my-0 small custom-detail-text">
+                                            <strong class="text-muted">Your Request:</strong>
+                                            {{ item.artwork_request }}
+                                        </p>
+                                        <p class="my-0 small custom-detail-text">
+                                            <strong class="text-muted">Text Content Provided:</strong>
+                                            {{ item.product_text_content }}
+                                        </p>
                                         <hr>
-                                        <span>Text Content Provided:</span>
-                                        <p class="my-0 small text-muted"> {{ item.product_text_content }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
