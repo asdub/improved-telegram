@@ -44,8 +44,8 @@ def bag_contents(request):
                 data['final_price'] = int(data['final_price']) + 25
                 data['order_list'].append(f'+ Full Colour, additional €25.00 ({product.name})')
             total += int(data['quantity']) * int(data['final_price'])
-            printthis = data['order_list']
-            print(f' ORDER--->>> {printthis}')
+            printthis = data['order_ref']
+            print(f' ORDER REF --->>> {printthis}')
             data['subtotal'] = int(data['quantity']) * data['final_price']
             data['product'] = product
 

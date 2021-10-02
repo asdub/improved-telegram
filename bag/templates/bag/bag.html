@@ -52,12 +52,13 @@
                                         <p class="my-0">€{{ item.final_price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <form method="POST" id="update-form" action=""></form>
-                                        {% csrf_token %}
-                                        <input class="form-control qty_input w-50" type="number" 
-                                                name="quantity" value="{{ item.quantity }}" min="1" max="99" 
-                                                    data-item_id="{{ product.id }}" id="id_qty">
-                                        <input type="hidden" id="item_id" name="item_id" value="{{ item.item_id }}">
+                                        <form method="POST" id="update-form" action="{% url 'update_order' item.item_id %}">
+                                            {% csrf_token %}
+                                            <input class="form-control qty_input w-50" type="number" 
+                                                    name="quantity" value="{{ item.quantity }}" min="1" max="99" 
+                                                        data-item_id="{{ product.id }}" id="id_qty">
+                                            <input type="hidden" id="order_ref" name="order_ref" value="{{ item.order_ref }}">
+                                        </form>
                                         <a href="javascript: submitForm()" class="update-link text-info" id="update_bag_item"><small>Update</small></a>
                                         <a href="javascript: submitFormRemove()" class="remove-item text-danger float-right" id="remove_bag_item"><small>Remove</small></a>
                                     </td>
@@ -134,7 +135,34 @@
 {% endblock %}
 
 {% block postloadjs %}
-    <script src="{% static 'js/helper.js' %}"></script>
+    <script>
+        function submitForm() {
+            document.getElementById('update-form').submit()
+        }
+
+        function submitFormRemove(){
+            document.getElementById('id_qty').value = 0;
+            document.getElementById('update-form').submit();
+        }
+
+        let form = document.getElementById('update-form');
+
+        form.addEventListener('submit', function(event) { 
+            event.preventDefault()
+            csrfToken = "{{ csrf_token }}";
+        
+            let data = new FormData();
+            data.append('id_qty', document.getElementById('id_qty').value)  
+            data.append('csrfmiddlewaretoken', csrfToken)
+            axios.post('bag/update_order', data)
+            .then(res => {
+                console.log(csrftoken)
+                location.reload()
+            })
+            .catch(errors => console.log(errors))
+
+        })
+    </script>
 {{ block.super }}
 
 {% endblock %}
