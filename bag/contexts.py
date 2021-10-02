@@ -5,6 +5,7 @@ from products.models import Product
 
 
 def bag_contents(request):
+    """ Calculates bag/ cart totals and customisation amounts """
     total = 0
     product_count = 0
     order = request.session.get('order')
