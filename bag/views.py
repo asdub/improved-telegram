@@ -50,5 +50,8 @@ def update_order(request, item_id):
             if data['order_ref'] == ref:
                 if quantity > 0:
                     data['quantity'] = quantity
+                    print(f'Order:{ref} - Quanity Updated to: {quantity}')
+                else:
+                    order.remove(data)
     request.session['order'] = order
     return redirect(reverse('view_bag'))
