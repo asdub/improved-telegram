@@ -128,7 +128,7 @@ a.category-badge > span.badge:hover {
     position: fixed;
     top: 2rem;
     right: 2rem;
-    z-index: 999;
+    z-index: 99999999;
 }
 
 .custom-toast {
