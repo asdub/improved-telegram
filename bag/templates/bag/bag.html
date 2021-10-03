@@ -52,15 +52,15 @@
                                         <p class="my-0">€{{ item.final_price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <form method="POST" id="update-form" action="{% url 'update_order' item.item_id %}">
+                                        <form method="POST" id="update-form" data-ref="{{ item.order_ref }}" action="{% url 'update_order' item.item_id %}">
                                             {% csrf_token %}
                                             <input class="form-control qty_input w-50" type="number" 
                                                     name="quantity" value="{{ item.quantity }}" min="1" max="99" 
-                                                        data-item_id="{{ product.id }}" id="id_qty">
+                                                        data-ref="{{ item.order_ref  }}" id="id_qty_{{ item.order_ref }}">
                                             <input type="hidden" id="order_ref" name="order_ref" value="{{ item.order_ref }}">
                                         </form>
-                                        <a href="javascript: submitForm()" class="update-link text-info" id="update_bag_item"><small>Update</small></a>
-                                        <a href="javascript: submitFormRemove()" class="remove-item text-danger float-right" id="remove_bag_item"><small>Remove</small></a>
+                                        <a href="javascript: submitForm('id_qty_{{ item.order_ref }}')" class="update-link text-info" id="update_bag_item"><small>Update</small></a>
+                                        <a href="javascript: submitFormRemove('id_qty_{{ item.order_ref }}')" class="remove-item text-danger float-right" id="remove_bag_item"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">€{{ item.subtotal }}</p>
@@ -136,12 +136,12 @@
 
 {% block postloadjs %}
     <script>
-        function submitForm() {
+        function submitForm(data) {
             document.getElementById('update-form').submit()
         }
 
-        function submitFormRemove(){
-            document.getElementById('id_qty').value = 0;
+        function submitFormRemove(data){
+            document.getElementById(data).value = 0;
             document.getElementById('update-form').submit();
         }
 
@@ -149,10 +149,12 @@
 
         form.addEventListener('submit', function(event) { 
             event.preventDefault()
+            var element = event.target.getAttribute("data-ref")
+            var id = 'id_qty_' + element
             csrfToken = "{{ csrf_token }}";
         
             let data = new FormData();
-            data.append('id_qty', document.getElementById('id_qty').value)  
+            data.append(id, document.getElementById(id).value)  
             data.append('csrfmiddlewaretoken', csrfToken)
             axios.post('bag/update_order', data)
             .then(res => {

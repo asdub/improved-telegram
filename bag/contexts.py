@@ -36,7 +36,7 @@ def bag_contents(request):
                 data['order_list'].append(f'- A7 Size artwork, €20.00 reduction ({product.name})')
             elif data['product_size'] == 'A8':
                 data['final_price'] = int(product.price) - 25
-                data['order_list'].append(f'- A8 Size artwork, €25.00 reduction ({product.name})' )
+                data['order_list'].append(f'- A8 Size artwork, €25.00 reduction ({product.name})')
             else:
                 data['final_price'] = int(product.price)
 
@@ -44,8 +44,6 @@ def bag_contents(request):
                 data['final_price'] = int(data['final_price']) + 25
                 data['order_list'].append(f'+ Full Colour, additional €25.00 ({product.name})')
             total += int(data['quantity']) * int(data['final_price'])
-            printthis = data['order_ref']
-            print(f' ORDER REF --->>> {printthis}')
             data['subtotal'] = int(data['quantity']) * data['final_price']
             data['product'] = product
 

@@ -44,13 +44,14 @@ def update_order(request, item_id):
     quantity = int(request.POST.get('quantity'))
     order = request.session.get('order')
     ref = request.POST.get('order_ref')
+    print(f'ORDERS--> {order}')
+    print(f'REF--> {ref}')
 
     if order:
         for data in order:
             if data['order_ref'] == ref:
                 if quantity > 0:
                     data['quantity'] = quantity
-                    print(f'Order:{ref} - Quanity Updated to: {quantity}')
                 else:
                     order.remove(data)
     request.session['order'] = order
