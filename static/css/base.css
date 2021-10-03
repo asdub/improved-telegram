@@ -123,6 +123,22 @@ a.category-badge > span.badge:hover {
     color: #fff !important;
 }
 
+/* Toast Messages */
+.message-container {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
