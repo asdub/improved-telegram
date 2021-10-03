@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
+
 from products.models import Product
 import uuid
 
@@ -15,6 +16,7 @@ def view_bag(request):
 def add_to_order(request, item_id):
     """ Add quantity of the specified product/ service to the bag """
 
+    product = Product.object.get(pk=item_id)
     redirect_url = request.POST.get('redirect_url')
     order = request.session.get('order')
     ref = uuid.uuid4().hex
@@ -32,6 +34,7 @@ def add_to_order(request, item_id):
 
     if order is not None:
         order.append(cus_order.copy())
+        messages.success(request, f'Added {product.name} to your bag')
     else:
         order = []
         order.append(cus_order.copy())
