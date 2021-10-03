@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category
-from .forms import OrderForm
 
 # Create your views here.
 
@@ -67,15 +66,4 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
-
-
-def order_form(request):
-    form = OrderForm(request.POST or None)
-    if form.is_valid():
-        form.save(commit=True)
-        print(request.POST)
-
-    context = {
-        'form': form
-    }
-    return render(request, 'bag/product_order.html', context)
+ 
