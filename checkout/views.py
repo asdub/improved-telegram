@@ -40,7 +40,7 @@ def checkout(request):
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
-                            quantity=data['qauntity'],
+                            quantity=data['quantity'],
                         )
                         order_line_item.save()
                 except Product.DoesNotExist:
