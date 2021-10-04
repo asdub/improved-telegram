@@ -46,8 +46,8 @@ em {
 
 /* Delivery Banner */
 .delivery-banner-content {
-    background: #e59758;
-    color: #000000;
+    background: #6b63ff;
+    color: #ffffff;
 }
 
 .main-logo-link {
@@ -90,7 +90,7 @@ em {
 }
 
 .text-info {
-    color: #e59758 !important;
+    color: #6b63ff !important;
 }
 
 /* Navigation */
@@ -134,11 +134,17 @@ a.category-badge > span.badge:hover {
 /* Toast Messages */
 .toast-header {
     justify-content: space-between;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .toast-header > button {
     border: none;
-    
+}
+
+.toast-body {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .message-container {
@@ -150,10 +156,19 @@ a.category-badge > span.badge:hover {
 
 .custom-toast {
     overflow: visible;
+    border-radius: 20px;
 }
 
 .toast-capper {
-    height: 2px;
+    height: 4px;
+}
+
+/* Here Images */
+.hero-immage-container img {
+    position: fixed;
+    max-height: 300px;
+    bottom: 0;
+    right: 0;
 }
 
 /* -------------------------------- Media Queries */
