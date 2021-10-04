@@ -22,6 +22,14 @@ i {
     color: #6b63ff;
 }
 
+.text-theme {
+    color: #6b63ff;
+}
+
+.text-right {
+    text-align: right;
+}
+
 /* Selectors & Search Bar */
 .custom-select, .custom-borders {
     border-bottom: 1px solid #6b63ff !important;
