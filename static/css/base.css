@@ -1,3 +1,4 @@
+/* Stylesheet - base.css - Improved Design */
 html {
     height: 100%;
 }
@@ -8,6 +9,7 @@ body {
     height: calc(100vh - 160px);
     color: #555;
     font-family: 'Roboto';
+    -webkit-font-smoothing: antialiased
 }
 
 em {
@@ -82,7 +84,7 @@ em {
 }
 
 .text-info {
-    color: #ff7200 !important;
+    color: #e59758 !important;
 }
 
 /* Navigation */

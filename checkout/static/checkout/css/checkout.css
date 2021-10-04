@@ -1,0 +1,33 @@
+/* Stylesheet for checkout.html - Improved Design */
+.checkout-tag {
+    color: #e59758;
+}
+.fieldset-label {
+    position: relative;
+    right: 0.5rem;
+}
+
+label {
+    font-size: 0.9rem;
+}
+
+.form-control {
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased
+}
+
+input::placeholder {
+    color: #555!important;
+  }
+
+#card-element {
+    padding: 1rem;
+    border-radius: 3px;
+}
+
+#payment-form .form-control,
+#card-element {
+    color: #000000;
+    border: 1px solid #e59758;
+    margin-bottom: 0.5rem;
+}
