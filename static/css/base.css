@@ -132,6 +132,15 @@ a.category-badge > span.badge:hover {
 }
 
 /* Toast Messages */
+.toast-header {
+    justify-content: space-between;
+}
+
+.toast-header > button {
+    border: none;
+    
+}
+
 .message-container {
     position: fixed;
     top: 2rem;

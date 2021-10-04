@@ -40,6 +40,10 @@ def checkout(request):
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
+                            product_size=data['product_size'],
+                            artwork_request=data['artwork_request'],
+                            product_text_content=data['product_text_content'],
+                            artwork_colour=data['artwork_colour'],
                             quantity=data['quantity'],
                         )
                         order_line_item.save()
