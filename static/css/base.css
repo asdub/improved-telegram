@@ -71,8 +71,8 @@ i {
 /* Hero Container */
 .hero-container {
     background: url('/static/img/gallery.svg') no-repeat center center fixed;
-    background-size: contain;
-    height: calc(100vh - 160px);
+    background-position: bottom;
+    background-size: 700px;
 }
 
 /* Home Banner */
@@ -249,10 +249,11 @@ a.category-badge > span.badge:hover {
     }
 }
 
-/* Add padding to header container in mobile view */
+/* Mobile view adjustments */
 @media (max-width: 991px) {
     .hero-container {
-        background-size: cover;
+        background-position:  center;
+        background-size: 350px;
     }
     .home-banner-container {
         margin: 0.5rem

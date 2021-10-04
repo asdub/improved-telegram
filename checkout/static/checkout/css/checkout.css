@@ -31,3 +31,9 @@ input::placeholder {
     border: 1px solid #6b63ff;
     margin-bottom: 0.5rem;
 }
+
+.checkout-container {
+    background: url('/static/img/order.svg') no-repeat center center fixed;
+    background-size: 300px;
+    background-position: bottom;
+}
