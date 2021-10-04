@@ -16,7 +16,7 @@
 {% block content %}
 <!-- Customer Order Sucessfull Template -->
     <div class="overlay"></div>
-    <div class="container">
+    <div class="container checkout-container-success">
         <div class="row">
             <div class="col">
                 <hr>
@@ -244,16 +244,13 @@
         </div>
         <div class="row">
 			<div class="col-12 col-lg-7 text-right">
-				<a href="{% url 'products' %}" class="btn btn-black rounded-0 my-2">
+				<a href="{% url 'products' %}" class="btn btn-black rounded-1 my-2">
+                    <span class="text-uppercase">Forgot something? | <small>Back to Services</small></span>
 					<span class="icon mr-2">
-						<i class="fas fa-gifts"></i>
+						<i class="fas fa-angle-right"></i>
 					</span>
-					<span class="text-uppercase">Forgot something? | <small>Back to Services</small></span>
 				</a>
 			</div>
 		</div>
-        <div class="row hero-immage-container">
-            <img src="{% static 'checkout/img/purchase.svg' %}" alt="Thanks for ordering at Improved Design"/>
-        </div>
     </div>
 {% endblock %}

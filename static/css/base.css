@@ -213,12 +213,19 @@ a.category-badge > span.badge:hover {
     height: 4px;
 }
 
-/* Here Images */
+/* Hero Images */
 .hero-immage-container img {
     position: fixed;
     max-height: 300px;
     bottom: 0;
     right: 0;
+}
+
+/* Checkout Success */
+.checkout-container-success {
+    background: url('/static/img/purchase.svg') no-repeat center center fixed;
+    background-size: 400px;
+    background-position: bottom right 100px;
 }
 
 /* -------------------------------- Media Queries */
@@ -228,6 +235,10 @@ a.category-badge > span.badge:hover {
   .container {
     max-width: 80%;
   }
+
+  .checkout-container-success {
+    background-position: bottom right 200px;
+}
 
   .card-img-top {
     width: 300px;
@@ -259,9 +270,11 @@ a.category-badge > span.badge:hover {
 
 /* Mobile view adjustments */
 @media (max-width: 991px) {
-    .hero-container {
-        background-position:  center;
-        background-size: 350px;
+    .hero-container,
+    .checkout-container-success {
+        background-position: bottom;
+        background-size: 250px;
+        padding: 0 0 10rem 0;
     }
     .home-banner-container {
         margin: 0.5rem
