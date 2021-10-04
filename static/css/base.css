@@ -16,6 +16,22 @@ em {
     font-size: 80%;
 }
 
+hr {
+    border-top: 1px solid #6b63ff;
+}
+
+i {
+    color: #6b63ff;
+}
+
+/* Selectors & Search Bar */
+.custom-select, .custom-borders {
+    border-bottom: 1px solid #6b63ff !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+}
+
 /* Buttons */
 .discover-btn {
     background: #ffffff;
@@ -48,7 +64,7 @@ em {
 
 /* Logo */ 
 .nav-logo h2 {
-    border-bottom: 2px solid #6b63ff;
+    font-weight: 600;
     padding-bottom: 5px;
     padding-top: 5px;
     text-align: left;

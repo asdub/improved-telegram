@@ -1,6 +1,6 @@
 /* Stylesheet for checkout.html - Improved Design */
 .checkout-tag {
-    color: #e59758;
+    color: #6b63ff;
 }
 .fieldset-label {
     position: relative;
@@ -28,6 +28,6 @@ input::placeholder {
 #payment-form .form-control,
 #card-element {
     color: #000000;
-    border: 1px solid #e59758;
+    border: 1px solid #6b63ff;
     margin-bottom: 0.5rem;
 }
