@@ -44,6 +44,12 @@ em {
     width: 1.5rem;
 }
 
+/* Delivery Banner */
+.delivery-banner-content {
+    background: #e59758;
+    color: #000000;
+}
+
 .main-logo-link {
     width: fit-content;
 }
