@@ -4,8 +4,6 @@ html {
 }
 
 body {
-    background: url('/media/id_background.jpg') no-repeat center center fixed;
-    background-size: cover;
     height: calc(100vh - 160px);
     color: #555;
     font-family: 'Roboto';
@@ -68,6 +66,13 @@ i {
     padding-bottom: 5px;
     padding-top: 5px;
     text-align: left;
+}
+
+/* Hero Container */
+.hero-container {
+    background: url('/static/img/gallery.svg') no-repeat center center fixed;
+    background-size: contain;
+    height: calc(100vh - 160px);
 }
 
 /* Home Banner */
@@ -246,6 +251,12 @@ a.category-badge > span.badge:hover {
 
 /* Add padding to header container in mobile view */
 @media (max-width: 991px) {
+    .hero-container {
+        background-size: cover;
+    }
+    .home-banner-container {
+        margin: 0.5rem
+    }
     .header-container {
         padding-top: 116px;
     }
