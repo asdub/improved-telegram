@@ -38,15 +38,26 @@ i {
     border-top: none !important;
 }
 
-/* Buttons */
+/* Buttons & Nav Links */
 .discover-btn {
     background: #ffffff;
     float: right;
 }
 
-/* Fonts */
-.banner-font {
-    font-size: 1rem;
+a#category-link,
+a#all-products-link {
+    transition: ease-in-out;
+    border-bottom: 1px solid;
+}
+a#category-link:hover,
+a#category-link:focus,
+a#category-link:active,
+a#all-products-link:hover,
+a#all-products-link:focus,
+a#all-products-link:active {
+    color: #6b63ff !important;
+    transform: scale(1.03);
+    border-bottom-color: #6b63ff;
 }
 
 .discover-btn:hover,
@@ -55,6 +66,11 @@ i {
     background: rgba(0, 0, 0, 0.8);
     text-decoration: underline;
     color: #ffffff;
+}
+
+/* Fonts */
+.banner-font {
+    font-size: 1rem;
 }
 
 /* CSS below from https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/e3ce173e7475dd8e9c7f51a3af3eaa888c29cb79/static/css/base.css */
@@ -74,6 +90,10 @@ i {
     padding-bottom: 5px;
     padding-top: 5px;
     text-align: left;
+}
+
+#main-nav {
+    padding-left: 16px;
 }
 
 /* Hero Container */
@@ -228,6 +248,10 @@ a.category-badge > span.badge:hover {
     background-position: bottom right 100px;
 }
 
+.order-confirmation-wrapper {
+    background: #ffffff;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -266,6 +290,11 @@ a.category-badge > span.badge:hover {
         height: 350px;
         object-fit: cover;
     }
+
+    .navbar-expand-lg {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
 }
 
 /* Mobile view adjustments */
@@ -274,7 +303,7 @@ a.category-badge > span.badge:hover {
     .checkout-container-success {
         background-position: bottom;
         background-size: 250px;
-        padding: 0 0 10rem 0;
+        padding-bottom: 10rem;
     }
     .home-banner-container {
         margin: 0.5rem
@@ -282,7 +311,16 @@ a.category-badge > span.badge:hover {
     .header-container {
         padding-top: 116px;
     }
-
+    .message-container {
+        top: auto !important;
+        bottom: 2rem;
+        right: auto !important;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .text-right {
+        text-align: left;
+    }
     body {
         height: calc(100vh - 116px);
     }
