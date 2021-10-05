@@ -12,7 +12,7 @@ var elements = stripe.elements();
 var style = {
     base: {
         color: '#000',
-        fontFamily: '"Roboto"',
+        fontFamily: 'Roboto, sans-serif',
         fontSmoothing: 'antialiased',
         fontSize: '14px',
         '::placeholder': {
