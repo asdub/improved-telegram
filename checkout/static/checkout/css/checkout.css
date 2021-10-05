@@ -30,6 +30,7 @@ input::placeholder {
     color: #000000;
     border: 1px solid #6b63ff;
     margin-bottom: 0.5rem;
+    background: #ffffff;
 }
 
 .checkout-container {
