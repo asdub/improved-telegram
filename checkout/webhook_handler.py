@@ -1,11 +1,11 @@
 from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
 
 from .models import Order, OrderLineItem
 from products.models import Product
 
 import json
 import time
-
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
@@ -33,6 +33,11 @@ class StripeWH_Handler:
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
+
+        # Clean data in the shipping details
+        for field, value in shipping_details.address.items():
+            if value == "":
+                shipping_details.address[field] = None
 
         order_exists = False
         attempt = 1
@@ -77,25 +82,22 @@ class StripeWH_Handler:
                     original_bag=bag,
                     stripe_pid=pid,
                 )
-                for item_id, item_data in json.loads(bag).items():
-                    product = Product.objects.get(id=item_id)
-                    if isinstance(item_data, int):
+                for data in json.loads(bag):
+                    product = get_object_or_404(Product, pk=data['item_id'])
+                    if data:
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
-                            quantity=item_data,
+                            product_size=data['product_size'],
+                            artwork_request=data['artwork_request'],
+                            product_text_content=data['product_text_content'],
+                            artwork_colour=data['artwork_colour'],
+                            quantity=data['quantity'],
                         )
                         order_line_item.save()
-                    else:
-                        for size, quantity in item_data['items_by_size'].items():
-                            order_line_item = OrderLineItem(
-                                order=order,
-                                product=product,
-                                quantity=quantity,
-                                product_size=size,
-                            )
-                            order_line_item.save()
             except Exception as e:
+                print(f'BAG--->{bag}')
+                print(f'ERROR-->>{e}')
                 if order:
                     order.delete()
                 return HttpResponse(
@@ -104,7 +106,6 @@ class StripeWH_Handler:
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)
-
 
     def handle_payment_intent_payment_failed(self, event):
         """

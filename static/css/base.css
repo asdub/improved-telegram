@@ -244,8 +244,8 @@ a.category-badge > span.badge:hover {
 /* Checkout Success */
 .checkout-container-success {
     background: url('/static/img/purchase.svg') no-repeat center center fixed;
-    background-size: 400px;
-    background-position: bottom right 100px;
+    background-size: 350px;
+    background-position: bottom right 60px;
 }
 
 .order-confirmation-wrapper {
