@@ -28,7 +28,6 @@ class Order(models.Model):
     original_bag = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
 
-
     def _generate_order_number(self):
         """
         Generate a random, unique order number using UUID
@@ -77,7 +76,7 @@ class OrderLineItem(models.Model):
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        self.lineitem_total = self.product.price * self.quantity
+        self.lineitem_total = self.final_price * self.quantity
         super().save(*args, **kwargs)
 
     def __str__(self):

@@ -68,6 +68,7 @@ def checkout(request):
                             artwork_request=data['artwork_request'],
                             product_text_content=data['product_text_content'],
                             artwork_colour=data['artwork_colour'],
+                            final_price=data['final_price'],
                             quantity=data['quantity'],
                         )
                         order_line_item.save()
@@ -75,7 +76,7 @@ def checkout(request):
                     messages.error(request, "There was an issue processing your order. Please try again.")
                     order_line_item.delete()
                     return redirect(reverse('view_bag'))
-
+            print(f'FINAl PRICE---->>> {order_line_item.final_price}')
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
 
@@ -115,6 +116,9 @@ def checkout_success(request, order_number):
     Handle successful checkouts
     """
     save_info = request.session.get('save_info')
+    bag = request.session.get('order')
+    order_obj = get_object_or_404(OrderLineItem, pk=1)
+    print(f'ORDER------>>>>> {bag}')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. \
