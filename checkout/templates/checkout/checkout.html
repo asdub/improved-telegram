@@ -28,8 +28,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-lg-6 order-lg-last mb-5">
-                <p class="text-muted">Order Summary</p>
+            <div class="col-12 col-lg-6 order-lg-last mb-5 card-bg-shadow">
+                <p class="text-theme">Order Summary</p>
                 <div class="row">
                     <div class="col-7 offset-2">
                         <p class="mb-1 mt-0 small text-muted">Item</p>
@@ -89,7 +89,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 card-bg-shadow">
                 <p class="checkout-tag">Please provide your details below:</p>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}

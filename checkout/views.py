@@ -1,4 +1,4 @@
-from django.shortcuts import (render, redirect, 
+from django.shortcuts import (render, redirect,
                               reverse, get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
@@ -116,9 +116,6 @@ def checkout_success(request, order_number):
     Handle successful checkouts
     """
     save_info = request.session.get('save_info')
-    bag = request.session.get('order')
-    order_obj = get_object_or_404(OrderLineItem, pk=1)
-    print(f'ORDER------>>>>> {bag}')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. \

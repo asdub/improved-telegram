@@ -196,6 +196,14 @@ a#all-products-link:active {
     object-fit: cover;
 }
 
+.card-bg-shadow {
+    background: rgba(255, 255, 255, 0.95);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    border-radius: 10px;
+    box-shadow: 10px 10px 60px #dcdcdc2e, -10px -10px 35px #e4e4e4;
+}
+
 a.category-badge > span.badge:hover {
     background: #212529 !important;
     color: #fff !important;

@@ -3,8 +3,6 @@ from products.models import Product
 from checkout.models import OrderLineItem
 from django.contrib import messages
 
-import uuid
-
 # Create your views here.
 
 
@@ -20,9 +18,7 @@ def add_to_order(request, item_id):
     product = Product.objects.get(pk=item_id)
     redirect_url = request.POST.get('redirect_url')
     order = request.session.get('order')
-    ref = uuid.uuid4().hex
     cus_order = {
-            "order_ref": ref,
             "item_id": item_id,
             "quantity": int(request.POST.get("quantity")),
             "artwork_request": request.POST.get("artwork_request"),
