@@ -76,7 +76,6 @@ def checkout(request):
                     messages.error(request, "There was an issue processing your order. Please try again.")
                     order_line_item.delete()
                     return redirect(reverse('view_bag'))
-            print(f'FINAl PRICE---->>> {order_line_item.final_price}')
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
 

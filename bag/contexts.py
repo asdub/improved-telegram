@@ -2,6 +2,7 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
+from django.forms.models import model_to_dict
 from django.contrib import messages
 
 
@@ -16,7 +17,10 @@ def bag_contents(request):
             product = get_object_or_404(Product, pk=data['item_id'])
             total += int(data['quantity']) * int(data['final_price'])
             data['subtotal'] = int(data['quantity']) * data['final_price']
-            data['product'] = product
+            data['product_name'] = product.name
+            data['product_id'] = product.id
+            data['product_sku'] = product.sku
+            data['product_image_url'] = product.image_url
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)

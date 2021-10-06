@@ -40,11 +40,13 @@
                             {% for item in order %}
                                 <tr class="order-bag-item">
                                     <td class="p-3 w-25">
-                                        <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                                        <a href="{% url 'product_detail' item.product_id %}">
+                                            <img class="img-fluid rounded" src="{{ item.product_image_url }}">
+                                        </a>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                        <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                        <p class="my-0"><strong>{{ item.product_name }}</strong></p>
+                                        <p class="my-0 small text-muted">SKU: {{ item.product_sku|upper }}</p>
                                         <p class="my-0 small text-dark"><strong class="text-muted">Selected Size:</strong> {{ item.product_size }}</p>
                                         <p class="my-0 small text-dark"><strong class="text-muted">Colour:</strong> {{ item.artwork_colour }}</p>
                                     </td>

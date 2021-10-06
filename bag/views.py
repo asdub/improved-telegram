@@ -36,6 +36,8 @@ def add_to_order(request, item_id):
         order = []
         order.append(cus_order.copy())
 
+    messages.success(request, "Message")
+
     for data in order:
         product = get_object_or_404(Product, pk=data['item_id'])
         if data['product_size'] == 'A0':
