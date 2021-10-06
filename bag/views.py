@@ -19,6 +19,7 @@ def add_to_order(request, item_id):
     redirect_url = request.POST.get('redirect_url')
     order = request.session.get('order')
     cus_order = {
+            "order_ref": item_id + "-" + request.POST.get("quantity"),
             "item_id": item_id,
             "quantity": int(request.POST.get("quantity")),
             "artwork_request": request.POST.get("artwork_request"),

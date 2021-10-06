@@ -30,6 +30,12 @@ i {
     text-align: right;
 }
 
+.image-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 /* Selectors & Search Bar */
 .custom-select, .custom-borders {
     border-bottom: 1px solid #6b63ff !important;
@@ -73,6 +79,32 @@ a#all-products-link:active {
     font-size: 1rem;
 }
 
+/* Key Frames for Home */
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
 /* CSS below from https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/e3ce173e7475dd8e9c7f51a3af3eaa888c29cb79/static/css/base.css */
 
 /* from Bulma */
@@ -96,11 +128,29 @@ a#all-products-link:active {
     padding-left: 16px;
 }
 
-/* Hero Container */
+/* Hero Section */
 .hero-container {
+    height: 50vh;
     background: url('/static/img/gallery.svg') no-repeat center center fixed;
     background-position: bottom;
     background-size: 700px;
+    animation: fadeIn 3s;
+    -webkit-animation: fadeIn 2s;
+    -moz-animation: fadeIn 2s;
+    -o-animation: fadeIn 2s;
+    -ms-animation: fadeIn 2s;
+}
+
+/* Portfolio Section */
+body > div.hero-container.portfolio-container {
+    background: #6b63ff;
+    margin-left: 0;
+    margin-right: 0;
+    height: 100%;
+}
+
+.inner-container {
+    padding: 3rem 2rem;
 }
 
 /* Home Banner */
@@ -270,6 +320,10 @@ a.category-badge > span.badge:hover {
         max-width: 80%;
     }
 
+    .hero-container {
+        height: 60vh;
+    }
+
     .card-img-top {
         width: 300px;
         height: 300px;
@@ -286,17 +340,17 @@ a.category-badge > span.badge:hover {
         left: 0;
         z-index: 1030;
     }
-
+    .hero-container {
+        height: 55vh;
+    }
     .header-container {
         padding-top: 164px;
     }
-
     .card-img-top {
         width: 350px;
         height: 350px;
         object-fit: cover;
     }
-
     .navbar-expand-lg {
         flex-wrap: nowrap;
         justify-content: flex-start;
@@ -315,6 +369,13 @@ a.category-badge > span.badge:hover {
 
 /* Medium view adjustments */
 @media (max-width: 991px) {
+    body > div.container,
+    body > div.container-fluid {
+        margin-top: 3rem;
+    }
+    .hero-container {
+        height: 55vh;
+    }
     .hero-container,
     .checkout-container-success {
         background-position: bottom;
@@ -352,6 +413,12 @@ a.category-badge > span.badge:hover {
 
 /* Mobile view adjustments */
 @media (max-width: 480px) {
+    .hero-container {
+        height: 52vh;
+    }
+    .inner-container {
+        padding: 2rem 1rem;
+    }
     .hero-container,
     .checkout-container-success {
         background-position: bottom;
