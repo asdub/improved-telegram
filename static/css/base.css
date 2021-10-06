@@ -200,8 +200,8 @@ a#all-products-link:active {
     background: rgba(255, 255, 255, 0.95);
     padding-bottom: 1rem;
     padding-top: 1rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     border-radius: 10px;
     box-shadow: 10px 10px 60px #dcdcdc2e, -10px -10px 35px #e4e4e4;
 }
