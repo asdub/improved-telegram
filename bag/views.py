@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from products.models import Product
 from checkout.models import OrderLineItem
+from django.utils.html import format_html
 from django.contrib import messages
 
 # Create your views here.
@@ -36,7 +37,8 @@ def add_to_order(request, item_id):
         order = []
         order.append(cus_order.copy())
 
-    messages.success(request, "Message")
+    message = format_html(f'{product.name} added to your order.' + '<br><a href="{}">View Orders.</a>', reverse('view_bag'))
+    messages.error(request, message)
 
     for data in order:
         product = get_object_or_404(Product, pk=data['item_id'])
