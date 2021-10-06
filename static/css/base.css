@@ -36,6 +36,10 @@ i {
     justify-content: center;
 }
 
+.heading-bg-none {
+    background: rgba(0, 0, 0, 0) !important;
+}
+
 /* Selectors & Search Bar */
 .custom-select, .custom-borders {
     border-bottom: 1px solid #6b63ff !important;
@@ -143,7 +147,8 @@ a#all-products-link:active {
 
 /* Portfolio Section */
 body > div.hero-container.portfolio-container {
-    background: #6b63ff;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(188,184,255,1) 42%, rgba(107,99,255,1) 89%);
     margin-left: 0;
     margin-right: 0;
     height: 100%;
@@ -212,6 +217,9 @@ body > div.hero-container.portfolio-container {
 .text-info {
     color: #6b63ff !important;
 }
+
+/* Header */
+
 
 /* Navigation */
 .search-bar-dropdown.show {
@@ -419,9 +427,12 @@ a.category-badge > span.badge:hover {
     .inner-container {
         padding: 2rem 1rem;
     }
+    .home-banner-container {
+        width: 70%;
+    }
     .hero-container,
     .checkout-container-success {
-        background-position: bottom;
+        background-position: center;
         background-size: calc(100vw / 1.1);
     }
 }
