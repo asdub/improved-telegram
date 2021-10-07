@@ -5,12 +5,9 @@
         <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="text-center">
                 <div class="header-icon-container">
-                    <object type="image/svg+xml" id="dropdown-search-icon" data="{% static 'img/noun_search.svg' %}">
-                        <!-- Search SVG fallback-->
-                        <i class="fas fa-search"></i>
-                    </object></i>
+                    <img type="image/svg+xml" id="dropdown-search-icon" src="{% static 'img/noun_search.svg' %}">
+                    <p class="my-0 text-theme">Search</p>
                 </div>
-                <p class="my-0 text-theme">Search</p>
             </div>
         </a>
         <div class="dropdown-menu search-bar-dropdown border-0 w-100 p-3 my-0" aria-labelledby="mobile-search">
@@ -35,10 +32,7 @@
       <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="text-center">
                 <div class="header-icon-container">
-                    <object type="image/svg+xml" id="account-icon" data="{% static 'img/noun_person.svg' %}">
-                        <!-- Account SVG fallback-->
-                        <i class="fas fa-user fa-lg"></i>
-                    </object>
+                    <img type="image/svg+xml" id="account-icon" src="{% static 'img/noun_person.svg' %}">
                     <p class="my-0 text-theme" id="account-icon-text">Account</p>
                 </div>
           </div>
@@ -59,20 +53,17 @@
     <li class="list-inline-item">
       <a class="{% if grand_total %}text-info
        font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
-          <div class="text-center">
+          <div class="header-icon-container">
                 <div class="header-icon-container">
-                    <object type="image/svg+xml" id="basket-icon" data="{% static 'img/noun_checkout.svg' %}">
-                        <!-- Account Basket fallback-->
-                        <i class="fas fa-basket fa-lg"></i>
-                    </object>
+                    <img type="image/svg+xml" id="basket-icon" src="{% static 'img/noun_checkout.svg' %}">
+                    <p class="my-0">
+                        {% if grand_total %}
+                            €{{ grand_total|floatformat:2 }}
+                        {% else %}
+                            €0.00
+                        {% endif %}
+                    </p>
                 </div>
-              <p class="my-0">
-                  {% if grand_total %}
-                      €{{ grand_total|floatformat:2 }}
-                  {% else %}
-                      €0.00
-                  {% endif %}
-              </p>
           </div>
       </a>
     </li>

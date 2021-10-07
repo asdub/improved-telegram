@@ -240,19 +240,15 @@ body > div.hero-container.portfolio-container {
     height: 35px;
     transition: all 0.2s ease-in-out
 }
-#user-options {
-    transition: all 0.1s ease-in-out
-}
 
 #basket-icon:hover,
 #basket-icon:focus,
-#user-options:hover > #account-icon,
+#account-icon:hover,
 #account-icon:focus,
 #dropdown-search-icon:hover,
 #dropdown-search-icon:focus {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
-
 
 .header-search-button {
     height: 30px;
@@ -274,11 +270,31 @@ body > header > div:nth-child(3) > nav > ul > li.list-inline-item.show > div > f
 }
 
 /* Navigation */
+.mobile-menu-toggle {
+    font-size: 2rem;
+}
+
 .search-bar-dropdown.show {
     display: flex;
     background: black;
     border-radius: 20px;
     box-shadow: 10px 10px 60px #dcdcdc2e, 5px -10px 35px #e4e4e485;
+}
+
+.dropdown-menu {
+    background: #000000;
+}
+
+.dropdown-item {
+    color: #ffffff;
+}
+
+.navbar-collapse {
+    flex-basis: 0;
+}
+
+.navbar-nav .dropdown-menu {
+    position: absolute;
 }
 
 /* Products Page */
