@@ -19,6 +19,10 @@ hr {
 }
 
 i {
+    color: #6b63ff;
+}
+
+.icon-white {
     color: #ffffff;
 }
 
@@ -43,6 +47,10 @@ i {
 body > div.container,
 body > div.container-fluid {
     margin-top: 1rem;
+}
+
+.hero-container {
+    margin-top: 0 !important;
 }
 
 /* Selectors & Search Bar */
@@ -163,6 +171,13 @@ body > div.hero-container.portfolio-container {
     margin-left: 0;
     margin-right: 0;
     height: 100%;
+}
+
+a.portfolio-container {
+    display: block;
+    position: relative;
+    top: -250px;
+    visibility: hidden;
 }
 
 .inner-container {
@@ -368,6 +383,20 @@ a.category-badge > span.badge:hover {
     justify-content: space-between;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    background: #000000;
+    font-size: 1.1rem;
+}
+
+.toast-header-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.bg-theme {
+    background: #6b63ff;
 }
 
 .toast-header > button {
@@ -375,8 +404,28 @@ a.category-badge > span.badge:hover {
 }
 
 .toast-body {
+    display: flex;
+    flex-direction: column;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    background: #000000;
+}
+.toast-header.text-white > button {
+    background: none;
+    font-size: 1.5rem;
+}
+
+.toast-body.text-white > a {
+    color: #000000;
+    background-color: #ffffff;
+    padding: .175rem .75rem;
+    margin-top: 0.5rem;
+    transition: all 0.2s ease-in-out
+}
+
+.toast-body.text-white > a:hover,
+.toast-body.text-white > a:focus {
+    background: #e9ecef;
 }
 
 .message-container {
@@ -393,6 +442,11 @@ a.category-badge > span.badge:hover {
 
 .toast-capper {
     height: 4px;
+}
+
+
+.thumbs-up {
+    padding-right: 1rem;
 }
 
 /* Hero Images */

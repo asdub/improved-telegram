@@ -37,7 +37,7 @@ def add_to_order(request, item_id):
         order = []
         order.append(cus_order.copy())
 
-    message = format_html(f'{product.name} added to your order.' + '<br><a href="{}">View Orders.</a>', reverse('view_bag'))
+    message = format_html(f'<strong>+ {product.name}</strong> Added to your order.' + '<br><a class="btn" href="{}">View Orders.</a>', reverse('view_bag'))
     messages.error(request, message)
 
     for data in order:
