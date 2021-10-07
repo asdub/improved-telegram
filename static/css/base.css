@@ -19,7 +19,7 @@ hr {
 }
 
 i {
-    color: #6b63ff;
+    color: #ffffff;
 }
 
 .text-theme {
@@ -40,6 +40,11 @@ i {
     background: rgba(0, 0, 0, 0) !important;
 }
 
+body > div.container,
+body > div.container-fluid {
+    margin-top: 1rem;
+}
+
 /* Selectors & Search Bar */
 .custom-select, .custom-borders {
     border-bottom: 1px solid #6b63ff !important;
@@ -49,6 +54,12 @@ i {
 }
 
 /* Buttons & Nav Links */
+body > div.container-fluid > div > div:nth-child(2) > div > form > div > div:nth-child(11) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .discover-btn {
     background: #ffffff;
     float: right;
@@ -308,6 +319,10 @@ body > header > div:nth-child(3) > nav > ul > li.list-inline-item.show > div > f
 	z-index: -1;
 }
 
+.product-spacer {
+    height: 2rem;
+}
+
 /* Cart/ Bag */
 
 .custom-detail-text {
@@ -486,6 +501,14 @@ a.category-badge > span.badge:hover {
     }
     body {
         height: calc(100vh - 116px);
+    }
+    body > div.container-fluid > div > div:nth-child(2) > div > form > div > div:nth-child(11) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .product-detail-image {
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }
 
