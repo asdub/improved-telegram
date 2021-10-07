@@ -37,9 +37,6 @@ def add_to_order(request, item_id):
         order = []
         order.append(cus_order.copy())
 
-    message = format_html(f'<strong>+ {product.name}</strong> Added to your order.' + '<br><a class="btn" href="{}">View Orders.</a>', reverse('view_bag'))
-    messages.error(request, message)
-
     for data in order:
         product = get_object_or_404(Product, pk=data['item_id'])
         if data['product_size'] == 'A0':
@@ -74,7 +71,8 @@ def add_to_order(request, item_id):
             data['order_list'].append(f'+ Full Colour, additional €25.00 ({product.name})')
     data['subtotal'] = int(data['quantity']) * data['final_price']
 
-    print(order)
+    message = format_html(f'<strong>+ {product.name}</strong> Added to your order.' + '<br><a class="btn" href="{}">View Orders.</a>', reverse('view_bag'))
+    messages.error(request, message)
     request.session['order'] = order
     return redirect(redirect_url)
 
