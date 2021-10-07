@@ -115,9 +115,9 @@ a#all-products-link:active {
 .icon {
     align-items: center;
     display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
+    justify-content: flex-start;
+    height: 32px;
+    width: 32px;
 }
 
 /* Logo */ 
@@ -220,10 +220,65 @@ body > div.hero-container.portfolio-container {
 
 /* Header */
 
+.header-icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#basket-icon {
+    height: 35px;
+    transition: all 0.2s ease-in-out
+}
+
+#account-icon {
+    height: 50px;
+    transition: all 0.2s ease-in-out
+}
+
+#dropdown-search-icon {
+    height: 35px;
+    transition: all 0.2s ease-in-out
+}
+#user-options {
+    transition: all 0.1s ease-in-out
+}
+
+#basket-icon:hover,
+#basket-icon:focus,
+#user-options:hover > #account-icon,
+#account-icon:focus,
+#dropdown-search-icon:hover,
+#dropdown-search-icon:focus {
+    transform: scale(1.1);
+}
+
+
+.header-search-button {
+    height: 30px;
+}
+
+.header-search-bar {
+    border: 0;
+    border-bottom: 2px #ffffff solid;
+    color: #ffffff;
+}
+body > header > div:nth-child(3) > nav > ul > li.list-inline-item.show > div > form > div > input[type="text"],
+body > header > div:nth-child(3) > nav > ul > li.list-inline-item.show > div > form > div > textarea {
+    background-color : #000000;
+    color: #ffffff;
+}
+
+body > header > div:nth-child(3) > nav > ul > li.list-inline-item.show > div > form > div > input::placeholder {
+    color: rgba(255,255,255,0.7)
+}
 
 /* Navigation */
 .search-bar-dropdown.show {
     display: flex;
+    background: black;
+    border-radius: 20px;
+    box-shadow: 10px 10px 60px #dcdcdc2e, 5px -10px 35px #e4e4e485;
 }
 
 /* Products Page */
