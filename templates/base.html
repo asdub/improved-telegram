@@ -57,9 +57,9 @@
             <div class="input-group w-100">
                 <input class="form-control custom-borders rounded-0" type="text" name="q" placeholder="Search our services..">
                 <div class="input-group-append">
-                    <button class="form-control btn custom-borders rounded-0" type="submit">
+                    <button class="form-control btn header-search-buttonrounded-0" type="submit">
                         <span class="icon">
-                            <i class="fas fa-search"></i>
+                          <img type="image/svg+xml" src="{% static 'img/noun_search.svg' %}">
                         </span>
                     </button>
                 </div>
@@ -70,10 +70,12 @@
           <ul class="list-inline list-unstyled text-center text-lg-right my-0">
             <li class="list-inline-item dropdown">
                 <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <div class="text-center">
-                        <div><i class="fas fa-user fa-lg"></i></div>
-                        <p class="my-0">My Account</p>
+                  <div class="text-center">
+                    <div class="header-icon-container">
+                        <img type="image/svg+xml" id="account-icon" src="{% static 'img/noun_person.svg' %}">
+                        <p class="my-0 text-theme" id="account-icon-text">Account</p>
                     </div>
+                  </div>
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="user-options">
                     {% if request.user.is_authenticated %}
@@ -90,16 +92,16 @@
             </li>
             <li class="list-inline-item">
                 <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
-                    <div class="text-center">
-                        <div><i class="fas fa-shopping-basket fa-lg"></i></div>
-                        <p class="my-0">
-                            {% if grand_total %}
-                                € {{ grand_total|floatformat:2 }}
-                            {% else %}
-                                € 0.00
-                            {% endif %}
-                        </p>
-                    </div>
+                  <div class="header-icon-container">
+                    <img type="image/svg+xml" id="basket-icon" src="{% static 'img/noun_checkout.svg' %}">
+                    <p class="my-0">
+                        {% if grand_total %}
+                            €{{ grand_total|floatformat:2 }}
+                        {% else %}
+                            €0.00
+                        {% endif %}
+                    </p>
+                  </div>
                 </a>
             </li>
           </ul>
