@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-lg-6 order-lg-last mb-5 card-bg-shadow">
+            <div class="col-12 col-lg-5 order-lg-last mb-5 card-bg-shadow">
                 <p class="text-theme">Order Summary</p>
                 <div class="row">
                     <div class="col-7 offset-2">
@@ -77,12 +77,12 @@
                 </div>
                 <hr class="my-0">
                 <div class="row text-black text-right">
-                    <div class="col-7 offset-2">
+                    <div class="col-7 offset-2 mt-2">
                         <p class="my-0">Order Total:</p>
                         <p class="my-0">Delivery:</p>
                         <p class="my-0">Grand Total:</p>
                     </div>
-                    <div class="col-3">
+                    <div class="col-3 mt-2">
                         <p class="my-0">€{{ total | floatformat:2 }}</p>
                         <p class="my-0">€{{ delivery | floatformat:2 }}</p>
                         <p class="my-0"><strong>€{{ grand_total | floatformat:2 }}</strong></p>
@@ -130,25 +130,27 @@
                         <!-- Pass client secret to for payment intent id -->
                         <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     </fieldset>
-                    <div class="submit-button text-right mt-5 mb-2">                    
-						<a href="{% url 'view_bag' %}" class="btn btn-outline-black rounded-0">
-							<span class="icon">
-								<i class="fas fa-chevron-left"></i>
-							</span>
-							<span class="font-weight-bold">Adjust Order</span>
-						</a>
-						<button id="submit-button" class="btn btn-black rounded-0">
-							<span class="font-weight-bold">Complete Order</span>
-							<span class="icon">
-								<i class="fas fa-lock"></i>
-							</span>
-						</button>
-						<p class="small text-danger my-0">
+                    <div class="submit-button text-right mt-3 mb-2">
+                        <p class="small text-danger my-0">
 							<span class="icon">
 								<i class="fas fa-exclamation-circle"></i>
 							</span>
 							<span>You will be charged <strong>€ {{ grand_total|floatformat:2 }}</strong></span>
 						</p>
+                        <div class="btn-container">                   
+                            <a href="{% url 'view_bag' %}" class="btn btn-outline-black rounded-1 mt-3">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="font-weight-bold">Adjust Order</span>
+                            </a>
+                            <button id="submit-button" class="btn btn-black rounded-1 mt-3">
+                                <span class="font-weight-bold">Complete Order</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </button>
+                        </div>
 					</div>
                 </form>
             </div>

@@ -39,3 +39,8 @@ input::placeholder {
     background-size: 300px;
     background-position: bottom;
 }
+
+.order-lg-last {
+    margin-left: auto;
+    height: fit-content;
+}
