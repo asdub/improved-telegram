@@ -469,6 +469,16 @@ a.category-badge > span.badge:hover {
     background: #ffffff;
 }
 
+/* Account/ User Profiles */ 
+.login-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
