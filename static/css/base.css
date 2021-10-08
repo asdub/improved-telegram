@@ -458,6 +458,7 @@ a.category-badge > span.badge:hover {
 }
 
 /* Checkout Success */
+
 .checkout-container-success {
     background: url('/static/img/purchase.svg') no-repeat center center fixed;
     background-size: 350px;
@@ -478,6 +479,10 @@ a.category-badge > span.badge:hover {
 
     .hero-container {
         height: 60vh;
+    }
+
+    .checkout-container-success {
+        background-position: bottom right 100px !important;
     }
 
     .card-img-top {
@@ -512,14 +517,14 @@ a.category-badge > span.badge:hover {
         justify-content: flex-start;
     }
 
-    .hero-container, .checkout-container-success {
+    .hero-container {
     background-position: bottom;
     background-size: calc(100vw / 1.5);
     }
 
     .checkout-container-success {
-    background-position: bottom right;
-    
+    background-position: bottom right 50px;
+    background-size: calc(100vw / 3.5);
     }
 }
 
@@ -532,8 +537,7 @@ a.category-badge > span.badge:hover {
     .hero-container {
         height: 55vh;
     }
-    .hero-container,
-    .checkout-container-success {
+    .hero-container {
         background-position: bottom;
         background-size: 650px;
     }
@@ -552,6 +556,10 @@ a.category-badge > span.badge:hover {
     }
     .text-right {
         text-align: left;
+    }
+    body > div.container.checkout-container-success > div:nth-child(3) > div {
+        text-align: right;
+        display: flex;
     }
     body {
         height: calc(100vh - 116px);
@@ -582,6 +590,10 @@ a.category-badge > span.badge:hover {
 
 /* Mobile view adjustments */
 @media (max-width: 480px) {
+    .row-margin {
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+    }
     .hero-container {
         height: 52vh;
     }
@@ -593,7 +605,7 @@ a.category-badge > span.badge:hover {
     }
     .hero-container,
     .checkout-container-success {
-        background-position: center;
+        background-position: bottom;
         background-size: calc(100vw / 1.1);
     }
 }
