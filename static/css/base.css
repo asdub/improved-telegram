@@ -74,6 +74,7 @@ body > div.container-fluid {
 }
 
 /* Buttons & Nav Links */
+.btn-container,
 body > div.container-fluid > div > div:nth-child(2) > div > form > div > div:nth-child(11) {
     display: flex;
     flex-direction: row;
