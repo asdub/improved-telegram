@@ -42,6 +42,12 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
 </form>
 <div class="btn-container">
+  <a class="btn btn-outline-black rounded-1 mt-3" href="{% url 'home' %}">
+    <span class="icon">
+      <i class="fas fa-chevron-left"></i>
+    </span>
+    <span>Home</span>
+  </a>
   <button class="primaryAction btn btn-black rounded-1 mt-3" type="submit">{% trans "Sign In" %}</button>
 </div>
 

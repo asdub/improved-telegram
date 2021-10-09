@@ -2,12 +2,14 @@
 
 {% block content %}
     <div class="overlay"></div>
-        <div class="row">
-            <div class="col-12">
-            <div class="login-container">
-                <div class="allauth-form-inner-content card-bg-shadow login-form">
-                    {% block inner_content %}
-                    {% endblock %}
+        <div class="container login-bg">
+            <div class="row">
+                <div class="col-12">
+                <div class="login-container">
+                    <div class="allauth-form-inner-content card-bg-shadow login-form">
+                        {% block inner_content %}
+                        {% endblock %}
+                    </div>
                 </div>
             </div>
         </div>

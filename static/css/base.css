@@ -61,6 +61,10 @@ body > div.container-fluid {
     position: sticky;
 }
 
+.border {
+    border: 1px solid #6b63ffaf!important;
+}
+
 /* Selectors & Search Bar */
 .custom-select, .custom-borders {
     border-bottom: 1px solid #6b63ff !important;
@@ -346,6 +350,15 @@ body > header > div:nth-child(3) > nav > ul > li.list-inline-item.show > div > f
     height: 2rem;
 }
 
+.card-hover {
+    transition: all 0.2s ease-in-out;
+}
+
+.card-hover:focus,
+.card-hover:hover {
+    transform: scale(1.05);
+}
+
 /* Cart/ Bag */
 
 .custom-detail-text {
@@ -483,14 +496,22 @@ a.category-badge > span.badge:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: url('/static/img/login.svg') no-repeat center center fixed;
-    background-size: 350px;
-    background-position: bottom right 60px;
     margin-top: 2rem;
 }
 
 .login-form {
     margin: 0 1rem;
+}
+
+body > div.container.login-bg > div > div > div > div {
+    opacity: 0.75;
+}
+
+.login-bg {
+    height: 100%;
+    background: url('/static/img/login.svg') no-repeat center center fixed;
+    background-size: 350px;
+    background-position: bottom right 60px;
 }
 
 /* -------------------------------- Media Queries */
