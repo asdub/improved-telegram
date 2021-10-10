@@ -16,6 +16,10 @@ label {
     -webkit-font-smoothing: antialiased
 }
 
+#div_id_country label {
+    display: none;
+}
+
 #id_country,
 input::placeholder {
     color: #555!important;
