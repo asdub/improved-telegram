@@ -491,7 +491,7 @@ a.category-badge > span.badge:hover {
     background: #ffffff;
 }
 
-/* Account/ User Profiles */ 
+/* Account/ User Profiles (Allauth) */ 
 .login-container {
     display: flex;
     flex-direction: column;
@@ -513,6 +513,16 @@ body > div.container.login-bg > div > div > div > div {
     background: url('/static/img/login.svg') no-repeat center center fixed;
     background-size: 350px;
     background-position: bottom right 60px;
+}
+
+#login_form label,
+#signup_form label {
+    display: none;
+}
+
+#login_form > div,
+#signup_form > div {
+    margin-top: 0.25rem;
 }
 
 /* -------------------------------- Media Queries */
