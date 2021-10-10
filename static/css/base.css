@@ -537,6 +537,14 @@ input::placeholder {
     color: #555!important;
 }
 
+#id_default_country option:not(:first-child) {
+    color: #000000;
+}
+
+#id_default_country option:first-child {
+    color: #555!important;
+}
+
 #profile-update-form > div.btn-container {
     justify-content: flex-end;
 }
