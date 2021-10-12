@@ -79,6 +79,7 @@ body > div.container-fluid > div > div:nth-child(2) > div > form > div > div:nth
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
 }
 
 .discover-btn {

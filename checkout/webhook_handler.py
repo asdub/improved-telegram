@@ -30,6 +30,8 @@ class StripeWH_Handler:
         intent = event.data.object
         pid = intent.id
         bag = intent.metadata.order
+        artwork_request = intent.metadata.artwork_request
+        order_product_text_content = intent.metadata.order_product_text_content
         save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details

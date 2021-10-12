@@ -87,13 +87,15 @@
                                 </div>
                                 <hr>
                                 <div class="col-12">
-                                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-1 mt-3">
-                                        <span class="icon">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </span>
-                                        <span class="text-uppercase">Add more services </span>
-                                    </a>
-                                    <input type="submit" class="btn btn-black rounded-1 text-uppercase mt-3" value="Add to Order +">
+                                    <div class="btn-container">
+                                        <a href="{% url 'products' %}" class="btn btn-outline-black rounded-1 mt-3">
+                                            <span class="icon">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </span>
+                                            <span class="text-uppercase">Back </span>
+                                        </a>
+                                        <input type="submit" class="btn btn-black rounded-1 mt-3" value="Add to Order +">
+                                    </div>
                                 </div>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </div>

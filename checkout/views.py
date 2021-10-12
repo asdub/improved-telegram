@@ -13,6 +13,7 @@ from bag.contexts import bag_contents
 
 import stripe
 import json
+import copy
 
 # Create your views here.
 
@@ -22,13 +23,43 @@ def cache_checkout_data(request):
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
+        order_items = request.session.get('order')
+        order_intent = []
+        order_artwork_request = []
+        order_product_text_content = []
+        product_image_url = []
+        ref = None
+
+        for items in order_items:
+            d = copy.deepcopy(items)
+            order_intent.append(d)
+
+        for orders in order_intent:
+            for key, value in orders.items():
+                if key == 'order_ref':
+                    ref = value
+                if key == 'artwork_request':
+                    d = {ref: value}
+                    order_artwork_request.append(d.copy())
+                if key == 'product_text_content':
+                    d = {ref: value}
+                    order_product_text_content.append(d.copy())
+
+        print(f'ORDER ITEMs-------->> {order_items}')
+        print(f'ORDER INTENT-------->> {order_intent}')
+        print(f'artwork_request-------->> {order_artwork_request}')
+        print(f'order_product_text_content-------->> {order_product_text_content}')
+
         stripe.PaymentIntent.modify(pid, metadata={
-            'order': json.dumps(request.session.get('order')),
+            'order': json.dumps(order_intent),
+            'artwork_request': json.dumps(order_artwork_request),
+            'order_product_text_content': json.dumps(order_product_text_content),
             'save_info': request.POST.get('save_info'),
             'username': request.user,
         })
         return HttpResponse(status=200)
     except Exception as e:
+        print(f'error--->> {e}')
         messages.error(request, 'Sorry, your payment cannot be \
             processed. Please try again later.')
         return HttpResponse(content=e, status=400)
