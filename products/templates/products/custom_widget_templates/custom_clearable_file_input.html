@@ -1,5 +1,5 @@
 {% if widget.is_initial %}
-    <p><small class="text-theme">{{ widget.initial_text }}:</small></p>
+    <p>{{ widget.initial_text }}:</p>
     <a href="{{ widget.value.url }}">
         <img width="96" height="96" class="rounded shadow-sm" src="{{ widget.value.url }}">
     </a>
@@ -8,7 +8,7 @@
             <input class="custom-control-input" type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}">
             <label class="custom-control-label text-danger" for="{{ widget.checkbox_id }}">{{ widget.clear_checkbox_label }}</label>
         </div>
-    {% endif %}<br>
+    {% endif %}
     {{ widget.input_text }}
 {% endif %}
 <span class="btn btn-outline rounded-1 btn-file">
