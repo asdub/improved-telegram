@@ -1,0 +1,20 @@
+Hello {{ order.full_name }}!
+
+This is a confirmation of your order at Improved Design. Your order information is below:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: €{{ order.order_total }}
+Delivery: €{{ order.delivery_cost }}
+Grand Total: €{{ order.grand_total }}
+
+Your order will be ready as soon as possible. 
+You will receive a further email once your order is available for download. 
+
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Thank you for your order!
+
+Improved Design
