@@ -6,9 +6,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6">
-                <hr>
                 <h2 class="logo-font mb-4">Product Management</h2>
-                <h5 class="text-muted">Add a Product</h5>
+                <h5 class="text-theme">Add a Product</h5>
                 <hr>
             </div>
         </div>
@@ -20,7 +19,7 @@
                     {{ form | crispy }}
                     <div class="btn-container text-right">
                         <a class="btn btn-outline-black rounded-1 mt-3" href="{% url 'products' %}">Cancel</a>
-                        <button class="btn btn-black rounded-1 mt-3" type="submit">Add Product</button>
+                        <button class="btn btn-black rounded-1 mt-3" type="submit">Add Product +</button>
                     </div>
                 </form>
             </div>            
