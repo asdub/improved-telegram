@@ -4,9 +4,8 @@ from django.db.models import Q
 from .models import Product, Category
 from .forms import ProductForm
 
-# Create your views here.
 
-
+# All products/ services view.
 def all_products(request):
     """ View to show products and sorting """
 
@@ -57,6 +56,7 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
+# Products/ Services individual view.
 def product_detail(request, product_id):
     """ View to show individual product/ service details """
 
@@ -69,14 +69,15 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
+# Add Products/ Services view via management.
 def add_product(request):
     """ Add a product to the store """
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            product = form.save()
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('add_product'))
+            return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
@@ -90,6 +91,7 @@ def add_product(request):
     return render(request, template, context)
 
 
+# Edit Products/ Services view via management.
 def edit_product(request, product_id):
     """ Edit a product in the store """
     product = get_object_or_404(Product, pk=product_id)
@@ -112,3 +114,12 @@ def edit_product(request, product_id):
     }
 
     return render(request, template, context)
+
+
+# Delete Products/ Services view via management.
+def delete_product(request, product_id):
+    """ Delete a product from the store """
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Product deleted!')
+    return redirect(reverse('products'))
