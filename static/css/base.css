@@ -292,6 +292,8 @@ a.portfolio-container {
 
 .header-search-button {
     height: 30px;
+    background: none !important;
+    border: 0 !important;
 }
 
 .header-search-bar {
