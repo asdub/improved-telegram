@@ -573,10 +573,6 @@ input::placeholder {
     height: fit-content;
 }
 
-tr {
-    border-width: 1px;
-}
-
 .order-history-item-inner {
     display: flex;
     flex-direction: row;

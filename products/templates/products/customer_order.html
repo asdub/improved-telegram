@@ -67,19 +67,19 @@
                             </div>
                             <hr class="m-0 mb-1 mt-1">
                         </div>
-                    </div>
-                    <div class="order-upload">
-                        <form method="POST" action="{% url 'customer_order' order.id %}" class="form mb-2" enctype="multipart/form-data">
-                            <small class="text-theme">Please upload customer artwork(s) below.</small>
-                            {% csrf_token %}
-                            {{ form_update | crispy }}
-                            <div class="btn-container">
-                                <button class="btn btn-black rounded-1 mt-3" name="update_order" type="submit">
-                                    Complete Order
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                </div>
+                <div class="order-upload">
+                    <form method="POST" action="{% url 'customer_order' order.id %}" class="form mb-2" enctype="multipart/form-data">
+                        <small class="text-theme">Please upload customer artwork(s) below.</small>
+                        {% csrf_token %}
+                        {{ form_update | crispy }}
+                        <div class="btn-container">
+                            <button class="btn btn-black rounded-1 mt-3" name="update_order" type="submit">
+                                Complete Order
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
