@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-4 ml-auto mr-auto mb-3 card-bg-shadow">
                 <p class="text-theme">Your Delivery Information</p>
                 <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
@@ -25,16 +25,16 @@
                     </div>
                 </form>
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 m-auto mb-3 card-bg-shadow">
                 <p class="text-theme">Your Orders</p>
                 <div class="order-history table-responsive">
                     <table class="table table-sm table-borderless">
                         <thead>
                             <tr>
-                                <th>Order Number</th>
-                                <th>Date</th>
-                                <th>Items</th>
-                                <th>Order Total</th>
+                                <th><small class="text-muted">Number</small></th>
+                                <th><small class="text-muted">Date</small></th>
+                                <th><small class="text-muted">Items</small></th>
+                                <th><small class="text-muted">Order Total</small></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,7 +46,7 @@
                                             {{ order.order_number|truncatechars:6 }}
                                         </a>
                                     </td>
-                                    <td>{{ order.date }}</td>
+                                    <td><small>{{ order.date }}</small></td>
                                     <td>
                                         <ul class="list-unstyled">
                                             {% for item in order.lineitems.all %}
