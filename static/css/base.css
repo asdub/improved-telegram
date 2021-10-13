@@ -65,6 +65,11 @@ body > div.container-fluid {
     border: 1px solid #6b63ffaf!important;
 }
 
+.initialism {
+    font-size: .675em;
+    font-weight: 600;
+}
+
 /* Selectors & Search Bar */
 .custom-select, .custom-borders {
     border-bottom: 1px solid #6b63ff !important;
@@ -469,7 +474,6 @@ a.category-badge > span.badge:hover {
     height: 4px;
 }
 
-
 .thumbs-up {
     padding-right: 1rem;
     display: flex;
@@ -566,6 +570,20 @@ input::placeholder {
 .order-lg-last {
     margin-left: auto;
     height: fit-content;
+}
+
+.order-history-item-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-history-complete {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 /* -------------------------------- Media Queries */

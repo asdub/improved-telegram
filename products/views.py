@@ -76,7 +76,7 @@ def product_detail(request, product_id):
 # Add Products/ Services view via management.
 @login_required
 def add_product(request):
-    """ Add a product to the store """
+    """ Add a product to the store & list pending orders """
     orders = Order.objects.filter(order_status="Pending")
     ordered_orders = orders.order_by('-date')
 
@@ -85,19 +85,20 @@ def add_product(request):
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)
-        if form.is_valid():
-            product = form.save()
+        form_product = ProductForm(request.POST, request.FILES)
+        if form_product.is_valid():
+            product = form_product.save()
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
+
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
-        form = ProductForm()
+        form_product = ProductForm()
 
     template = 'products/add_product.html'
     context = {
-        'form': form,
+        'form_product': form_product,
         'orders': ordered_orders,
     }
 
@@ -147,3 +148,32 @@ def delete_product(request, product_id):
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
 
+
+# Add Products/ Services view via management.
+@login_required
+def customer_order(request, order_id):
+    """ Add a product to the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store administrators can add products.')
+        return redirect(reverse('home'))
+
+    order = get_object_or_404(Order, pk=order_id)
+    if request.method == 'POST':
+        form_update = CompleteOrderForm(request.FILES, instance=order)
+        if form_update.is_valid():
+            form_update.save()
+            messages.success(request, 'Successfully completed order!')
+            return redirect(reverse('home'))
+
+        else:
+            messages.error(request, 'Failed to update order. Please ensure the form is valid.')
+    else:
+        form_update = CompleteOrderForm()
+
+    template = 'products/customer_order.html'
+    context = {
+        'form_update': form_update,
+    }
+
+    return render(request, template, context)
