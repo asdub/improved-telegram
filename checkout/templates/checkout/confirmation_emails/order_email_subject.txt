@@ -1,0 +1,1 @@
+Improved Design - Your Order is Available / {{ order.order_number }}

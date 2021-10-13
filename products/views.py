@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from django.conf import settings
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
 from .models import Product, Category
 from .forms import ProductForm
@@ -149,6 +152,27 @@ def delete_product(request, product_id):
     return redirect(reverse('products'))
 
 
+# Email User on order status change.
+def send_order_confirmation_email(request, orders):
+    """Send user email confriming artwork upload"""
+    cust_email = orders.email
+    subject = render_to_string(
+        'checkout/confirmation_emails/order_email_subject.txt',
+        {'order': orders})
+
+    context = {'order': orders, 'contact_email': settings.DEFAULT_FROM_EMAIL}
+    body = render_to_string(
+        'checkout/confirmation_emails/order_email_body.txt',
+        context, request=request)
+
+    send_mail(
+        subject,
+        body,
+        settings.DEFAULT_FROM_EMAIL,
+        [cust_email]
+    )
+
+
 # Add Products/ Services view via management.
 @login_required
 def customer_order(request, order_id):
@@ -167,7 +191,8 @@ def customer_order(request, order_id):
             form_update.save()
             orders.order_status = 'Completed'
             orders.save()
-            messages.success(request, 'Successfully completed order!')
+            send_order_confirmation_email(request, orders)
+            messages.success(request, 'Successfully completed order! Confirmation email sent to Customer')
             return redirect(reverse('add_product'))
 
         else:

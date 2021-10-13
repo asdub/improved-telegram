@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    height: calc(100vh - 160px);
+    height: auto;
     color: #555;
     font-family: 'Roboto';
     -webkit-font-smoothing: antialiased
@@ -192,11 +192,8 @@ body > div.hero-container.portfolio-container {
     height: 100vh;
 }
 
-a.portfolio-container {
-    display: block;
-    position: relative;
-    top: -250px;
-    visibility: hidden;
+#our-work:target {
+    scroll-margin-top: 160px;
 }
 
 .inner-container {
@@ -666,7 +663,7 @@ input::placeholder {
         z-index: 1030;
     }
     .hero-container {
-        height: 55vh;
+        height: calc(100vh - 206px);
     }
     .header-container {
         padding-top: 164px;
@@ -694,6 +691,9 @@ input::placeholder {
 
 /* Medium view adjustments */
 @media (max-width: 991px) {
+    #our-work:target {
+        scroll-margin-top: -250px;
+    }
     .hero-container {
         height: 55vh;
     }
@@ -766,7 +766,7 @@ input::placeholder {
     .hero-container,
     .checkout-container-success {
         background-position: bottom;
-        background-size: calc(100vw / 2);
+        background-size: calc(100vw / 1.2);
     }
     .customer-item-container {
         flex-direction: column;
