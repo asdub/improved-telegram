@@ -30,7 +30,7 @@ class CompleteOrderForm(forms.ModelForm):
         model = Order
         fields = ['image']
 
-    image = forms.ImageField(label='Image', required=True, widget=CustomClearableFileInput)
+    image = forms.ImageField(label='', required=True, widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

@@ -586,6 +586,41 @@ input::placeholder {
     align-items: center;
 }
 
+/* Customer Order Update */
+
+.complete-order-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.complete-order-header-total {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline
+}
+
+.complete-order-header-total small {
+    margin-right: 0.25rem;
+}
+
+.complete-order-header-total p {
+   font-weight: 600;
+}
+
+#div_id_image > div > span {
+    padding: 0;
+    text-align: left;
+    font-size: 85%;
+}
+
+.customer-item-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.25rem 0
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

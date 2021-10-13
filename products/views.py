@@ -158,13 +158,15 @@ def customer_order(request, order_id):
         messages.error(request, 'Sorry, only store administrators can add products.')
         return redirect(reverse('home'))
 
-    order = get_object_or_404(Order, pk=order_id)
+    orders = get_object_or_404(Order, pk=order_id)
     if request.method == 'POST':
-        form_update = CompleteOrderForm(request.FILES, instance=order)
+        form_update = CompleteOrderForm(request.POST, request.FILES, instance=orders)
         if form_update.is_valid():
             form_update.save()
+            orders.order_status = 'Completed'
+            orders.save()
             messages.success(request, 'Successfully completed order!')
-            return redirect(reverse('home'))
+            return redirect(reverse('add_product'))
 
         else:
             messages.error(request, 'Failed to update order. Please ensure the form is valid.')
@@ -174,6 +176,7 @@ def customer_order(request, order_id):
     template = 'products/customer_order.html'
     context = {
         'form_update': form_update,
+        'order': orders,
     }
 
     return render(request, template, context)

@@ -7,62 +7,71 @@
         <div class="row">
             <div class="col">
                 <h2 class="logo-font mb-4">Order Management</h2>
-                <h5 class="text-theme">Complete customer orders</h5>
+                <h5 class="text-theme">Complete customer orders below.</h5>
                 <hr>
             </div>
         </div>
-
         <div class="row row-margin">            
-            <div class="col-12 col-md-6 col-lg-6 mb-3 order-lg-last card-bg-shadow">
-                <p class="text-theme">Pending Orders</p>
-                <div class="order-history table-responsive">
-                    <table class="table table-sm table-borderless">
-                        <thead>
-                            <tr>
-                                <th>Order Number</th>
-                                <th>Date</th>
-                                <th>Items</th>
-                                <th>Order Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for order in orders %}
-                                {% if order.order_status == 'Pending' %}
-                                    <tr>
-                                        <td>
-                                            <a href="{% url 'order_history' order.order_number %}"
-                                            title="{{ order.order_number }}">
-                                                {{ order.order_number|truncatechars:6 }}
-                                            </a>
-                                        </td>
-                                        <td>{{ order.date }}</td>
-                                        <td>
-                                            <ul class="list-unstyled">
-                                                {% for item in order.lineitems.all %}
-                                                    <li class="small">
-                                                       {{ item.product.name }} x{{ item.quantity }}
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        </td>
-                                        <td>€{{ order.grand_total }}</td>
-                                        <tr>
-                                            <form method="POST" action="{% url 'customer_order' order.id %}" class="form mb-2" enctype="multipart/form-data">
-                                                {% csrf_token %}
-                                                {{ form_update | crispy }}
-                                                <div class="btn-container">
-                                                    <button class="btn btn-black rounded-1 mt-3" name="update_order" type="submit">Complete Order</button>
-                                                </div>
-                                            </form>
-                                        </tr>
-                                    </tr>
-                                {% else %}
-                                  <p>No pending orders.</p> 
-                                {% endif %}
-                            {% endfor %}
-                        </tbody>
-                    </table>
+            <div class="col-12 mb-3 card-bg-shadow">
+                <div class="complete-order-header">
+                    <p class="text-theme">Pending Order # <small>{{ order.order_number}}</small></p>
+                    <div class="complete-order-header-total">
+                        <small>Total </small>
+                        <p class="text-black">€{{ order.grand_total }}</p>
+                    </div>
                 </div>
+                <div class="customer-item-container form-control rounded-1">
+                    <div class="customer-item">
+                        <small class="initialism">Customer Name</small>
+                        <p class="text-black mb-0">{{ order.full_name }}</p>
+                    </div>
+                    <div class="customer-item">
+                        <small class="initialism">Email</small>
+                        <p class="text-black mb-0">{{ order.email }}</p>
+                    </div>
+                    <div class="customer-item">
+                        <small class="initialism">Phone #</small>
+                        <p class="text-black mb-0">{{ order.phone_number }}</p>
+                    </div>
+                </div>
+                <div class="order-history">
+                        <div class="order-history-item-container mb-3">
+                            <div class="order-history-item">
+                                <div class="order-history-item-inner">
+                                    <small class="text-theme font-weight-bold">{{ order.date }}</small>
+                                </div>
+                                <hr class="m-0 mb-1">
+                            </div>
+                            <div class="order-history-item">
+                                <div class="order-history-item-inner">
+                                    <ul class="list-unstyled mb-0">
+                                        {% for item in order.lineitems.all %}
+                                            <li class="small">
+                                            {{ item.product.name }} x{{ item.quantity }}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                    <small>
+                                        <small class="initialism">Total</small> 
+                                        €{{ order.grand_total }}
+                                    </small>
+                                </div>
+                            </div>
+                            <hr class="m-0 mb-1 mt-1">
+                        </div>
+                    </div>
+                    <div class="order-upload">
+                        <form method="POST" action="{% url 'customer_order' order.id %}" class="form mb-2" enctype="multipart/form-data">
+                            <small class="text-theme">Please upload customer artwork below.</small>
+                            {% csrf_token %}
+                            {{ form_update | crispy }}
+                            <div class="btn-container">
+                                <button class="btn btn-black rounded-1 mt-3" name="update_order" type="submit">
+                                    Complete Order
+                                </button>
+                            </div>
+                        </form>
+                    </div>
             </div>
         </div>
     </div>

@@ -58,7 +58,7 @@
                         </div>
                         <hr class="m-0 mb-1 mt-1">
                         <div class="order-history-complete">
-                            <a class="btn btn-black rounded-1 mt-1 btn-sm" href=""
+                            <a class="btn btn-black rounded-1 mt-1 btn-sm" href="{% url 'customer_order' order.id %}"
                                 title="{{ order.order_number }}">
                                 Complete Order
                             </a>
