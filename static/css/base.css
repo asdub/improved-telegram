@@ -472,6 +472,14 @@ a.category-badge > span.badge:hover {
 
 .thumbs-up {
     padding-right: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.thumbs-up img {
+    filter: invert(100%);
+    padding-right: 1rem;
 }
 
 /* Hero Images */
