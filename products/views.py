@@ -5,6 +5,7 @@ from django.db.models import Q
 
 from .models import Product, Category
 from .forms import ProductForm
+from .forms import CompleteOrderForm
 from checkout.models import Order
 
 
