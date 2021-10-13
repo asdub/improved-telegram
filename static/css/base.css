@@ -561,6 +561,13 @@ input::placeholder {
     justify-content: flex-end;
 }
 
+/* Management */ 
+
+.order-lg-last {
+    margin-left: auto;
+    height: fit-content;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

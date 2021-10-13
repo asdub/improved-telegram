@@ -10,6 +10,8 @@ from profiles.models import UserProfile
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
+    order_status = models.CharField(max_length=32, null=False, blank=False, default='Pending')
+    image = models.ImageField(null=True, blank=True)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True, related_name='orders')
     full_name = models.CharField(max_length=50, null=False, blank=False)
@@ -70,7 +72,7 @@ class OrderLineItem(models.Model):
     product_size = models.CharField(max_length=2, null=True, blank=True)
     artwork_request = models.CharField(max_length=1024, null=True, blank=True)
     product_text_content = models.CharField(max_length=1024, null=True, blank=True)
-    artwork_colour = models.CharField(max_length=10, null=True, blank=True)
+    artwork_colour = models.CharField(max_length=20, null=True, blank=True)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     final_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=False, editable=False)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)

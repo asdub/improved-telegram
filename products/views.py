@@ -2,8 +2,10 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+
 from .models import Product, Category
 from .forms import ProductForm
+from checkout.models import Order
 
 
 # All products/ services view.
@@ -74,6 +76,9 @@ def product_detail(request, product_id):
 @login_required
 def add_product(request):
     """ Add a product to the store """
+    orders = Order.objects.filter(order_status="Pending")
+    ordered_orders = orders.order_by('-date')
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store administrators can add products.')
         return redirect(reverse('home'))
@@ -92,6 +97,7 @@ def add_product(request):
     template = 'products/add_product.html'
     context = {
         'form': form,
+        'orders': ordered_orders,
     }
 
     return render(request, template, context)
@@ -134,8 +140,9 @@ def delete_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store administrators can delete products.')
         return redirect(reverse('home'))
-        
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
