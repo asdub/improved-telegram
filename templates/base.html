@@ -43,7 +43,10 @@
     <header class="container-fluid fixed-top">
       <div class="row bg-white d-lg-none text-center">
         <a href="{% url 'home' %}" class="nav-link nav-logo ">
-          <h2 class="logo text-black my-0">Improved Design</h2>
+          <div class="thumbs-up header-icon-container">
+            <img type="image/svg+xml" id="dropdown-search-icon" src="{% static 'img/noun_thumbs_up.svg' %}">
+            <h2 class="logo text-black my-0">Improved Design</h2>
+        </div>
         </a>
       </div>
       <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
