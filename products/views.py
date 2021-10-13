@@ -6,7 +6,7 @@ from django.db.models import Q
 from .models import Product, Category
 from .forms import ProductForm
 from .forms import CompleteOrderForm
-from checkout.models import Order
+from checkout.models import Order, Image
 
 
 # All products/ services view.
@@ -162,6 +162,8 @@ def customer_order(request, order_id):
     if request.method == 'POST':
         form_update = CompleteOrderForm(request.POST, request.FILES, instance=orders)
         if form_update.is_valid():
+            for img in request.FILES.getlist('image'):
+                Image.objects.create(order_id=orders.id, image=img)
             form_update.save()
             orders.order_status = 'Completed'
             orders.save()

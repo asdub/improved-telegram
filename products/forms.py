@@ -30,7 +30,8 @@ class CompleteOrderForm(forms.ModelForm):
         model = Order
         fields = ['image']
 
-    image = forms.ImageField(label='', required=True, widget=CustomClearableFileInput)
+    # Multiple attrs selected to for orders with many items
+    image = forms.ImageField(label='', required=True, widget=CustomClearableFileInput(attrs={'multiple': True}))
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

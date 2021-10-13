@@ -22,15 +22,15 @@
                 </div>
                 <div class="customer-item-container form-control rounded-1">
                     <div class="customer-item">
-                        <small class="initialism">Customer Name</small>
+                        <small class="text-muted initialism">Customer Name</small>
                         <p class="text-black mb-0">{{ order.full_name }}</p>
                     </div>
                     <div class="customer-item">
-                        <small class="initialism">Email</small>
+                        <small class="text-muted initialism">Email</small>
                         <p class="text-black mb-0">{{ order.email }}</p>
                     </div>
                     <div class="customer-item">
-                        <small class="initialism">Phone #</small>
+                        <small class="text-muted initialism">Phone #</small>
                         <p class="text-black mb-0">{{ order.phone_number }}</p>
                     </div>
                 </div>
@@ -47,7 +47,13 @@
                                     <ul class="list-unstyled mb-0">
                                         {% for item in order.lineitems.all %}
                                             <li class="small">
-                                            {{ item.product.name }} x{{ item.quantity }}
+                                                <div class="customer-lineitems">
+                                                {{ item.product.name }} x{{ item.quantity }} - {{ item.product_size}} ({{item.artwork_colour}})
+                                                </div>
+                                                <div class="customer-lineitems-custom">
+                                                    <small>Customer Customisations</small>
+                                                    {{ item.artwork_request }}
+                                                </div>
                                             </li>
                                         {% endfor %}
                                     </ul>
