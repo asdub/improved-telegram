@@ -621,6 +621,11 @@ input::placeholder {
     padding: 0.25rem 0
 }
 
+.customer-item {
+    display: flex;
+    flex-direction: column;
+}
+
 .customer-lineitems-custom {
     display: flex;
     flex-direction: column;
@@ -734,7 +739,7 @@ input::placeholder {
     .hero-container,
     .checkout-container-success {
         background-position: bottom;
-        background-size:  calc(100vw / 1.2);
+        background-size:  calc(100vw / 2);
     }
     body > div.container-fluid > div > div:nth-child(2) > div > form > div > div:nth-child(11) {
         display: flex;
@@ -760,6 +765,9 @@ input::placeholder {
     .hero-container,
     .checkout-container-success {
         background-position: bottom;
-        background-size: calc(100vw / 1.1);
+        background-size: calc(100vw / 2);
     }
-}
+    .customer-item-container {
+        flex-direction: column;
+        padding: 0.25rem;
+    }

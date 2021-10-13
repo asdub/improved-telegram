@@ -12,9 +12,9 @@
             </div>
         </div>
         <div class="row row-margin">            
-            <div class="col-12 mb-3 card-bg-shadow">
+            <div class="col-11 col-md-10 col-lg-8 m-auto mb-3 card-bg-shadow">
                 <div class="complete-order-header">
-                    <p class="text-theme">Pending Order # <small>{{ order.order_number}}</small></p>
+                    <p class="text-theme">Pending Order # <small>{{ order.order_number|truncatechars:10 }}</small></p>
                     <div class="complete-order-header-total">
                         <small>Total </small>
                         <p class="text-black">€{{ order.grand_total }}</p>
@@ -27,15 +27,15 @@
                     </div>
                     <div class="customer-item">
                         <small class="text-muted initialism">Email</small>
-                        <p class="text-black mb-0">{{ order.email }}</p>
+                        <a href="mailto:{{ order.email }}">{{ order.email }}</a>
                     </div>
                     <div class="customer-item">
                         <small class="text-muted initialism">Phone #</small>
-                        <p class="text-black mb-0">{{ order.phone_number }}</p>
+                        <a href="tel:{{ order.phone_number }}">{{ order.phone_number }}</a>
                     </div>
                 </div>
-                <div class="order-history">
-                        <div class="order-history-item-container mb-3">
+                <div class="order-history mt-3 mb-3">
+                        <div class="order-history-item-container">
                             <div class="order-history-item">
                                 <div class="order-history-item-inner">
                                     <small class="text-theme font-weight-bold">{{ order.date }}</small>
@@ -48,11 +48,13 @@
                                         {% for item in order.lineitems.all %}
                                             <li class="small">
                                                 <div class="customer-lineitems">
-                                                {{ item.product.name }} x{{ item.quantity }} - {{ item.product_size}} ({{item.artwork_colour}})
+                                                <p class="text-black m-0">{{ item.product.name }} x{{ item.quantity }} - {{ item.product_size}} ({{item.artwork_colour}})</p>
                                                 </div>
                                                 <div class="customer-lineitems-custom">
-                                                    <small>Customer Customisations</small>
-                                                    {{ item.artwork_request }}
+                                                    <small>Artwork Requirements</small>
+                                                    <p class="text-black">{{ item.artwork_request }}</p>
+                                                    <small>Artwork Content/ Copy</small>
+                                                    <p class="text-black">{{ item.product_text_content }}</p>
                                                 </div>
                                             </li>
                                         {% endfor %}
@@ -68,7 +70,7 @@
                     </div>
                     <div class="order-upload">
                         <form method="POST" action="{% url 'customer_order' order.id %}" class="form mb-2" enctype="multipart/form-data">
-                            <small class="text-theme">Please upload customer artwork below.</small>
+                            <small class="text-theme">Please upload customer artwork(s) below.</small>
                             {% csrf_token %}
                             {{ form_update | crispy }}
                             <div class="btn-container">

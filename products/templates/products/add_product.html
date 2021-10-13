@@ -15,6 +15,7 @@
         <div class="row row-margin">
             <div class="col-12 col-md-6 col-lg-6 mb-3 card-bg-shadow">
                 <p class="text-theme">Add Service</p>
+                <!-- Add Product form element -->
                 <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form_product | crispy }}
@@ -27,60 +28,49 @@
             <div class="col-12 col-md-6 col-lg-6 mb-3 order-lg-last">
                 <p class="text-theme">Pending Orders</p>
                 <div class="order-history">
-                {% for order in orders %}
-                    {% if order.order_status == 'Pending' %}
-                    <div class="order-history-item-container card-bg-shadow mb-3">
-                        <div class="order-history-item">
-                            <div class="order-history-item-inner">
-                                <small class="text-theme font-weight-bold">{{ order.date }}</small>
+                    <!-- Display pending orders -->
+                    {% for order in orders %}
+                        {% if order.order_status == 'Pending' %}
+                        <div class="order-history-item-container card-bg-shadow mb-3">
+                            <div class="order-history-item">
+                                <div class="order-history-item-inner">
+                                    <small class="text-theme font-weight-bold">{{ order.date }}</small>
+                                </div>
+                                <hr class="m-0 mb-1">
+                                <div class="order-history-item-inner">
+                                    <small class="text-theme">Order #</small>
+                                    <small class="initialism">{{ order.order_number }}</small>
+                                    </a>
+                                </div>
                             </div>
-                            <hr class="m-0 mb-1">
-                            <div class="order-history-item-inner">
-                                <small class="text-theme">Order #</small>
-                                <small class="initialism">{{ order.order_number }}</small>
+                            <div class="order-history-item">
+                                <div class="order-history-item-inner">
+                                    <ul class="list-unstyled mb-0">
+                                        {% for item in order.lineitems.all %}
+                                            <li class="small">
+                                            {{ item.product.name }} x{{ item.quantity }}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                    <small>
+                                        <small class="initialism">Total</small> 
+                                        €{{ order.grand_total }}
+                                    </small>
+                                </div>
+                            </div>
+                            <hr class="m-0 mb-1 mt-1">
+                            <div class="order-history-complete">
+                                <a class="btn btn-black rounded-1 mt-1 btn-sm" href="{% url 'customer_order' order.id %}"
+                                    title="{{ order.order_number }}">
+                                    Complete Order
                                 </a>
                             </div>
                         </div>
-                        <div class="order-history-item">
-                            <div class="order-history-item-inner">
-                                <ul class="list-unstyled mb-0">
-                                    {% for item in order.lineitems.all %}
-                                        <li class="small">
-                                        {{ item.product.name }} x{{ item.quantity }}
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                                <small>
-                                    <small class="initialism">Total</small> 
-                                    €{{ order.grand_total }}
-                                </small>
-                            </div>
-                        </div>
-                        <hr class="m-0 mb-1 mt-1">
-                        <div class="order-history-complete">
-                            <a class="btn btn-black rounded-1 mt-1 btn-sm" href="{% url 'customer_order' order.id %}"
-                                title="{{ order.order_number }}">
-                                Complete Order
-                            </a>
-                        </div>
-                    </div>
-                    {% else %}
-                        <p>No pending orders.</p> 
-                    {% endif %}
-                {% endfor %}
-                </div>
-                   
-                       
-                            
-                                        <td></td>
-                                        <td>
-                                            
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                
-                        </tbody>
-                    </table>
+                        {% else %}
+                        <!-- If no pending orders -->
+                            <p>No pending orders.</p> 
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
