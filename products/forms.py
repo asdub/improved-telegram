@@ -1,7 +1,7 @@
 from django import forms
 from .widgets import CustomClearableFileInput
 from .models import Product, Category
-from checkout.models import Order
+from checkout.models import Order, Image
 
 
 # Form for updating products as superuser
@@ -27,7 +27,7 @@ class ProductForm(forms.ModelForm):
 class CompleteOrderForm(forms.ModelForm):
 
     class Meta:
-        model = Order
+        model = Image
         fields = ['image']
 
     # Multiple attrs selected to for orders with many items

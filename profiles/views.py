@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+
+from checkout.models import Order, Image
 from .models import UserProfile
 from .forms import UserProfileForm
-
-from checkout.models import Order
 
 
 # User profile view
@@ -35,6 +35,7 @@ def profile(request):
 
 
 def order_history(request, order_number):
+    """ Redirect user to orginal order confirmation from profile view """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
@@ -49,3 +50,20 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
+
+# View for user/ customer artwork and download
+@login_required
+def artwork(request, order_id):
+    """ Display Artwork to User. """
+    images = Image.objects.filter(order_id=order_id)
+    order = Order.objects.get(id=order_id)
+
+    template = 'profiles/artwork.html'
+    context = {
+        'images': images,
+        'order': order,
+    }
+
+    return render(request, template, context)
+

@@ -34,6 +34,14 @@ i {
     color: #6b63ff;
 }
 
+.text-success-id {
+    color: #356135;
+}
+
+.text-pending-id {
+    color: #daac21;
+}
+
 .text-right {
     text-align: right;
 }
@@ -115,6 +123,46 @@ a#all-products-link:active {
     text-decoration: underline;
     color: #ffffff;
 }
+
+.shop-now-button {
+    background: black;
+    color: white;
+    min-width: 260px;
+}
+
+.btn-black {
+    background: black;
+    color: white;
+}
+
+.btn-green {
+    color: white;
+    background: #198754
+}
+
+.btn-green:hover,
+.btn-green:active,
+.btn-green:focus {
+    color: #000000;
+    background: #bdf3bd;
+}
+
+.btn-outline-black {
+    background: white;
+    color: black !important;
+    border: 1px solid black;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #434242;
+    color: white;
+}
+
 
 /* Fonts */
 .banner-font {
@@ -219,33 +267,6 @@ body > div.hero-container.portfolio-container {
 
 .main-logo-link {
     width: fit-content;
-}
-
-.shop-now-button {
-    background: black;
-    color: white;
-    min-width: 260px;
-}
-
-.btn-black {
-    background: black;
-    color: white;
-}
-
-.btn-outline-black {
-    background: white;
-    color: black !important;
-    border: 1px solid black;
-}
-
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
-    color: white;
 }
 
 .text-black {
@@ -630,6 +651,25 @@ input::placeholder {
     padding: 0.25rem;
 }
 
+/* Artwork Page */
+
+.artwork-img img {
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+}
+
+.artwork-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.artwork-download {
+    padding: 1rem;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -732,6 +772,9 @@ input::placeholder {
     .product-detail-image {
         margin-left: 10%;
         margin-right: 10%;
+    }
+    .artwork-item {
+        flex-direction: column;
     }
 }
 

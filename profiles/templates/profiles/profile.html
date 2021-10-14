@@ -15,24 +15,37 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-11 col-lg-5 m-auto mb-3 mt-0 card-bg-shadow">
+            <div class="col-11 col-lg-5 order-last order-lg-0 m-auto mb-3 mt-0">
                 <p class="text-theme">Your Delivery Information</p>
-                <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <div class="btn-container">
-                        <button class="btn btn-black rounded-1 mt-3">Update Information</button>
-                    </div>
-                </form>
+                <div class="card-bg-shadow">
+                    <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="btn-container">
+                            <button class="btn btn-black rounded-1 mt-3">Update Information</button>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div class="col-11 col-lg-6 m-auto mb-3 mt-0">
                 <p class="text-theme">Your Orders</p>
                 <div class="order-history">
-                    {% for order in orders %}
+                    {% for order in orders|dictsort:"order_status" %}
+                    {% if order %}
                     <div class="order-history-item-container card-bg-shadow mb-3">
                         <div class="order-history-item">
                             <div class="order-history-item-inner">
                                 <small class="text-theme font-weight-bold">{{ order.date }}</small>
+                                {% if order.order_status == 'Completed' %}
+                                    <small class="text-success-id font-weight-bold">
+                                        Order Ready 
+                                        <i class="fas fa-check-circle"></i>
+                                    </small>
+                                    {% else %}
+                                    <small class="text-pending-id">
+                                       In progress..
+                                    </small>
+                                {% endif %}
                             </div>
                             <hr class="m-0 mb-1">
                             <div class="order-history-item-inner">
@@ -58,11 +71,21 @@
                         </div>
                         <hr class="m-0 mb-1 mt-1">
                         <div class="order-history-complete">
-                            <a class="btn btn-black rounded-1 mt-1 btn-sm" href="{% url 'order_history' order.order_number %}">
-                                View Order
-                            </a>
+                            <div class="btn-container">
+                                {% if order.order_status == 'Completed' %}
+                                <a class="btn btn-green rounded-1 mt-1 btn-sm" href="{% url 'artwork' order.id %}">
+                                    View Artwork
+                                </a>
+                                {% endif %}
+                                <a class="btn btn-black rounded-1 mt-1 btn-sm" href="{% url 'order_history' order.order_number %}">
+                                    View Order
+                                </a>
+                            </div>
                         </div>
                     </div>
+                    {% else %}
+                    <p>No orders found..</p>
+                    {% endif %}
                     {% endfor %}
                 </div>
             </div>

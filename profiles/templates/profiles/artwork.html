@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block add_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="logo-font mb-4">Artwork</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10 mt-0 m-auto">
+                <p class="text-theme">Your Artwork for Order# {{ order.order_number|truncatechars:12 }}</p>
+                {% for image in images %}
+                <div class="artwork-container card-bg-shadow mb-3">
+                    <div class="artwork-item">
+                        <div class="artwork-img">
+                            <img class="img-thumbnail" src="{{ image.image.url }}" alt="Your Artwork">
+                        </div>
+                        <div class="artwork-download">
+                            <p class="text-theme">
+                                Download you artwork below
+                            </p>
+                            <div class="btn-container">
+                                <a class="btn btn-black rounded-1 mt-1 btn-sm" 
+                                    alt="Your Artwork Download" 
+                                    href="{{ image.image.url }}" download>
+                                    Download Artwork
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="btn-container">
+                    <a href="{% url 'profile' %}" class="btn btn-black rounded-1 my-2">
+                        <span class="icon mr-2">
+                            <i class="fas fa-angle-left"></i>
+                        </span>
+                        <span class="text-uppercase">Back to Profile</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{ profile }}
+{% endblock %}
