@@ -130,7 +130,6 @@
         </div>            
       </div>
     </header>
-
     {% block messages %}
       {% if messages %}
         <div class="message-container">
@@ -145,6 +144,27 @@
     {% endblock %}
 
     {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+     <!-- Footer Section -->
+     <footer class="page-footer">
+      <div class="section-container footer-container">
+          <div class="footer-content">
+            <img type="image/svg+xml" class="footer-thumb" src="{% static 'img/noun_thumbs_up.svg' %}">
+          </div>
+          <div class="copyright-footer">
+              <div class="copyright-footer-inner">
+                  <span>Copyright Improved Design 2021</span>
+                  <span>All rights reserved</span>
+                  <div class="copyright-links-container">
+                      <a href="https://wikiedu.org/terms-of-service/" target="_blank">Terms of Service |&nbsp;</a>
+                      <a href="https://wikiedu.org/privacy-policy/" target="_blank"> Privacy Policy</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </footer>
     {% endblock %}
 
     {% block postloadjs %}

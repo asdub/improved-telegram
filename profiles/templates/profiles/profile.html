@@ -15,6 +15,7 @@
             </div>
         </div>
         <div class="row">
+            <!--Devivery Info Form -->
             <div class="col-11 col-lg-5 order-last order-lg-0 m-auto mb-3 mt-0">
                 <p class="text-theme">Your Delivery Information</p>
                 <div class="card-bg-shadow">
@@ -27,9 +28,11 @@
                     </form>
                 </div>
             </div>
+             <!--User Orders -->
             <div class="col-11 col-lg-6 m-auto mb-3 mt-0">
                 <p class="text-theme">Your Orders</p>
                 <div class="order-history">
+                     <!-- Sort orders by status -->
                     {% for order in orders|dictsort:"order_status" %}
                     {% if order %}
                     <div class="order-history-item-container card-bg-shadow mb-3">
@@ -83,6 +86,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- If no order found display -->
                     {% else %}
                     <p>No orders found..</p>
                     {% endif %}
@@ -90,5 +94,6 @@
                 </div>
             </div>
         </div>
+    </div>
         {{ profile }}
 {% endblock %}

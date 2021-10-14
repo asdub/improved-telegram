@@ -5,36 +5,92 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container hero-container">
-        <div class="row h-100">
-            <div class="col-7 col-md-7 col-sm-10 my-auto home-banner-container">
-                <h1 class="display-4 banner-text home-banner">
-                    Studio quality. <br>
-                    Freelance rates.
-                </h1>
-                <div class="my-4">
-                    <h4>
-                        <a href="{% url 'products' %}" class="discover-btn btn btn-lg rounded-1 text-uppercase py-3">Order Artwork</a>
-                    </h4>
-                </div>
+<div class="main-grid-container">
+    <!--Hero Section -->
+    <div class="container hero-container home-container">
+        <div class="my-auto home-banner-container">
+            <h1 class="display-4 banner-text home-banner">
+                Studio quality. <br>
+                Freelance rates.
+            </h1>
+            <div class="my-4">
+                <h4>
+                    <a href="{% url 'products' %}" class="discover-btn btn btn-lg rounded-1 text-uppercase py-3">Order Artwork</a>
+                </h4>
             </div>
         </div>
     </div>
-    <div class="hero-container portfolio-container" id="our-work">
+    <!--Portfolio Section -->
+    <section class="hero-container portfolio-container" id="our-work">
         <div class="inner-container">
-            <div class="row h-100">
-                <h2 class="display-4 banner-text home-banner text-white">
-                    Our Work
-                </h2>
-                <div class="our-work-layout">
-                {% for image in images %}
-                    <div class="our-work-item">
-                        <img src="{{ image.image.url }}" alt="Our Work">
+            <h2 class="display-4 banner-text home-banner text-white">
+                Our Work
+            </h2>
+            <div class="our-work-tag">
+                <p class="text-white font-weight-bold">A selection of out most recent work..</p>
+            </div>
+            <div class="our-work-layout">
+            {% for image in images|slice:12 %}
+                <div class="our-work-item">
+                    <img src="{{ image.image.url }}" alt="Our Work">
+                </div>
+            {% endfor %}
+        </div>
+        <div class="btn-container">
+            <a class="btn btn-lg btn-black rounded-1 mt-1" href="{% url 'products' %}">
+                Explore Services
+            </a>
+        </div>
+    </section>
+    <!--About/ Contact Section -->
+    <section id="about" class="about-container">
+        <div class="inner-container">
+            <h2 class="display-4 banner-text home-banner text-theme">
+                About Us
+            </h2>
+            <div class="about-text">
+                <p>There are many benefits to working with a freelance web designer. 
+                    Where traditional design companies offer teams of specialists, 
+                    a freelance designer is able to work on all aspects of your site themselves. 
+                    The reduced overhead and flexible schedule of the freelancer can result in 
+                    projects that cost less and get done faster without sacrificing the quality
+                    you’d expect from an experienced design firm.
+                </p>
+            </div>
+            <hr>
+            <div class="contact-container">
+                <div class="social-media-icons">
+                    <span>Follow us on</span>
+                    <div class="social-media-icons-container">
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
                     </div>
-                {% endfor %}
                 </div>
             </div>
         </div>
-    </div>
-
+    </section>
+</div>
 {% endblock %}
+
+{% block postloadjs %}
+    <script type="text/javascript">
+    function scrollTo(element, to, duration) {
+        if (duration <= 0) return;
+        var difference = to - element.scrollTop;
+        var perTick = difference / duration * 10;
+
+        setTimeout(function() {
+            element.scrollTop = element.scrollTop + perTick;
+            if (element.scrollTop === to) return;
+            scrollTo(element, to, duration - 10);
+        }, 10);
+    }
+
+    elmnt = document.getElementById("our-work");
+    scrollTo(document.body, elmnt.offsetTop, 600);
+    // Credit - https://stackoverflow.com/questions/17733076 //
+    </script>
+{% endblock %}
+
