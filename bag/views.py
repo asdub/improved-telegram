@@ -69,7 +69,7 @@ def add_to_order(request, item_id):
         if data['artwork_colour'] == 'Full Colour':
             data['final_price'] = int(data['final_price']) + 25
             data['order_list'].append(f'+ Full Colour, additional €25.00 ({product.name})')
-    data['subtotal'] = int(data['quantity']) * data['final_price']
+        data['subtotal'] = int(data['quantity']) * data['final_price']
 
     message = format_html(f'<strong>+ {product.name}</strong> Added to your order.' + '<br><a class="btn" href="{}">View Orders.</a>', reverse('view_bag'))
     messages.error(request, message)

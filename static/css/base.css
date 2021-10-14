@@ -513,6 +513,28 @@ a.category-badge > span.badge:hover {
     right: 0;
 }
 
+/* Work Section */
+.our-work-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 2rem;
+    margin: 1rem 0;
+}
+
+.our-work-item {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 2.5px 5px 10px -5px rgb(0 0 0 / 20%);
+}
+
+.our-work-item img {
+    object-fit: cover;
+    height: 180px;
+    width: 100%;
+    border-radius: 3px;
+}
+
 /* Checkout Success */
 
 .checkout-container-success {
@@ -531,7 +553,6 @@ a.category-badge > span.badge:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 2rem;
 }
 
 .login-form {
@@ -543,7 +564,7 @@ body > div.container.login-bg > div > div > div > div {
 }
 
 .login-bg {
-    height: 100%;
+    height: calc(100vh - 206px);
     background: url('/static/img/login.svg') no-repeat center center fixed;
     background-size: 350px;
     background-position: bottom right 60px;
@@ -776,6 +797,12 @@ input::placeholder {
     .artwork-item {
         flex-direction: column;
     }
+    .our-work-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2rem;
+        margin: 1rem 0;
+    }
 }
 
 /* Tablet view adjustments */
@@ -788,6 +815,11 @@ input::placeholder {
     body > div.container-fluid > div > div:nth-child(2) > div > form > div > div:nth-child(11) {
         display: flex;
         flex-direction: column-reverse;
+    }
+    .our-work-layout {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2rem;
+        margin: 1rem 0;
     }
 }
 
@@ -814,5 +846,12 @@ input::placeholder {
     .customer-item-container {
         flex-direction: column;
         padding: 0.25rem;
+    }
+    .our-work-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        row-gap: 2rem;
+        margin: 2rem 0;
     }
 }

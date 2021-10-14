@@ -36,6 +36,7 @@ class StripeWH_Handler:
             [cust_email]
         )
 
+
     def handle_event(self, event):
         """
         Handle a generic/unknown/unexpected webhook event
@@ -44,6 +45,7 @@ class StripeWH_Handler:
             content=f'Unhandled webhook received: {event["type"]}',
             status=200)
 
+
     def handle_payment_intent_succeeded(self, event):
         """
         Handle the payment_intent.succeeded webhook from Stripe
@@ -51,10 +53,8 @@ class StripeWH_Handler:
         intent = event.data.object
         pid = intent.id
         bag = intent.metadata.order
-        artwork_request = intent.metadata.artwork_request
-        order_product_text_content = intent.metadata.order_product_text_content
         save_info = intent.metadata.save_info
-
+        print(f'Webhook Bag-->> {bag}')
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
@@ -97,11 +97,13 @@ class StripeWH_Handler:
                     original_bag=bag,
                     stripe_pid=pid,
                 )
+                print(f'Webhook Bag-->> {order}')
                 order_exists = True
                 break
             except Order.DoesNotExist:
                 attempt += 1
                 time.sleep(1)
+                print(f'Webhook Bag-->> {attempt}')
         if order_exists:
             # Send order confirmation email
             self._send_confirmation_email(order)
@@ -137,12 +139,13 @@ class StripeWH_Handler:
                             artwork_colour=data['artwork_colour'],
                             quantity=data['quantity'],
                         )
+                        print(f'Webhook Bag-->> {order_line_item}')
                         order_line_item.save()
             except Exception as e:
                 if order:
                     order.delete()
                 return HttpResponse(
-                    content=f'Webhook received: {event["type"]} | ERROR: {e}',
+                    content=f'Webhook received HI: {event["type"]} | ERROR: {e}',
                     status=500)
         # Send order confirmation email webhook
         self._send_confirmation_email(order)

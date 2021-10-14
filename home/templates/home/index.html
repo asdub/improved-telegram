@@ -23,11 +23,15 @@
     <div class="hero-container portfolio-container" id="our-work">
         <div class="inner-container">
             <div class="row h-100">
-                <div class="col-7 col-md-6 my-auto home-banner-container heading-bg-none">
-                    <h2 class="display-4 banner-text home-banner text-white">
-                        Our Work
-                    </h2>
-
+                <h2 class="display-4 banner-text home-banner text-white">
+                    Our Work
+                </h2>
+                <div class="our-work-layout">
+                {% for image in images %}
+                    <div class="our-work-item">
+                        <img src="{{ image.image.url }}" alt="Our Work">
+                    </div>
+                {% endfor %}
                 </div>
             </div>
         </div>

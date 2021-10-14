@@ -2,7 +2,6 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
-from django.forms.models import model_to_dict
 from django.contrib import messages
 
 
