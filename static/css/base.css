@@ -426,9 +426,7 @@ body > header > div:nth-child(3) > nav > ul > li.list-inline-item.show > div > f
 }
 
 .card-img-top {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
+    object-fit: scale-down;
 }
 
 .card-bg-shadow {
@@ -605,7 +603,7 @@ a.category-badge > span.badge:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 5rem 3rem 0;
+    margin: 0 5% 10% 5%;
 }
 
 .login-form {
@@ -818,11 +816,6 @@ footer {
     }
     .header-container {
         padding-top: 164px;
-    }
-    .card-img-top {
-        width: 350px;
-        height: 350px;
-        object-fit: cover;
     }
     .navbar-expand-lg {
         flex-wrap: nowrap;
