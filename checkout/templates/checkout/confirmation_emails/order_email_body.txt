@@ -9,7 +9,7 @@ Order Total: €{{ order.order_total }}
 Delivery: €{{ order.delivery_cost }}
 Grand Total: €{{ order.grand_total }}
 
-Follow the link below to log into your profile to view completed orders:
+Follow the link below to view your artwork:
 <a href="{{ request.scheme }}://{{ request.get_host }}{% url 'profile' %}">My Profile</a>
 
 If you have any questions, feel free to contact us at {{ contact_email }}.

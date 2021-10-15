@@ -13,7 +13,7 @@
             <div class="col">
                 <h2 class="logo-font mb-4">Account</h2>
                 <hr>
-                <p class="text-black mt-3">
+                <p class="text-black mb-4 mt-3">
                     You will receive an email as soon as your order is ready to download. 
                     Physical media is sent the same day.
                 </p>
@@ -81,7 +81,7 @@
                             <div class="order-history-complete">
                                 <div class="btn-container">
                                     {% if order.order_status == 'Completed' %}
-                                    <a class="btn btn-green rounded-1 mt-1 btn-sm" href="{% url 'artwork' order.id %}">
+                                    <a class="btn btn-green rounded-1 mt-1 btn-sm" href="{% url 'artwork' order_number %}">
                                         View Artwork
                                     </a>
                                     {% endif %}

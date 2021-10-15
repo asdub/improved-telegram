@@ -81,6 +81,10 @@ body > div.container-fluid {
     font-weight: 600;
 }
 
+.row {
+    margin: auto;
+}
+
 /* Selectors & Search Bar */
 .custom-select, .custom-borders {
     border-bottom: 1px solid #6b63ff !important;
@@ -426,8 +430,12 @@ body > header > div:nth-child(3) > nav > ul > li.list-inline-item.show > div > f
 .card-img-top {
     object-fit: cover;
     min-height: 250px;
+}
+
+.card-img-top img {
     border: 1px solid;
     border-radius: 3px;
+    border-color: #6b63ff;
 }
 
 .card-bg-shadow {
@@ -440,8 +448,6 @@ body > header > div:nth-child(3) > nav > ul > li.list-inline-item.show > div > f
     box-shadow: 10px 10px 30px #dcdcdc6e, 5px -5px 25px #e5e5e5;
     height: fit-content;
 }
-
-body > div.container-fluid > div > div.row > div > div:nth-child(2) > div:nth-child(4) > div > a > img
 
 a.category-badge > span.badge:hover {
     background: #212529 !important;
@@ -656,6 +662,10 @@ input::placeholder {
 #logout-container,
 #profile-update-form > div.btn-container {
     justify-content: flex-end;
+}
+
+.login-bg {
+    min-height: 60vh;
 }
 
 /* Management */ 
