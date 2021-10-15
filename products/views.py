@@ -174,7 +174,6 @@ def send_order_confirmation_email(request, orders):
     send_mail(
         subject,
         plain_text,
-        html_content,
         settings.DEFAULT_FROM_EMAIL,
         [cust_email],
         html_message=html_content
