@@ -6,10 +6,10 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
+from checkout.models import Order, Image
 from .models import Product, Category
 from .forms import ProductForm
 from .forms import CompleteOrderForm
-from checkout.models import Order, Image
 
 
 # All products/ services view.
@@ -45,7 +45,9 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "Please check your search term and try again.")
+                messages.error(
+                    request, "Please check your search term and try again."
+                    )
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(description__icontains=query)
@@ -84,7 +86,9 @@ def add_product(request):
     ordered_orders = orders.order_by('-date')
 
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store administrators can add products.')
+        messages.error(
+            request, 'Sorry, only store administrators can add products.'
+            )
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -95,7 +99,10 @@ def add_product(request):
             return redirect(reverse('product_detail', args=[product.id]))
 
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(
+                request, 'Failed to add product. \
+                            Please ensure the form is valid.'
+                )
     else:
         form_product = ProductForm()
 
@@ -113,7 +120,9 @@ def add_product(request):
 def edit_product(request, product_id):
     """ Edit a product in the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store administrators can edit products.')
+        messages.error(
+            request, 'Sorry, only store administrators can edit products.'
+            )
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
@@ -124,7 +133,10 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(
+                request, 'Failed to update product. \
+                            Please ensure the form is valid.'
+                )
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -143,7 +155,9 @@ def edit_product(request, product_id):
 def delete_product(request, product_id):
     """ Delete a product from the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store administrators can delete products.')
+        messages.error(
+            request, 'Sorry, only store administrators can delete products.'
+            )
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
@@ -179,12 +193,16 @@ def customer_order(request, order_id):
     """ Add a product to the store """
 
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store administrators can add products.')
+        messages.error(
+            request, 'Sorry, only store administrators can add products.'
+            )
         return redirect(reverse('home'))
 
     orders = get_object_or_404(Order, pk=order_id)
     if request.method == 'POST':
-        form_update = CompleteOrderForm(request.POST, request.FILES, instance=orders)
+        form_update = CompleteOrderForm(
+            request.POST, request.FILES, instance=orders
+            )
         if form_update.is_valid():
             for img in request.FILES.getlist('image'):
                 Image.objects.create(order_id=orders.id, image=img)
@@ -192,11 +210,17 @@ def customer_order(request, order_id):
             orders.order_status = 'Completed'
             orders.save()
             send_order_confirmation_email(request, orders)
-            messages.success(request, 'Successfully completed order! Confirmation email sent to Customer')
+            messages.success(
+                request, 'Successfully completed order! \
+                            Confirmation email sent to Customer'
+                )
             return redirect(reverse('add_product'))
 
         else:
-            messages.error(request, 'Failed to update order. Please ensure the form is valid.')
+            messages.error(
+                request, 'Failed to update order. \
+                            Please ensure the form is valid.'
+                )
     else:
         form_update = CompleteOrderForm()
 

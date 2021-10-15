@@ -1,17 +1,19 @@
 from django import forms
-from .widgets import CustomClearableFileInput
+from checkout.models import Image
 from .models import Product, Category
-from checkout.models import Order, Image
+from .widgets import CustomClearableFileInput
 
 
-# Form for updating products as superuser
 class ProductForm(forms.ModelForm):
-
+    """ Form for updating products as superuser """
     class Meta:
+        """ Form model and fields selection """
         model = Product
         fields = '__all__'
 
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(
+                label='Image', required=False, widget=CustomClearableFileInput
+                )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -23,15 +25,20 @@ class ProductForm(forms.ModelForm):
             field.widget.attrs['class'] = 'form-control rounded-1'
 
 
-# Form for completing orders as superuser
 class CompleteOrderForm(forms.ModelForm):
+    """ Form for completing orders as superuser """
 
     class Meta:
+        """ Form model and fields selection """
         model = Image
         fields = ['image']
 
-    # Multiple attrs selected to for orders with many items
-    image = forms.ImageField(label='', required=True, widget=CustomClearableFileInput(attrs={'multiple': True}))
+    # Multiple attrs selected for orders with many items
+    image = forms.ImageField(
+            label='', required=True, widget=CustomClearableFileInput(
+                        attrs={'multiple': True}
+                        )
+                    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
