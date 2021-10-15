@@ -613,7 +613,7 @@ a.category-badge > span.badge:hover {
 .login-bg {
     background: url('/static/img/login.svg') no-repeat center center fixed;
     background-size: 350px;
-    background-position: left;
+    background-position: bottom left;
 }
 
 #login_form label,
