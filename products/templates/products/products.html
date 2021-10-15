@@ -9,6 +9,8 @@
             <div class="col">
                 <div class="col text-center mt-4">
                     <h2 class="logo-font">Design Services</h2>
+                    <small class="text-theme">All orders will be available for digital download</small> 
+                    <p class="w-50 m-auto small">We believe that pysical media is the best form to view and enjoy our work, a black & white A4 Giclée fine art print of your artwork will be included with your order.</small>
                     {% for c in current_categories %}
                         <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                             <span class="p-2 mt-2 badge badge-white text-black rounded-1 border border-dark">{{ c.friendly_name }}</span>
@@ -60,7 +62,7 @@
                                 </a>
                             {% endif %}
                             <div class="card-body pb-0">
-                                <p class="mb-0 text-black">{{ product.name }}</p>
+                                <p class="mb-0 text-theme">{{ product.name }}</p>
                             </div>
                             <div class="card-footer bg-white pt-0 border-0 text-left">
                                 <div class="row">
