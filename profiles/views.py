@@ -19,7 +19,9 @@ def profile(request):
             form.save()
             messages.success(request, 'Your Profile had been updated.')
         else:
-            messages.error(request, 'Update failed. Please ensure the form is valid.')
+            messages.error(
+                request, 'Update failed. Please ensure the form is valid.'
+                )
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
@@ -66,4 +68,3 @@ def artwork(request, order_id):
     }
 
     return render(request, template, context)
-
