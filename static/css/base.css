@@ -748,6 +748,9 @@ input::placeholder {
 footer {
     background: #6b63ff;
     padding: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-content {
