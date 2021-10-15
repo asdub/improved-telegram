@@ -1,9 +1,8 @@
 from django.shortcuts import render
 from checkout.models import Image
 
-# Create your views here.
 
-
+# Home app view
 def index(request):
     """ View to render index.html """
     images = Image.objects.all()
