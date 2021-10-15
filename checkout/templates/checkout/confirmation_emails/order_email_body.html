@@ -1,9 +1,9 @@
 <div>
-    <p>Dear {{ order.full_name }} }}</p>
+    <p>Dear {{ order.full_name }}</p>
 
     <p>Your order is now available for download and has been shipped</p>
 
-    <a href=">{{ request.build_absolute_uri }}profile/{{ order.id }}">
+    <a href="{{ request.get_host() }}profile/{{ order.id }}">
         View Artowrk
     </a>
 
