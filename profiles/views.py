@@ -55,11 +55,10 @@ def order_history(request, order_number):
 
 
 # View for user/ customer artwork and download
-
-def artwork(request, order_number):
+def artwork(request, order_id):
     """ Display Artwork to User. """
-    images = Image.objects.filter(order_number=order_number)
-    order = Order.objects.get(order_number=order_number)
+    images = Image.objects.filter(order_id=order_id)
+    order = Order.objects.get(id=order_id)
 
     template = 'profiles/artwork.html'
     context = {

@@ -155,22 +155,29 @@ def delete_product(request, product_id):
 
 # Email User on order status change.
 def send_order_confirmation_email(request, orders):
-    """Send user email confriming artwork upload"""
+    """Send user email confriming artwork upload""" 
     cust_email = orders.email
     subject = render_to_string(
         'checkout/confirmation_emails/order_email_subject.txt',
         {'order': orders})
 
+    context = {'order': orders}
+    html_content = render_to_string(
+        'checkout/confirmation_emails/order_email_boby.html',
+        {'order': orders})
+
     context = {'order': orders, 'contact_email': settings.DEFAULT_FROM_EMAIL}
-    body = render_to_string(
+    plain_text = render_to_string(
         'checkout/confirmation_emails/order_email_body.txt',
         context, request=request)
 
     send_mail(
         subject,
-        body,
+        plain_text,
+        html_content,
         settings.DEFAULT_FROM_EMAIL,
-        [cust_email]
+        [cust_email],
+        html_message=html_content
     )
 
 

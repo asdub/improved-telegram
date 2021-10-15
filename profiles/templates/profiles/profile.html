@@ -81,7 +81,7 @@
                             <div class="order-history-complete">
                                 <div class="btn-container">
                                     {% if order.order_status == 'Completed' %}
-                                    <a class="btn btn-green rounded-1 mt-1 btn-sm" href="{% url 'artwork' order_number %}">
+                                    <a class="btn btn-green rounded-1 mt-1 btn-sm" href="{% url 'artwork' order.id %}">
                                         View Artwork
                                     </a>
                                     {% endif %}
