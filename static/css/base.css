@@ -445,6 +445,10 @@ a.category-badge > span.badge:hover {
     color: #fff !important;
 }
 
+body > div.container.mb-2 > div:nth-child(2) {
+    min-height: 50vh;
+}
+
 /* Toast Messages */
 .custom-toast {
     animation: fadeIn 2s;
