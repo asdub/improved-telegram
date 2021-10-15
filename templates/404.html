@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- 404 Template -->
+    <div class="overlay"></div>
+    <div class="container error-container">
+        <div class="row">
+            <div class="col-12  col-lg-6">
+                <hr>
+                <h2 class="logo-font text-theme mb-4">Uh Oh! 404 Error</h2>
+                <hr>
+                <p class="text-black">This page doesn't exisit!</strong></p>
+            </div>
+            <!-- Back to home -->
+            <div class="btn-container">
+                <a href="{% url 'home' %}" class="btn btn-black rounded-1 my-2">
+                    <span class="icon mr-2">
+                        <i class="fas fa-angle-left"></i>
+                    </span>
+                    <span class="text-uppercase">Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

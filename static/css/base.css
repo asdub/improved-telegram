@@ -786,6 +786,20 @@ footer {
     transition: all 0.2s ease-in-out
 }
 
+.error-container {
+    height: calc(100vh - 206px);
+    background: url('/static/img/404_error.png') no-repeat center center fixed;
+    background-size: 250px;
+    background-position: bottom;
+}
+
+.error-five-container {
+    height: calc(100vh - 206px);
+    background: url('/static/img/500_error.svg') no-repeat center center fixed;
+    background-size: 250px;
+    background-position: bottom;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
