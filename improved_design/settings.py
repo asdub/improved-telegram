@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True # 'DEVELOPMENT' in os.environ
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['improved-design-asdub.herokuapp.com', 'localhost']
 
@@ -227,5 +227,5 @@ else:
     EMAIL_PORT = 587
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-    EMAIL_HOST_KEY = os.environ.get('EMAIL_HOST_PASS')
+    EMAIL_HOST_KEY = os.environ.get('EMAIL_HOST_KEY')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
