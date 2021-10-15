@@ -1,1 +1,1 @@
-web: python manage.py
+web: gunicorn improved_design.wsgi:application
