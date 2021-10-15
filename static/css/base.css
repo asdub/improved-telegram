@@ -81,10 +81,6 @@ body > div.container-fluid {
     font-weight: 600;
 }
 
-.row {
-    margin: auto;
-}
-
 /* Selectors & Search Bar */
 .custom-select, .custom-borders {
     border-bottom: 1px solid #6b63ff !important;

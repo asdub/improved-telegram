@@ -1,1 +1,17 @@
-<a href="{{ request.scheme }}://{{ request.get_host }}{% url 'profile' %}/{{ order.id }}">View Artowrk</a>/
+<div>
+    <p>Dear {{ {{ order.full_name }} }}</p>
+
+    <p>Your order is now available for download and has been shipped</p>
+
+    <a href=">{{ request.build_absolute_uri }}profile/{{ order.id }}">
+        View Artowrk
+    </a>
+
+    <p>
+        If you have any questions, feel free to contact us at {{ contact_email }}.
+        <br>
+        Thank you for your order!
+    </p>
+
+    <p>Improved Design</p>
+</div>
