@@ -613,7 +613,7 @@ a.category-badge > span.badge:hover {
 .login-bg {
     background: url('/static/img/login.svg') no-repeat center center fixed;
     background-size: 350px;
-    background-position: bottom right 60px;
+    background-position: left;
 }
 
 #login_form label,
@@ -748,7 +748,7 @@ input::placeholder {
 footer {
     background: #6b63ff;
     padding: 0;
-    position: absolute;
+    position: sticky;
     bottom: 0;
     width: 100%;
 }
