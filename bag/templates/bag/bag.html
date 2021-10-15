@@ -25,7 +25,7 @@
                                     <th scope="col">Subtotal</th>
                                 </tr>
                             </thead>
-
+                            <!-- List Orders items and order details -->
                             {% for item in order %}
                                 <tr class="order-bag-item">
                                     <td class="p-3 w-25">
@@ -33,7 +33,7 @@
                                         <img class="img-fluid rounded" src="{{ item.product_image_url }}" alt="{{ item.product.name }}">
                                         {% else %}
                                         <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                                        {% endif %}
+                                    {% endif %}
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0"><strong>{{ item.product_name }}</strong></p>
@@ -76,6 +76,7 @@
                                 </tr>
                             {% endfor %}
                             <tr class="text-right">
+                                <!-- Order totals -->
                                 <td colspan="5" class="pt-5 text-right">
                                     <h6><strong>Order Total: €{{ total|floatformat:2 }}</strong></h6>
                                     <h6>Delivery: €{{ delivery|floatformat:2 }}</h6>
@@ -97,6 +98,7 @@
                             </tr>
                             <tr class="text-right">
                                 <td colspan="12" class="text-right">
+                                    <!-- Buttons -->
                                     <div class="btn-container">
                                         <a href="{% url 'products' %}" class="btn btn-outline-black rounded-1 mt-3">
                                             <span class="icon">
@@ -116,6 +118,7 @@
                         </table>
                     </div>
                 {% else %}
+                    <!-- Displayed if no orders present -->
                     <p class="lead mb-5">No orders made.</p>
                     <a href="{% url 'products' %}" class="btn btn-outline-black rounded-1 btn-lg">
                         <span class="icon">
@@ -131,6 +134,7 @@
 
 {% block postloadjs %}
     <script>
+        // Update Item quantities (axios) //
         function submitForm(data) {
             document.getElementById('update-form').submit()
         }
@@ -153,7 +157,6 @@
             data.append('csrfmiddlewaretoken', csrfToken)
             axios.post('bag/update_order', data)
             .then(res => {
-                console.log(csrftoken)
                 location.reload()
             })
             .catch(errors => console.log(errors))

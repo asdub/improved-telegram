@@ -4,12 +4,13 @@ from django.template.loader import render_to_string
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 
-from .models import Order, OrderLineItem
-from products.models import Product
-from profiles.models import UserProfile
-
 import json
 import time
+from pprint import pprint
+
+from products.models import Product
+from profiles.models import UserProfile
+from .models import Order, OrderLineItem
 
 
 class StripeWH_Handler:
@@ -54,7 +55,6 @@ class StripeWH_Handler:
         pid = intent.id
         bag = intent.metadata.order
         save_info = intent.metadata.save_info
-        print(f'Webhook Bag-->> {bag}')
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
@@ -78,7 +78,7 @@ class StripeWH_Handler:
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
-
+        # Check Order 
         order_exists = False
         attempt = 1
         while attempt <= 5:
@@ -94,16 +94,15 @@ class StripeWH_Handler:
                     street_address2__iexact=shipping_details.address.line2,
                     county__iexact=shipping_details.address.state,
                     grand_total=grand_total,
-                    original_bag=bag,
                     stripe_pid=pid,
                 )
-                print(f'Webhook Bag-->> {order}')
                 order_exists = True
+                pprint(f'ORDER-->> {vars(order)}')
+                print(f'ORDER EXITST-->> {order_exists}')
                 break
             except Order.DoesNotExist:
                 attempt += 1
                 time.sleep(1)
-                print(f'Webhook Bag-->> {attempt}')
         if order_exists:
             # Send order confirmation email
             self._send_confirmation_email(order)
@@ -133,19 +132,21 @@ class StripeWH_Handler:
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
+                            id=data['item_id'],
                             product_size=data['product_size'],
                             artwork_request=data['artwork_request'],
                             product_text_content=data['product_text_content'],
                             artwork_colour=data['artwork_colour'],
                             quantity=data['quantity'],
+                            final_price=data['final_price'],
+                            lineitem_total=data['subtotal'],
                         )
-                        print(f'Webhook Bag-->> {order_line_item}')
                         order_line_item.save()
             except Exception as e:
                 if order:
                     order.delete()
                 return HttpResponse(
-                    content=f'Webhook received HI: {event["type"]} | ERROR: {e}',
+                    content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
         # Send order confirmation email webhook
         self._send_confirmation_email(order)

@@ -34,62 +34,62 @@
                 <div class="order-history">
                      <!-- Sort orders by status -->
                     {% for order in orders|dictsort:"order_status" %}
-                    {% if order %}
-                    <div class="order-history-item-container card-bg-shadow mb-3">
-                        <div class="order-history-item">
-                            <div class="order-history-item-inner">
-                                <small class="text-theme font-weight-bold">{{ order.date }}</small>
-                                {% if order.order_status == 'Completed' %}
-                                    <small class="text-success-id font-weight-bold">
-                                        Order Ready 
-                                        <i class="fas fa-check-circle"></i>
+                        {% if order %}
+                        <div class="order-history-item-container card-bg-shadow mb-3">
+                            <div class="order-history-item">
+                                <div class="order-history-item-inner">
+                                    <small class="text-theme font-weight-bold">{{ order.date }}</small>
+                                    {% if order.order_status == 'Completed' %}
+                                        <small class="text-success-id font-weight-bold">
+                                            Order Ready 
+                                            <i class="fas fa-check-circle"></i>
+                                        </small>
+                                        {% else %}
+                                        <small class="text-pending-id">
+                                        In progress..
+                                        </small>
+                                    {% endif %}
+                                </div>
+                                <hr class="m-0 mb-1">
+                                <div class="order-history-item-inner">
+                                    <small class="text-theme">Order #</small>
+                                    <small class="initialism" title="{{ order.order_number }}">{{ order.order_number }}</small>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="order-history-item">
+                                <div class="order-history-item-inner">
+                                    <ul class="list-unstyled mb-0">
+                                        {% for item in order.lineitems.all %}
+                                            <li class="small">
+                                            {{ item.product.name }} x{{ item.quantity }}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                    <small>
+                                        <small class="initialism">Total</small> 
+                                        €{{ order.grand_total }}
                                     </small>
-                                    {% else %}
-                                    <small class="text-pending-id">
-                                       In progress..
-                                    </small>
-                                {% endif %}
+                                </div>
                             </div>
-                            <hr class="m-0 mb-1">
-                            <div class="order-history-item-inner">
-                                <small class="text-theme">Order #</small>
-                                <small class="initialism" title="{{ order.order_number }}">{{ order.order_number }}</small>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="order-history-item">
-                            <div class="order-history-item-inner">
-                                <ul class="list-unstyled mb-0">
-                                    {% for item in order.lineitems.all %}
-                                        <li class="small">
-                                        {{ item.product.name }} x{{ item.quantity }}
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                                <small>
-                                    <small class="initialism">Total</small> 
-                                    €{{ order.grand_total }}
-                                </small>
+                            <hr class="m-0 mb-1 mt-1">
+                            <div class="order-history-complete">
+                                <div class="btn-container">
+                                    {% if order.order_status == 'Completed' %}
+                                    <a class="btn btn-green rounded-1 mt-1 btn-sm" href="{% url 'artwork' order.id %}">
+                                        View Artwork
+                                    </a>
+                                    {% endif %}
+                                    <a class="btn btn-black rounded-1 mt-1 btn-sm" href="{% url 'order_history' order.order_number %}">
+                                        View Order
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <hr class="m-0 mb-1 mt-1">
-                        <div class="order-history-complete">
-                            <div class="btn-container">
-                                {% if order.order_status == 'Completed' %}
-                                <a class="btn btn-green rounded-1 mt-1 btn-sm" href="{% url 'artwork' order.id %}">
-                                    View Artwork
-                                </a>
-                                {% endif %}
-                                <a class="btn btn-black rounded-1 mt-1 btn-sm" href="{% url 'order_history' order.order_number %}">
-                                    View Order
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- If no order found display -->
-                    {% else %}
-                    <p>No orders found..</p>
-                    {% endif %}
+                        <!-- If no order found display -->
+                        {% else %}
+                        <p>No orders found..</p>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>

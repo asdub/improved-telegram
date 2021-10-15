@@ -27,11 +27,12 @@
                         <p class="mb-1 mt-0 small text-muted">Subtotal</p>
                     </div>
                 </div>
+                <!-- List checkout items -->
                 {% for item in order %}
                     <div class="row row-margin">
                         <div class="col-2 mb-1">
                             <a href="{% url 'product_detail' item.product_id %}">
-                                {% if item.product.image %}
+                                {% if item.product_image_url %}
                                     <img class="w-100" src="{{ item.product_image_url }}" alt="{{ product.name }}">
                                 {% else %}
                                     <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
@@ -52,6 +53,7 @@
                     <div class="col-2 mb-1">
                     </div>
                     <div class="col-7 mb-3">
+                        <!-- List user customisations -->
                         <p class="mb-0 mt-0 small text-muted">
                             Your Customisations
                         </p>
@@ -78,6 +80,7 @@
                     </div>
                 </div>
             </div>
+            <!-- User checkout/ deliver form -->
             <div class="col-12 col-lg-6 mb-5 card-bg-shadow">
                 <p class="checkout-tag">Please provide your details below:</p>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
@@ -148,6 +151,7 @@
 {% endblock %}
 
 {% block postloadjs %}
+    <!-- Load stripe.js -->
     {{ block.super}}
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}
     {{ client_secret|json_script:"id_client_secret" }}

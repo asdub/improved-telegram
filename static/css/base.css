@@ -438,7 +438,7 @@ body > header > div:nth-child(3) > nav > ul > li.list-inline-item.show > div > f
     padding-left: 1rem;
     padding-right: 1rem;
     border-radius: 10px;
-    box-shadow: 10px 10px 60px #dcdcdc2e, -10px -10px 35px #e4e4e4;
+    box-shadow: 10px 10px 30px #dcdcdc6e, 5px -5px 25px #e5e5e5;
     height: fit-content;
 }
 
@@ -744,6 +744,12 @@ input::placeholder {
 }
 
 /* Footer */
+.footer-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
 
 footer {
     background: #6b63ff;
@@ -756,24 +762,32 @@ footer {
     padding: 0.5rem;
 }
 
+.copyright-footer {
+    align-self: flex-end;
+}
+
 .copyright-footer-inner {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-end;
 }
 
 .copyright-footer-inner span {
     color: #ffffff;
-    font-size: 90%;
+    font-size: 75%;
+}
+
+.copyright-links-container {
+    padding-left: 0.4rem;
 }
 
 .copyright-links-container a {
     color: #ffffff;
-    font-size: 80%;
+    font-size: 65%;
 }
 
 .footer-thumb {
-    height: 25px;
+    height: 35px;
     transition: all 0.2s ease-in-out
 }
 

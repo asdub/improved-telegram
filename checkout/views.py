@@ -4,22 +4,21 @@ from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
-from .models import Order, OrderLineItem
-from products.models import Product
-from .forms import OrderForm
-from profiles.forms import UserProfileForm
-from profiles.models import UserProfile
-from bag.contexts import bag_contents
-
 import stripe
 import json
 import copy
 
-# Create your views here.
+from profiles.forms import UserProfileForm
+from profiles.models import UserProfile
+from bag.contexts import bag_contents
+from products.models import Product
+from .models import Order, OrderLineItem
+from .forms import OrderForm
 
 
 @require_POST
 def cache_checkout_data(request):
+    """ Cache order information for Stripe meta data"""
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -30,7 +29,7 @@ def cache_checkout_data(request):
         for items in order_items:
             d = copy.deepcopy(items)
             order_intent.update(d)
-
+        # List of keys to me removed from order_intent
         remove = {'product_image_url',
                   'product_sku',
                   'product_id',
@@ -42,10 +41,6 @@ def cache_checkout_data(request):
 
         order_intent_clean = remove_keys(order_intent, remove)
         order.append(order_intent_clean)
-
-        print(f'ORDER ITEMs-------->> {order_items}')
-        print(f'ORDER INTENT-------->> {order}')
-
         stripe.PaymentIntent.modify(pid, metadata={
             'order': json.dumps(order),
             'save_info': request.POST.get('save_info'),
@@ -59,7 +54,9 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 
+# Checkout View
 def checkout(request):
+    """ Process and store checkout form information   """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -100,15 +97,21 @@ def checkout(request):
                         )
                         order_line_item.save()
                 except Product.DoesNotExist:
-                    messages.error(request, "There was an issue processing your order. Please try again.")
+                    messages.error(
+                        request, "There was an issue processing your order. \
+                                    Please try again."
+                        )
                     order_line_item.delete()
                     return redirect(reverse('view_bag'))
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
-
+            return redirect(
+                reverse(
+                    'checkout_success', args=[order.order_number])
+                    )
         else:
-            messages.error(request,
-                "There was an error processing your details.")
+            messages.error(
+                request, "There was an error processing your details."
+                )
     else:
         order = request.session.get('order')
         if not order:
