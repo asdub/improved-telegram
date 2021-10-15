@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+    <!-- User Artwork(s) download view -->
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
@@ -17,6 +18,7 @@
         <div class="row">
             <div class="col-10 mt-0 m-auto">
                 <p class="text-theme">Your Artwork for Order# {{ order.order_number|truncatechars:12 }}</p>
+                <!-- List available artwork images on user order -->
                 {% for image in images %}
                 <div class="artwork-container card-bg-shadow mb-3">
                     <div class="artwork-item">

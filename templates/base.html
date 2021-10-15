@@ -40,6 +40,7 @@
     <title>Improved Design {% block title_text %}{% endblock %}</title>
   </head>
   <body>
+    <!-- Header -->
     <header class="container-fluid fixed-top">
       <div class="row bg-white d-lg-none text-center">
         <a href="{% url 'home' %}" class="nav-link nav-logo ">
@@ -84,6 +85,7 @@
                   </div>
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                  <!-- Check User and display menu -->
                     {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
                             <a href="{% url 'add_product' %}" class="dropdown-item">Management</a>
