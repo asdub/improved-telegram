@@ -1,12 +1,12 @@
+import json
+import copy
+import stripe
+
 from django.shortcuts import (render, redirect,
                               reverse, get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
-
-import stripe
-import json
-import copy
 
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
@@ -48,7 +48,6 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        print(f'error--->> {e}')
         messages.error(request, 'Sorry, your payment cannot be \
             processed. Please try again later.')
         return HttpResponse(content=e, status=400)

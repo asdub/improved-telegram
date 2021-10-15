@@ -9,6 +9,7 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
+    """ Order Model """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     order_status = models.CharField(max_length=32, null=False, blank=False, default='Pending')
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
@@ -44,9 +45,11 @@ class Order(models.Model):
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        self.order_total = self.lineitems.aggregate(Sum(
+                            'lineitem_total'))['lineitem_total__sum'] or 0
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
-            self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+            cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+            self.delivery_cost = cost
         else:
             self.delivery_cost = 0
         self.grand_total = self.order_total + self.delivery_cost
@@ -66,11 +69,13 @@ class Order(models.Model):
 
 
 class Image(models.Model):
+    """ Order Image Model - User artwork uploads """
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='images')
     image = models.ImageField(upload_to='completed_artwork/', null=True, blank=True)
 
 
 class OrderLineItem(models.Model):
+    """ Order Line Items """
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     product_size = models.CharField(max_length=2, null=True, blank=True)

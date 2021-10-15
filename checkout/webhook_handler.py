@@ -1,12 +1,11 @@
+import json
+import time
+
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.shortcuts import get_object_or_404
-
-import json
-import time
-from pprint import pprint
 
 from products.models import Product
 from profiles.models import UserProfile
@@ -97,8 +96,6 @@ class StripeWH_Handler:
                     stripe_pid=pid,
                 )
                 order_exists = True
-                pprint(f'ORDER-->> {vars(order)}')
-                print(f'ORDER EXITST-->> {order_exists}')
                 break
             except Order.DoesNotExist:
                 attempt += 1
