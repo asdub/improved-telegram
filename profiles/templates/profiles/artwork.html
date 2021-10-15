@@ -24,11 +24,14 @@
                             <img class="img-thumbnail" src="{{ image.image.url }}" alt="Your Artwork">
                         </div>
                         <div class="artwork-download">
-                            <p class="text-theme">
-                                Download you artwork below
-                            </p>
                             <div class="btn-container">
-                                <a class="btn btn-black rounded-1 mt-1 btn-sm" 
+                                <a class="btn btn-black rounded-1 mt-1 btn-sm" href="{% url 'order_history' order.order_number %}">
+                                    Order Confirmation
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="btn-container">
+                                <a class="btn btn-green rounded-1 mt-1 btn-sm" 
                                     alt="Your Artwork Download" 
                                     href="{{ image.image.url }}" download>
                                     Download Artwork
@@ -48,5 +51,6 @@
                 </div>
             </div>
         </div>
+    </div>
         {{ profile }}
 {% endblock %}
