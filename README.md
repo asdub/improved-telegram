@@ -7,7 +7,7 @@
 
 **A live version of this project can be found [here](https://improved-design-asdub.herokuapp.com/)**
 
-You can use the following accounts can be used for user and admin access: 
+The following accounts can be used for user and admin access: 
 
 
 *Admin User*\
@@ -26,9 +26,9 @@ This is the final project for my software development diploma.
 
 I have created an app to promote the services of a freelance designer. 
 Allowing users to purchase custom design services. 
-Specifically illustrations/ artwork. 
+Specifically illustrations/ artwork in the form of Icons, Logos, Posters and general Custom Artwork.
 
-Users can select from a variety of services, select and enter their desired customisations. 
+Users can select from a variety of design services, select and enter their desired customisations. 
 The user has the option of creating a profile to keep all their orders in one place and view or download their artwork. 
 In addition, users receive email notifications regarding the status of their order. 
 
@@ -88,10 +88,10 @@ And also complete user orders by uploading completed artwork.
 
 ### Brief
 
-My intention was to create a simple app that permits the user easy  and considered access to the services being presented.
-Users can easily purchase services and check on orders. While administrators can simply complete user orders.
-Having previously designed my own layouts and styles, I wanted to use a front-end framework with my own custom styling (and layouts in parts) for this project. 
-The app has been built using the [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/) front-end framework.
+My intention was to create a simple app that permits the user easy and considered access to the design services being presented.
+Users can easily navigate and purchase design services and check on an orders status. While administrators can easily complete user orders, via an upload feature.
+
+Having previously designed my own layouts and styles, I wanted to use a front-end framework with my own custom styling (and layouts in parts) for this project. The app has been built using the [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/) front-end framework.
 
 
 Owing to the services, the user base is likely to be very broad. 
@@ -485,3 +485,45 @@ The following Django dependencies apply to this app:
 
 #### Deploy on Heroku
 Deploying the app on heroku is very straight forward. 
+
+You need to make sure the following files are in the repo you wish to deploy: 
+1. requirements.txt 
+  > If not, you can create this by opening your terminal, make sure you are in the apps main folder and typing the following command:
+      ```
+      pip freeze --local > requirements.txt
+      ```
+  > It creates the txt file in the working directory (where it belongs).
+
+2. Procfile, this tells Heroku to start your app. 
+  > You can create one by typing the following into your terminal:
+  ```
+  echo "web: gunicorn improved_design.wsgi:application" > Procfile
+  ```
+
+Once certain those files are present. Go to [Heroku](https://dashboard.heroku.com/) and login or create an account. 
+
+1. Click on 'new' in the top right corner and then create app. 
+2. Choose a name and select your region 
+3. Your app overview will load. 
+4. Select Resources > Add-ons, and choose Heroku Postgres - the 'Hobby Dev or Free' option.
+5. Copy the the Postgres URI into a custom variable in settings called 'DATABASE_URL'
+
+Back in the apps settings.py, the database settings need to be updated.
+> Locate the default 'DATABASE' settings, and replace with:
+ ```
+ if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+```
+* This peice of code checks the env for 'DATABASE_URL'. If false the default sqlite db is loaded. If true, the heroku postgres db is loaded via the dj_database_url dependency. *
+
+
+
