@@ -408,6 +408,80 @@ Upon selecting complete, the user will receive an email containing a link to vie
 And the administrator will be redirected back to the add service/ pending orders view. 
 
 
+### Future Features 
+
+#### Expand Customisation Fields
+In a future version I would like to add more interactive customisation fields. Giving a user the ability to select colours. Draw shapes. 
+And provide a mood board they could add images, colour swatches etc to. 
+
+#### Security/ Authorisation
+I would like to improve security on the app. 
+And setup sign-in with social media/ gmail functionality to streamline the registration process. 
+
+#### Admin Dashboard    
+I would like to expand on the current offering to include:
+    - Daily, Weekly, Monthly sales data. 
+    - Apply the same breakdown to the number of services sold. 
+    - Display metrics regarding registered users, active users. 
+
+#### Order Abandonment 
+In conjunction with the streamlined registration process, I would like to collect data and present metrics to the admin detailing order abandonment. 
 
 
+## Technologies
 
+### Languages
+- **[HTML5](https://html.com/html5/)**
+- **[CSS3](https://www.w3schools.com/css/)**
+- **[Javascript](https://www.javascript.com/)**
+- **[Python](https://www.python.org/)**
+- **[Django template language](https://docs.djangoproject.com/en/3.2/ref/templates/language/)** (templating language)
+
+
+### Django
+Django is an open source framework for web development in Python. It is a flexible web development tool that can be used to create almost any type of website or app that is needed. Thanks to it's high usage, and extensive packages - there is often no need 'to reinvent the wheel' when deploying apps. And trusted and proven code can be used to deploy your project. 
+
+Django's most powerful feature is its object-relational mapper (ORM), allowing the interaction with a database in a pythonic way - with no need need for SQL queries. 
+
+Check out the [database schema](#databasedesign) above to see how this apps database is structured. 
+
+The following Django dependencies apply to this app:
+- **[asgiref](https://pypi.org/project/asgiref/)**
+- **[boto3](https://pypi.org/project/boto3/)**
+- **[botocor](https://pypi.org/project/botocore/)**
+- **[dj-database-url](https://pypi.org/project/dj-database-url/)**
+- **[Django](https://pypi.org/project/Django/)**
+- **[django-allauth](https://pypi.org/project/django-allauth/)**
+- **[django-countries](https://pypi.org/project/django-countries/)**
+- **[django-crispy-forms](https://pypi.org/project/django-crispy-forms/)**
+- **[django-storages](https://pypi.org/project/django-storages/)**
+- **[gunicorn](https://pypi.org/project/django-gunicorn/)**
+- **[jmespath](https://pypi.org/project/jmespath/)**
+- **[oauthlib](https://pypi.org/project/oauthlib/)**
+- **[Pillow](https://pypi.org/project/Pillow/)**
+- **[psycopg2-binary](https://pypi.org/project/psycopg2-binary/)**
+- **[PyJWT](https://pypi.org/project/PyJWT/)**
+- **[python3-openid](https://pypi.org/project/python3-openid/)**
+- **[requests-oauthlib](https://pypi.org/project/requests-oauthlib/)**
+- **[s3transfer](https://pypi.org/project/s3transfer/)**
+- **[sqlparse](https://pypi.org/project/sqlparse/)**
+- **[stripe](https://pypi.org/project/stripe/)**
+
+
+## Deployment
+
+#### Fork
+1. [Login](https://github.com/login) to your GitHub account([or join](https://github.com/join)).
+2. Go to the repo by clicking [here](https://github.com/asdub/5km-parks-MP2).
+3. Click fork in the top right corner of the screen. 
+
+#### Clone (Locally)
+1. [Login](https://github.com/login) to your GitHub account([or join](https://github.com/join)).
+2. Go to the repo by clicking [here](https://github.com/asdub/5km-parks-MP2).
+3. On the main page of the repository click on 'Code'. 
+4. Click on the 'Clipboard'/ copy the clone URL (Clone with HTTPs). 
+4. In your local environment open your terminal, navigate to or create a directory.
+5. Paste the URL into your terminal and enter. The repo should be successfully cloned.  
+
+#### Deploy on Heroku
+Deploying the app on heroku is very straight forward. 
