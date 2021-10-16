@@ -183,23 +183,23 @@ A limited palette of colours was used throughout the app.
 **There are four colours used in total throughout the app.**
 
 Purple - *#6b63ff*\
-![Purple](https://github.com/asdub/improved-telegram/blob/main/readme/colours/6b63ff.png "Purple - #6b63ff")
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/colours/6b63ff.png" width="75" alt="Purple - #6b63ff" />
 
 Grey - *#555555*\
-![Grey](https://github.com/asdub/improved-telegram/blob/main/readme/colours/555555.png "Grey - #555555")
-
-Black - *#000000*\
-![Black](https://github.com/asdub/improved-telegram/blob/main/readme/colurs/000000.png "Black - #000000")
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/colours/555555.png" width="75" alt="Grey - #555555" />
 
 White - *#ffffff*\
-![Whtie](https://github.com/asdub/improved-telegram/blob/main/readme/colours/ffffff.png "White - #ffffff")
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/colours/ffffff.png" width="75" alt="White - #ffffff" />
+
+Black - *#000000*\
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/colours/000000.png" width="75" alt="Black - #000000" />
 
 
 ### Wireframes 
 
-<img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/desktop_home_wire.png" width="450" alt="Wireframes" />
-<img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/tablet_products_wire.png" width="250" alt="Wireframes" />
-<img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/mobile_account_wire.png" width="250" alt="Wireframes" />
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/desktop_home_wire.png" width="400" alt="Wireframes" />
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/tablet_products_wire.png" width="200" alt="Wireframes" />
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/mobile_account_wire.png" width="150" alt="Wireframes" />
 
 Mock Ups were completed for desktop, tablet & mobile devices. 
 
