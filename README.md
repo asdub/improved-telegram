@@ -28,8 +28,8 @@ I have created an app to promote the services of a freelance designer.
 Allowing users to purchase custom design services. 
 Specifically illustrations/ artwork. 
 
-Users can select from a variety of services, select and enter their desired customistations. 
-The user has the option of creating a profile to keep all their orders in one places and view or download their artwork. 
+Users can select from a variety of services, select and enter their desired customisations. 
+The user has the option of creating a profile to keep all their orders in one place and view or download their artwork. 
 In addition, users receive email notifications regarding the status of their order. 
 
 Site admins can add, edit or delete services. 
@@ -51,7 +51,7 @@ And also complete user orders by uploading completed artwork.
     * [Typography](#typography)
     * [Iconography](#iconography)
     * [Illustrations](#illustrations)
-    * [Responsive](#responsive)
+    * [Responsive](#responsiv
     * [App Flow](#appflow)
     * [Database Design](#databasedesign)
     * [Features](#features)
@@ -61,7 +61,7 @@ And also complete user orders by uploading completed artwork.
     * [MongoDB & Dataset](#mongodb--dataset)
     * [Frameworks (back-end)](#frameworks-back-end)
     * [Dependencies](#dependencies)
-    * [Version Control & Managment](#version-control--managment)
+    * [Version Control & Management](#version-control--management)
     * [Software/ Tools Used](#other-software-tools-used)
 * [Deployment](#deployment)
     * [Fork](#fork)
@@ -94,7 +94,7 @@ Having previously designed my own layouts and styles, I wanted to use a front-en
 The app has been built using the [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/) front-end framework.
 
 
-Owing to the services, the user base is likey to be very broad. 
+Owing to the services, the user base is likely to be very broad. 
 With this in mind the design and layout has been considered to appeal to all age groups and demographics. 
 
 
@@ -105,14 +105,14 @@ With this in mind the design and layout has been considered to appeal to all age
 - Allow users to purchase a service (Stripe).
 - Allow users to customise their service.
 - Allow users to manage their address data (CRUD). 
-- Provide users with email & on screen nofications regarding their ordered services.
+- Provide users with email & on screen notifications regarding their ordered services.
 - Provide defensive design in terms of data editing or deletion. 
 - Provide seamless login/ registration functionality.
 - Allow administrators to manage services. 
 - Allow administrators to complete user orders. 
 
 #### Business/ Monetisation
-- The app provides an eccomm platform. An unlimtied number of products or services can be added to the database. Managed by the administrator.
+- The app provides an ecomm platform. An unlimited number of products or services can be added to the database. Managed by the administrator.
 
 
 #### New User Stories
@@ -123,13 +123,13 @@ With this in mind the design and layout has been considered to appeal to all age
 ##### Services
 - I want to view all available services.
 - I want detailed information on each service. 
-- I want the ability to search for serivces by keyword.
+- I want the ability to search for services by keyword.
 - I want to customise each service. 
 ##### Managing Services
 - I want to update my order quantities. 
 - I want to remove items from my order.
 - I want to see the total cost of each order item. 
-- I want to see a breakdown of customistion costs. 
+- I want to see a breakdown of customisation costs. 
 ##### Checkout/ Payments
 - I want a simple payment process. 
 - I want to know of any issues with payment. 
@@ -208,7 +208,7 @@ Wireframes were completed for desktop, tablet & mobile devices.
 
 [Google Fonts](https://fonts.google.com/) is in use on this app.
 
-To keep on the simplicity breif,
+To keep on the simplicity brief,
 Only one font is in use:\
 **Roboto** in weights of 400 & 600.
 
@@ -242,7 +242,7 @@ The app uses the [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/i
 Which is fully responsive. Bootstrap uses a 12 column grid system for layout.
 
 The app renders in three layouts for mobile, tablet and desktop. 
-Additonal css media quiries have been included to ensure a consistent experience accross device types. 
+Additional css media queries have been included to ensure a consistent experience across device types. 
 
 
 ### App Flow
@@ -250,25 +250,25 @@ Additonal css media quiries have been included to ensure a consistent experience
 <img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/flow.drawio.png" width="400" alt="App Flow Diagram"/>
 
 
-Users will initially land at */home*, a single page scroller container a work/ portfoilio section display the 8th most recent completed customer artworks.
+Users will initially land at */home*, a single page scroller containing a work/ portfolio section display the 8th most recent completed customer artworks.
 And also an about and social contact section.
-A large header (in all views) with dropdown navigation allows the user to quickly searh, access account facilities and order bag. Dropdown menus allow the users to navigate to individual services, all services, or can sort the services by price, rating and type. 
+A large header (in all views) with dropdown navigation allows the user to quickly search, access account facilities and order bag. Dropdown menus allow the users to navigate to individual services, all services, or can sort the services by price, rating and type. 
 Home contains a hero banner with a large CTA. Taking the user to an all services view.
 
 Selecting a service takes the user to a detailed view. And features the customisation options available to the user. 
 The user can add a service to their order from here. A toast notification will prompt the user to 'View their orders' where they can access their order bag. Or from the shopping card icon within the header. 
 
-In the order bag view, the user can review their orders and cusomistations. See their item and total pricing. 
-And also a breakdown of their cusomistation costs. A user can amend order quantities and remove items. 
+In the order bag view, the user can review their orders and customisations. See their item and total pricing. 
+And also a breakdown of their customisation costs. A user can amend order quantities and remove items. 
 A user can proceed to checkout/ payment from here. 
 
 The checkout view displays an order summary, a customer form and payment facilities. 
-Once the user completes their transaction, they are directed to on order success view, which details the order just made. 
+Once the user completes their transaction, they are directed to an order success view, which details the order just made. 
 A user will also receive an automated email confirming their order.  
 
 A site administrator has access to a management view where they can add new products and check pending orders. 
-An admin can access the complete customer order functionality from here. An admin is displayed an overview of the customer can order. They can upload the customer artwork, once the admin selects complete - the customer will receice an email confirming their artwork is available to download and has been shipped. The email contains a link to view and download the artwork. 
-If the user has an account setup they can view their historical orders and artowrk (if complete). 
+An admin can access the complete customer order functionality from here. Where an admin can see an overview of pending customer orders. They can upload the customer artwork, once the admin selects complete - the customer will receive an email confirming their artwork is available to download and has been shipped. The email contains a link to view and download the artwork. 
+If the user has an account setup they can view their historical orders and artwork (if complete). 
 
 The apps functionality is explored in further detail in the [Features](#features) section below. 
 
@@ -282,12 +282,83 @@ Django uses SQLite by default Heroku Postgres in production.
 <img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/db_schema.png" alt="Database Schema Diagram"/>
 
 Data is organised around 5 core apps, the models associated with these apps are detailed below. 
-The diagram above displays the replationships betwen these models. 
+The diagram above displays the relationships between these models. 
 
 |  App    |  Model                                      | 
-| :---:   | :-----------------------------------------: |
+| :---    | :-----------------------------------------  |
 | Home    |  Images                                     |
 | Checkout|  UserProfile, Product, Order, OrderLineItem |
 | Bag     |  Product                                    |
 | Products|  Order, Image, Product, Category            |
 | Profile |  Order, Image, UserProfile                  |
+
+
+### Features
+
+Improved Design is an ecommerce app providing users with the following functionality:
+
+**Navigation**
+- The app has a dynamic menu structure. Providing a standard horizontal text navbar on medium and large screens, and a hamburger menu with sidebar when used via a small/ mobile screen. Both menus have dropdown submenus. 
+- Under /account an unregistered user has the navigation options of: *'Login'* and *'Register'*. 
+- Under /account an authorised user has the following options: *'Profile'* and *'Log Out'*
+- In addition to the above, an admin user also has access to *'Management'*
+
+**Authentication** - *(AllAuth)*
+- Users have the ability to register for a user profile.
+- The registration process features email verification. 
+- AllAuth also provides Login and logout views for the user. 
+- A user can reset their password via the 'Forgot Password' hyperlink on the login form. 
+- 
+
+**Home** - *(/)*
+- The home app contains a single view detailing a hero banner, work portfolio, about and contact sections. 
+- The hero banner contains a CTA to the services view.
+- Artwork for the work portfolio is generated from the 8 most recent admin completed artworks which have been uploaded. 
+- A further CTA is located under the work/ portfolio section. 
+- The contact section contains font awesome social media icon links with transition effects
+- An app wide footer detailing copyright and links to terms & Conditions/ privacy policy. Improved design branding is also included. 
+
+**Services** - *(services/)*
+- The services view lists individual services in the form of service cards. 
+- Service cards contain representational artwork, title, cost and rating. 
+    - If authenticated as an admin, the options to edit and delete the service will also appear on the card.
+ - A user can also filter & sort the services based on Price, Name & Category. In both ascending or descending order.
+
+**Services Detail** - *(services/<product_id>)*
+- Upon selecting a service on the Services View, the service detail view is rendered. 
+- This view contains additional information in the form of a description and responsive image of the representational artwork.
+- The user can also specify how they wish to customise their artwork, they can:
+    - Choose the quantity
+    - Detail their requirements
+    - Choose a size
+    - Provide text content
+    - Choose a colour profile
+- An 'Add to Order' button allows the user to add the order to their order bag. 
+- Or return to the all services view.
+- When an item is added to an order, a notification will appear inviting the user to 'View all Orders'
+
+**Orders/ Bag** - *(orders/)*
+- This view lists all the current orders the user has added. 
+- Each order item is listed with the following data:
+    - Image
+    - Title
+    - SKU
+    - Size
+    - Colour Profile
+    - User customisations:
+        - Requirements / Request
+        - Text Content
+    - Item Cost
+    - Item Quantity 
+    - Subtotal
+- The user can amend quantities or remove an item in this view. 
+- An order total, delivery cost and Grand Total is displayed under the list of order items. 
+- A cost breakdown is also provided where the price has changed due to user customisations. 
+- The user can proceed to checkout/ payment or return to the all services view via the buttons under the order view. 
+
+
+**Checkout** - *(checkout/)*
+
+
+
+
