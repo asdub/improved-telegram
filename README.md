@@ -183,16 +183,16 @@ A limited palette of colours was used throughout the app.
 **There are four colours used in total throughout the app.**
 
 Purple - *#6b63ff*\
-<img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/colours/6b63ff.png" width="75" alt="Purple - #6b63ff" />
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/colours/6b63ff.png" width="75" alt="Purple - #6b63ff" />
 
 Grey - *#555555*\
-<img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/colours/555555.png" width="75" alt="Grey - #555555" />
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/colours/555555.png" width="75" alt="Grey - #555555" />
 
 White - *#ffffff*\
-<img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/colours/ffffff.png" width="75" alt="White - #ffffff" />
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/colours/ffffff.png" width="75" alt="White - #ffffff" />
 
 Black - *#000000*\
-<img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/colours/000000.png" width="75" alt="Black - #000000" />
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/colours/000000.png" width="75" alt="Black - #000000" />
 
 
 ### Wireframes 
