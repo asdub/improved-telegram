@@ -335,7 +335,8 @@ footer {
     transition: all 0.2s ease-in-out
 }
 
-.dropdown-search-icon {
+#thumb-icon,
+#dropdown-search-icon {
     height: 30px;
     transition: all 0.2s ease-in-out
 }
@@ -348,8 +349,8 @@ footer {
 #account-icon:focus,
 #account-icon-m:hover,
 #account-icon-m:focus,
-.dropdown-search-icon:hover,
-.dropdown-search-icon:focus {
+#dropdown-search-icon:hover,
+#dropdown-search-icon:focus {
     transform: scale(1.2);
 }
 
