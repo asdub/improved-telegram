@@ -6,8 +6,8 @@
 
     {% block meta %}
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     {% endblock %}
 
     {% block corecss %}
@@ -45,7 +45,7 @@
       <div class="row bg-white d-lg-none text-center">
         <a href="{% url 'home' %}" class="nav-link nav-logo ">
           <div class="thumbs-up header-icon-container">
-            <img type="image/svg+xml" id="dropdown-search-icon" src="{% static 'img/noun_thumbs_up.svg' %}">
+            <img class="dropdown-search-icon" src="{% static 'img/noun_thumbs_up.svg' %}" alt="Search Icon">
             <h2 class="logo text-black my-0">Improved Design</h2>
         </div>
         </a>
@@ -54,7 +54,7 @@
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
           <a href="{% url 'home' %}" class="nav-link nav-logo ">
             <div class="thumbs-up header-icon-container">
-              <img type="image/svg+xml" id="dropdown-search-icon" src="{% static 'img/noun_thumbs_up.svg' %}">
+              <img  class="dropdown-search-icon" src="{% static 'img/noun_thumbs_up.svg' %}" alt="Search Icon">
               <h2 class="logo text-black my-0">Improved Design</h2>
           </div>
           </a>
@@ -66,7 +66,7 @@
                 <div class="input-group-append">
                     <button class="form-control btn header-search-button rounded-0 border-0" type="submit">
                         <span class="icon">
-                          <img type="image/svg+xml" src="{% static 'img/noun_search.svg' %}">
+                          <img  src="{% static 'img/noun_search.svg' %}" alt="Search Icon">
                         </span>
                     </button>
                 </div>
@@ -76,15 +76,15 @@
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
           <ul class="list-inline list-unstyled text-center text-lg-right my-0">
             <li class="list-inline-item dropdown">
-                <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="text-black nav-link" href="#" id="user-options1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <div class="text-center">
                     <div class="header-icon-container">
-                        <img type="image/svg+xml" id="account-icon" src="{% static 'img/noun_person.svg' %}">
+                        <img  id="account-icon" src="{% static 'img/noun_person.svg' %}" alt="Account">
                         <p class="my-0 text-theme" id="account-icon-text">Account</p>
                     </div>
                   </div>
                 </a>
-                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                <div class="dropdown-menu border-0" aria-labelledby="user-options1">
                   <!-- Check User and display menu -->
                     {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
@@ -101,7 +101,7 @@
             <li class="list-inline-item">
                 <a class="{% if grand_total %}text-info font-weight-bolder {% else %}text-theme{% endif %} nav-link" href="{% url 'view_bag' %}">
                   <div class="header-icon-container">
-                    <img type="image/svg+xml" id="basket-icon" src="{% static 'img/noun_checkout.svg' %}">
+                    <img  id="basket-icon" src="{% static 'img/noun_checkout.svg' %}" alt="Checkout">
                     <p class="my-0">
                         {% if grand_total %}
                             €{{ grand_total|floatformat:2 }}
@@ -118,9 +118,7 @@
       <div class="row bg-white">
         <nav class="navbar navbar-expand-lg navbar-light w-100">
           <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <div class="mobile-menu-toggle">
               <i class="fas fa-bars"></i>
-            </div>
           </button>
           {% include 'includes/main-nav.html' %}
           {% include 'includes/mobile-top-header.html' %}
@@ -153,7 +151,7 @@
      <footer class="page-footer">
       <div class="section-container footer-container">
           <div class="footer-content">
-            <img type="image/svg+xml" class="footer-thumb" src="{% static 'img/noun_thumbs_up.svg' %}">
+            <img class="footer-thumb" src="{% static 'img/noun_thumbs_up.svg' %}" alt="Thumbs Up">
           </div>
           <div class="copyright-footer">
               <div class="copyright-footer-inner">
@@ -169,7 +167,7 @@
     {% endblock %}
 
     {% block postloadjs %}
-      <script type="text/javascript">
+      <script>
         $('.toast').toast('show');
       </script>
     {% endblock %}

@@ -104,6 +104,7 @@ body > div.container-fluid > div > div:nth-child(2) > div > form > div > div:nth
 }
 
 a#category-link,
+a#category-link1,
 a#all-products-link {
     transition: ease-in-out;
     border-bottom: 1px solid;
@@ -111,6 +112,9 @@ a#all-products-link {
 a#category-link:hover,
 a#category-link:focus,
 a#category-link:active,
+a#category-link1:hover,
+a#category-link1:focus,
+a#category-link1:active,
 a#all-products-link:hover,
 a#all-products-link:focus,
 a#all-products-link:active {
@@ -315,7 +319,8 @@ footer {
     align-items: center;
 }
 
-#basket-icon {
+#basket-icon,
+#basket-icon-m {
     height: 30px;
     transition: all 0.2s ease-in-out
 }
@@ -325,17 +330,26 @@ footer {
     transition: all 0.2s ease-in-out
 }
 
-#dropdown-search-icon {
+#account-icon-m {
+    height: 40px;
+    transition: all 0.2s ease-in-out
+}
+
+.dropdown-search-icon {
     height: 30px;
     transition: all 0.2s ease-in-out
 }
 
 #basket-icon:hover,
 #basket-icon:focus,
+#basket-icon-m:hover,
+#basket-icon-m:focus,
 #account-icon:hover,
 #account-icon:focus,
-#dropdown-search-icon:hover,
-#dropdown-search-icon:focus {
+#account-icon-m:hover,
+#account-icon-m:focus,
+.dropdown-search-icon:hover,
+.dropdown-search-icon:focus {
     transform: scale(1.2);
 }
 
@@ -361,7 +375,7 @@ body > header > div:nth-child(3) > nav > ul > li.list-inline-item.show > div > f
 }
 
 /* Navigation */
-.mobile-menu-toggle {
+body > header > div:nth-child(3) > nav > button > i {
     font-size: 2rem;
 }
 

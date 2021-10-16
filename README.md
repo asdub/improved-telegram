@@ -51,7 +51,7 @@ And also complete user orders by uploading completed artwork.
     * [Typography](#typography)
     * [Iconography](#iconography)
     * [Illustrations](#illustrations)
-    * [Responsive](#responsiv
+    * [Responsive](#responsive)
     * [App Flow](#appflow)
     * [Database Design](#databasedesign)
     * [Features](#features)
@@ -650,6 +650,14 @@ Next you will need to run migrations.
 You can find out more about connecting Django to AWS S3 [here](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html)
 
 
+## Testing
+
+#### [W3C HTML Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-salmon-iguana-ndu8w3oo.ws-eu17.gitpod.io%2F) *(Results)*
+The W3C validator found 3 initial issues:
+1. Error: 'http-equiv' attribute whose value is 'X-UA-Compatible' must have a content attribute with the value 'IE=edge' [x]
+2. Error: Element div not allowed as child of element button in this context. [x]
+3. Error  Duplicate ID category-link. [x]
+4. Error: Start tag a seen but an element of the same type was already open. [x]
 
 
 

@@ -31,16 +31,17 @@
             </div>
             <div class="our-work-layout">
             <!-- Display and set number of recent artworks to display -->
-            {% for image in images|slice:8 %}
-                <div class="our-work-item">
-                    <img src="{{ image.image.url }}" alt="Our Work">
-                </div>
-            {% endfor %}
-        </div>
-        <div class="btn-container">
-            <a class="btn btn-lg btn-black rounded-1 mt-1" href="{% url 'products' %}">
-                Explore Services
-            </a>
+                {% for image in images|slice:8 %}
+                    <div class="our-work-item">
+                        <img src="{{ image.image.url }}" alt="Our Work">
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="btn-container">
+                <a class="btn btn-lg btn-black rounded-1 mt-1" href="{% url 'products' %}">
+                    Explore Services
+                </a>
+            </div>
         </div>
     </section>
     <!--About/ Contact Section -->
@@ -76,22 +77,22 @@
 {% endblock %}
 
 {% block postloadjs %}
-    <script type="text/javascript">
-    function scrollTo(element, to, duration) {
-        if (duration <= 0) return;
-        var difference = to - element.scrollTop;
-        var perTick = difference / duration * 10;
+    <script>
+        function scrollTo(element, to, duration) {
+            if (duration <= 0) return;
+            var difference = to - element.scrollTop;
+            var perTick = difference / duration * 10;
 
-        setTimeout(function() {
-            element.scrollTop = element.scrollTop + perTick;
-            if (element.scrollTop === to) return;
-            scrollTo(element, to, duration - 10);
-        }, 10);
-    }
+            setTimeout(function() {
+                element.scrollTop = element.scrollTop + perTick;
+                if (element.scrollTop === to) return;
+                scrollTo(element, to, duration - 10);
+            }, 10);
+        }
 
-    elmnt = document.getElementById("our-work");
-    scrollTo(document.body, elmnt.offsetTop, 200);
-    // Credit - https://stackoverflow.com/questions/17733076 //
+        elmnt = document.getElementById("our-work");
+        scrollTo(document.body, elmnt.offsetTop, 200);
+        // Credit - https://stackoverflow.com/questions/17733076 //
     </script>
 {% endblock %}
 

@@ -5,7 +5,7 @@
         <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="text-center">
                 <div class="header-icon-container">
-                    <img type="image/svg+xml" id="dropdown-search-icon" src="{% static 'img/noun_search.svg' %}">
+                    <img id="dropdown-search-icon" src="{% static 'img/noun_search.svg' %}" alt="Search">
                     <p class="my-0 text-theme">Search</p>
                 </div>
             </div>
@@ -17,7 +17,7 @@
                     <div class="input-group-append">
                         <button class="form-control form-control btn header-search-button rounded-0" type="submit">
                             <span class="icon">
-                                <img type="image/svg+xml" src="{% static 'img/noun_search_btn.svg' %}">
+                                <img src="{% static 'img/noun_search_btn.svg' %}" alt="Search">
                             </span>
                         </button>
                     </div>
@@ -29,8 +29,8 @@
       <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="text-center">
                 <div class="header-icon-container">
-                    <img type="image/svg+xml" id="account-icon" src="{% static 'img/noun_person.svg' %}">
-                    <p class="my-0 text-theme" id="account-icon-text">Account</p>
+                    <img id="account-icon-m" src="{% static 'img/noun_person.svg' %}" alt="Account">
+                    <p class="my-0 text-theme" id="account-icon-text-m">Account</p>
                 </div>
           </div>
       </a>
@@ -52,7 +52,7 @@
        font-weight-bold{% else %}text-theme{% endif %} nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
           <div class="header-icon-container">
                 <div class="header-icon-container">
-                    <img type="image/svg+xml" id="basket-icon" src="{% static 'img/noun_checkout.svg' %}">
+                    <img id="basket-icon-m" src="{% static 'img/noun_checkout.svg' %}" alt="Checkout">
                     <p class="my-0">
                         {% if grand_total %}
                             €{{ grand_total|floatformat:2 }}

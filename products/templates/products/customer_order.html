@@ -92,7 +92,7 @@
 {% block postloadjs %}
     {{ block.super }}
     <!-- Display email warning -->
-    <script type="text/javascript">
+    <script>
         $('#new-image').change(function() {
             var file = $('#new-image')[0].files[0];
             $('#filename').text(`Completing order will auto email User confirmation.`);
