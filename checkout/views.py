@@ -190,10 +190,12 @@ def checkout_success(request, order_number):
 
     if 'order' in request.session:
         del request.session['order']
-    
+
+    host = request.META['HTTP_HOST']
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
+        'host': host,
     }
 
     return render(request, template, context)
