@@ -35,7 +35,7 @@ In addition, users receive email notifications regarding the status of their ord
 Site admins can add, edit or delete services. 
 And also complete user orders by uploading completed artwork. 
 
-<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/laptop_mockup.png" width="150" alt="Improved Design on Mobile" alt="Improved Design on Desktop"/>
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/laptop_mockup.png" alt="Improved Design on Mobile" alt="Improved Design on Desktop"/>
 
 
 ## Contents 
