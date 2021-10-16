@@ -247,7 +247,7 @@ Additonal css media quiries have been included to ensure a consistent experience
 
 ### App Flow
 *App Flow Diagram*
-<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/flow.drawio.png" alt="App Flow Diagram"/>
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/flow.drawio.png" width="400" alt="App Flow Diagram"/>
 
 
 Users will initially land at */home*, a single page scroller container a work/ portfoilio section display the 8th most recent completed customer artworks.
