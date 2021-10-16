@@ -223,10 +223,10 @@ All primary icons in this project are from [Noun Project](https://thenounproject
 With secondary icons from [Font Awesome](https://fontawesome.com/).
 
 The following SVG icons have been used throughout the app:\
-<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_checkout.svg" width="150" alt="Noun Project Icons"/>
-<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_person.svg" width="150" alt="Noun Project Icons"/>
-<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_search.svg" width="150" alt="Noun Project Icons"/>
-<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_thumbs_up.svg" width="150" alt="Noun Project Icons"/>
+<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_checkout.svg" height="90" alt="Noun Project Icons"/>
+<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_person.svg" height="90" alt="Noun Project Icons"/>
+<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_search.svg" height="90" alt="Noun Project Icons"/>
+<img style="filter: invert(100%);" src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_thumbs_up.svg" height="90" alt="Noun Project Icons"/>
 
 
 ### Illustrations
@@ -235,6 +235,7 @@ All illustrations/ artwork featured on this project are from [unDraw](https://un
 An amazing open source project by Katerina Limpitsouni. 
 
 *Example SVG*
+
 <img src="https://github.com/asdub/improved-telegram/blob/main/static/img/portfolio.svg" width="400" alt="unDraw"/>
 
 
