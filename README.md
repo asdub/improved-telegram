@@ -484,23 +484,12 @@ The following Django dependencies apply to this app:
 5. Paste the URL into your terminal and enter. The repo should be successfully cloned.  
 
 #### Deploy on Heroku
-Deploying the app on heroku is very straight forward. 
+Deploying the app on heroku is very straightforward. 
 
-You need to make sure the following files are in the repo you wish to deploy: 
-1. requirements.txt 
-  > If not, you can create this by opening your terminal, make sure you are in the apps main folder and typing the following command:
-      ```
-      pip freeze --local > requirements.txt
-      ```
-  > It creates the txt file in the working directory (where it belongs).
+**Heroku Setup**
 
-2. Procfile, this tells Heroku to start your app. 
-  > You can create one by typing the following into your terminal:
-  ```
-  echo "web: gunicorn improved_design.wsgi:application" > Procfile
-  ```
-
-Once certain those files are present. Go to [Heroku](https://dashboard.heroku.com/) and login or create an account. 
+*Initial Heroku Setup*
+Go to [Heroku](https://dashboard.heroku.com/) and login or create an account. 
 
 1. Click on 'new' in the top right corner and then create app. 
 2. Choose a name and select your region 
@@ -508,6 +497,8 @@ Once certain those files are present. Go to [Heroku](https://dashboard.heroku.co
 4. Select Resources > Add-ons, and choose Heroku Postgres - the 'Hobby Dev or Free' option.
 5. Copy the the Postgres URI into a custom variable in settings called 'DATABASE_URL'
 
+
+*Database Migration*
 Back in the apps settings.py, the database settings need to be updated.
 > Locate the default 'DATABASE' settings, and replace with:
  ```
@@ -523,7 +514,64 @@ else:
         }
     }
 ```
-* This peice of code checks the env for 'DATABASE_URL'. If false the default sqlite db is loaded. If true, the heroku postgres db is loaded via the dj_database_url dependency. *
+*This piece of code checks the env for 'DATABASE_URL'. If false the default sqlite db is loaded. If true, the heroku postgres db is loaded via the dj_database_url dependency.*
 
+Next you will need to run migrations. 
+1. You can achieve this by running the following commands:
+    ```
+    python3 manage.py showmigrations 
+    ```
+    Check the output of the above contains migrations for each of the apps, once happy run:
+    ```
+    python3 manage.py migrate
+    ```
+2. Now that we have migrated the database, we need to load the data. The initial data for this app came from a JSON [fixture](https://docs.djangoproject.com/en/3.2/howto/initial-data/). Run the following commands to load the date:
+    ```
+    python3 manage.py loaddata categories
+    ```
+    Followed by:
+    ```
+    python3 manage.py loaddata products
+    ```
+    *Data must be loaded in order based on the models relationship.
+
+3. Install gunicorn webserver with:
+    ```
+    Pip3 install gunicorn
+    ```
+
+4. Generate an up to date requirements.txt 
+    > Make sure you are in the apps main folder and typing the following command:
+    ```
+    pip freeze --local > requirements.txt
+    ```
+
+5. Generate a Procfile, this tells Heroku to start your app.
+    > You can create one by typing the following into your terminal:
+    ```
+    echo "web: gunicorn improved_design.wsgi:application" > Procfile
+    ```
+
+6. In the main apps settings.py, add the Heroku apps URL to 'Allowed Hosts', also include 'localhost'.
+
+*Heroku Setup Continued*
+6. Login into Heroku CLI with:
+    ```
+    heroku login -i
+    ```
+    Enter your login credentials when prompted. 
+7. Temporarily disable collectstatic with:
+    ```
+    heroku config:set DISABLE_COLLECTSTATIC=1 --app {app name}
+    ```
+8. Initialise Heroku git remote with: 
+    ```
+    heroku git:remote -a {app name}
+    ```
+9. Now we are ready for the initial commit to Heroku:
+    ```
+    git push heroku master
+    ```
+10. Back on the Heroku dashboard, we will setup automatic deploys. Navigate to Deploy > Deployment Method > Select GitHub. Search for your repo and then click connect. Then click enable automatic deploys. 
 
 
