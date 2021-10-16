@@ -303,7 +303,7 @@ Improved Design is an ecommerce app providing users with the following functiona
 - Under /account an authorised user has the following options: *'Profile'* and *'Log Out'*
 - In addition to the above, an admin user also has access to *'Management'*
 
-**Authentication** - *(AllAuth)*
+**Authentication** - AllAuth
 - Users have the ability to register for a user profile.
 - The registration process features email verification. 
 - AllAuth also provides Login and logout views for the user. 
@@ -372,13 +372,40 @@ Improved Design is an ecommerce app providing users with the following functiona
 **Checkout Success** - *(checkout_success/)*
 If the payment is successful the user will be directed to the checkout success view. 
 - This view confirms the successful order and order number. 
-- Advised user of email confirmation. 
+- Advises user of email confirmation sent. 
 - Saves the user's delivery information, if selected. 
 - Attaches the order to the UserProfile, if created/ exists. 
 - A toast notification will also appear confirming the order, and presenting the user with the order number. 
 - A CTA is located at the bottom of this view, directing the user back to the all services view. 
+- If accessed from the 'View Order' button within profie views (detailed below), this CTA return the user to their profile.
 
 
+**Account/ Profile** - *(account/)*
+Once authenticated a user will have a 'Profile' option within the account dropdown menu. 
+- The profile view displays the user's saved address. 
+    - A user can also update this information from this view. 
+- The profile view displays the dusers orders and status.
+    - Completed orders are listed first, the user has the option to view their artwork. 
+- The user can also view their original order confirmation.
+
+
+**Artwork** - *(artwork/)*
+- Accessed from the profile view above and also via URL sent to the user when an administrator completes their order. 
+- Displays any artwork images associated with the order. 
+- And two options to download and view the artwork. 
+
+
+**Management** - *(add/)*
+If a user is authenticated as an administrator a management option is available in the account dropdown. 
+- In this view an admin can add additional services/ products. 
+- View pending orders. 
+- Access the customer order completion view. 
+
+
+**Customer Order** - *(customer_order/<order_id>)*
+An administrator can review a customer's order and upload artwork to the order. 
+Upon selecting complete, the user will receive an email containing a link to view and download their artwork. 
+And the administrator will be redirected back to the add service/ pending orders view. 
 
 
 
