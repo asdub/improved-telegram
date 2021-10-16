@@ -340,7 +340,7 @@ Improved Design is an ecommerce app providing users with the following functiona
 **Orders/ Bag** - *(orders/)*
 - This view lists all the current orders the user has added. 
 - Each order item is listed with the following data:
-    - Image
+    - Service Image
     - Title
     - SKU
     - Size
@@ -358,6 +358,28 @@ Improved Design is an ecommerce app providing users with the following functiona
 
 
 **Checkout** - *(checkout/)*
+- The checkout view provide the user with a form requiring their, 
+    - Full Name, Email Address, Phone Number, Address and Credit Card Information. 
+- If authenticated, an option to store the address information is made available. 
+- A brief order summary of the users order items is display containing:
+    - Service Image, Title, Size, Quantity and Item Subtotal.
+    - The Order Total, Delivery Costs and Grand Total. 
+- Payment processing is done with stripe - to test, use '4242 4242 4242 4242', an expiry date in the future, any 3-digit CCV code and a five digit postcode. 
+- A user can complete their order and make payment by selecting the 'Complete Order' button.
+- If there are any issues with payment a toast notification will appear.
+- Stripe webhooks are used to complete the order and create the database entry should the user close the page or technical issues. 
+
+**Checkout Success** - *(checkout_success/)*
+If the payment is successful the user will be directed to the checkout success view. 
+- This view confirms the successful order and order number. 
+- Advised user of email confirmation. 
+- Saves the user's delivery information, if selected. 
+- Attaches the order to the UserProfile, if created/ exists. 
+- A toast notification will also appear confirming the order, and presenting the user with the order number. 
+- A CTA is located at the bottom of this view, directing the user back to the all services view. 
+
+
+
 
 
 
