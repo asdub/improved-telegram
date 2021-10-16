@@ -1,13 +1,13 @@
 # Improved Design
 
 ![GitHub contributors](https://img.shields.io/github/contributors-anon/asdub/improved-telegram)
-![GitHub top language](https://img.shields.io/github/languages/top/asdub/improved-telegram)
+![GitHub top language](https://img.shields.io/github/languages/count/asdub/improved-telegram)
 ![GitHub language count](https://img.shields.io/website?url=https%3A%2F%2Fimproved-design-asdub.herokuapp.com%2F)
 ![GitHub last commit](https://img.shields.io/github/last-commit/asdub/improved-telegram)
 
-**A live version of this project can be found [here](https://img.shields.io/website?url=https%3A%2F%2Fimproved-design-asdub.herokuapp.com%2F)**
+**A live version of this project can be found [here](https://improved-design-asdub.herokuapp.com/)**
 
-You can use the following admin account for backend access: 
+You can use the following accounts can be used for user and admin access: 
 
 
 *Admin User*\
@@ -50,6 +50,7 @@ And also complete user orders by uploading completed artwork.
     * [Wireframes](#wireframes)
     * [Typography](#typography)
     * [Iconography](#iconography)
+    * [Illustrations](#illustrations)
     * [Responsive](#responsive)
     * [App Flow](#appflow)
     * [Database Design](#databasedesign)
@@ -75,7 +76,7 @@ And also complete user orders by uploading completed artwork.
         * [Initial Test](#initial-test)
         * [Re-Test](#re-test)
     * [Manual Testing](#manual-testing)
-        * [Testing Documentaition](https://github.com/asdub/laughing-cookbook/blob/master/readme/test/TESTME.md)
+        * [Testing Documentaition](https://github.com/asdub/improved-telegram/blob/main/readme/test/TESTME.md)
         * [User Stories Testing](#user-stories-testing)
     * [Known Bugs](#known-bugs)
     * [Credits](#credits)
@@ -158,4 +159,90 @@ With this in mind the design and layout has been considered to appeal to all age
 
 
 
+## Design 
+
+### Frameworks (front-end)
+The [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/) front-end framework was used as the base app. 
+With additional custom css. 
+
+The app uses the following Bootstrap content, components & utilities:
+- [Grid Layout](https://getbootstrap.com/docs/4.1/layout/grid/)
+- [Typography](https://getbootstrap.com/docs/4.1/content/typography/)
+- [Images](https://getbootstrap.com/docs/4.1/content/images/)
+- [Tables](https://getbootstrap.com/docs/4.1/content/tables/)
+- [Forms](https://getbootstrap.com/docs/4.1/components/forms/)
+- [Card](https://getbootstrap.com/docs/4.1/components/card/)
+- [Dropdowns](https://getbootstrap.com/docs/4.1/components/dropdowns/)
+- [Toasts](https://getbootstrap.com/docs/4.3/components/toasts/)
+- [Several Utilities Features](https://getbootstrap.com/docs/4.3/utilities/)
+
+
+### Colours 
+A limited palette of colours was used throughout the app. 
+
+**There are four colours used in total throughout the app.**
+
+Purple - *#6b63ff*\
+![Purple](https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/#6b63ff.png "Purple - #6b63ff")
+
+Grey - *#555555*\
+![Grey](https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/#555555.png "Grey - #555555")
+
+Black - *#000000*\
+![Black](https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/#000000.png "Black - #000000")
+
+White - *#ffffff*\
+![Whtie](https://github.com/asdub/improved-telegram/blob/main/readme/colours/#ffffff.png "White - #ffffff")
+
+
+### Wireframes 
+
+![Desktop Wireframe](https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/desktop_home_wire.png "Wireframes")
+
+![Tablet Wireframe](https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/tablet_product_wire.png "Wireframes")
+
+![Mobile Wireframe](https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/mobile_account_wire.png "Wireframes")
+
+Mock Ups were completed for desktop, tablet & mobile devices. 
+
+
+### Typography
+
+[Google Fonts](https://fonts.google.com/) is in use on this app.
+
+To keep on the simplicity breif,
+Only one font is in use:\
+**Roboto** in weights of 400 & 600.
+
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/type_icon/roboto_font.png" width="250" alt="Google Fonts - Roboto" />
+
+
+### Iconography
+
+All primary icons in this project are from [Noun Project](https://thenounproject.com/).
+With secondary icons from [Font Awesome](https://fontawesome.com/).
+
+The following SVG icons have been used throughout the app:\
+<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_checkout.svg" width="150" alt="Noun Project Icons"/>
+<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_person.svg" width="150" alt="Noun Project Icons"/>
+<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_search.svg" width="150" alt="Noun Project Icons"/>
+<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_thumbs_up.svg" width="150" alt="Noun Project Icons"/>
+
+
+### Illustrations
+
+All illustrations/ artwork featured on this project are from [unDraw](https://undraw.co/).
+An amazing open source project by Katerina Limpitsouni. 
+
+*Example SVG*
+<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/portfolio.svg" width="400" alt="unDraw"/>
+
+
+### Responsive 
+
+The app uses the [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/) front-end framework.
+Which is fully responsive. Bootstrap uses a 12 column grid system for layout.
+
+The app renders in three layouts for mobile, tablet and desktop. 
+Additonal css media quiries have been included to ensure a consistent experience accross device types. 
 
