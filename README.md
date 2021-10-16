@@ -67,6 +67,7 @@ And also complete user orders by uploading completed artwork.
     * [Fork](#fork)
     * [Clone (Locally)](#clone-locally)
     * [Heroku](#deploy-on-heroku)
+    * [AWS](#aws-setup)
 * [Testing](#testing)
     * [W3C HTML](#wc3-html-validator-results)
     * [JS Hint](#js-hint)
@@ -484,7 +485,7 @@ The following Django dependencies apply to this app:
 5. Paste the URL into your terminal and enter. The repo should be successfully cloned.  
 
 #### Deploy on Heroku
-Deploying the app on heroku is very straightforward. 
+Deploying the app on Heroku is very straightforward. 
 
 
 *Initial Heroku Setup*
@@ -542,7 +543,7 @@ Next you will need to run migrations.
     ```
 
 4. Generate an up to date requirements.txt 
-    > Make sure you are in the apps main folder and typing the following command:
+    > Make sure you are in the apps main folder and enter the following command:
     ```
     pip freeze --local > requirements.txt
     ```
@@ -575,5 +576,98 @@ Next you will need to run migrations.
     git push heroku master
     ```
 10. Back on the Heroku dashboard, we will setup automatic deploys. Navigate to Deploy > Deployment Method > Select GitHub. Search for your repo and then click connect. Then click enable automatic deploys. 
+
+
+#### AWS Setup
+
+*Initial Setup*
+1. Go to https://aws.amazon.com/ > Create or Login to your AWS account. 
+2. On the management console select or search and select 'S3'
+3. Select 'Create Bucket' and populate the name field. 
+4. Deselect 'block all public access' and select the related warning.
+5. Click 'Create Bucket'
+
+*Bucket Setup*
+1. Under Properties 
+    - Enable 'Static Website Hosting' in order to get an endpoint.
+    - Set the defaults to index.html and error.html - these won't be used. 
+2. Under Permissions:
+    - Add the following CORS configuration:
+    ```
+    [
+        {
+            "AllowedHeaders": [
+                "Authorization"
+            ],
+            "AllowedMethods": [
+                "GET"
+            ],
+            "AllowedOrigins": [
+                "*"
+            ],
+            "ExposeHeaders": []
+        }
+    ]   
+    ```
+    - Under Bucket Policy:
+        - Select Policy Generator:
+            1. Select: 'S3 Bucket' Policy from the type dropdown.
+            2. But ' * ' in the principal field.
+            3. Select ‘get_object’ from the actions dropdown.
+            4. Copy your ARN from Bucket Policy (on the previous page).
+            5. Click add statement
+            6. Copy the policy config into the Bucket Policy editor and save.
+        - Under Access Control List
+            1. Select ‘list’ under Everyone/ Public access.
+            2. Accept the public warning and save. 
+
+3. Creating a User:
+    - From the service menu select 'IAM'.
+    - First, create a group for the user by selecting ‘User groups’ > ‘Create User group’.
+    - Enter group name (anything you like).
+    - Click ‘Create Group’.
+    - Next navigate to ‘Policies’.
+        1. Click ‘Create policy’.
+        2. Click the JSON tab then ‘Import managed policy’.
+        3. Select AmazonS3FullAccess and import this policy.
+        4. In the JSON tab, add your bucket ARN from above as a value for the ‘Resource’ key.
+        5. Click Next - ignoring tags - And then ‘Review Policy’.
+        6. Enter a name and description for your new policy.
+        7. Then click ‘Create policy’.
+    - Navigate back to ‘User groups’.
+    - Click on the group created earlier > click permissions > Add permissions > Attach policy.
+    - Select your policy from the list and then ‘Add Permissions’.
+    - Now you can create a user. 
+    - Navigate to ‘Users’ > ‘Add user’.
+    - Enter your desired user name.
+    - Select - ‘Access key - Programmatic access’
+    - Select ‘Next Permissions’
+    - Select the group made above.
+    - Select ‘Next Tags’, again ignoring the tags page. Click ‘Next Review’
+    - And finally! click ‘Create User’
+    - Download the user keys via the CSV. 
+
+You can find out more about connecting Django to AWS S3 [here](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
