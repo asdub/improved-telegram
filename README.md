@@ -271,3 +271,12 @@ An admin can access the complete customer order functionality from here. An admi
 If the user has an account setup they can view their historical orders and artowrk (if complete). 
 
 The apps functionality is explored in further detail in the [Features](#features) section below. 
+
+
+### Database Design
+
+As this app uses the Django web framework , the included default object-relational mapping layer (ORM) is used. 
+Django uses SQLite by default Heroku Postgres in production. 
+
+*Database Schema Overview*
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/db_schema.png" alt="Database Schema Diagram"/>
