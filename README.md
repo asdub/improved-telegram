@@ -1,33 +1,41 @@
 # Improved Design
 
-![GitHub contributors](https://img.shields.io/github/contributors-anon/asdub/laughing-cookbook)
-![GitHub top language](https://img.shields.io/github/languages/top/asdub/laughing-cookbook)
-![GitHub language count](https://img.shields.io/website?up_message=Online&url=http%3A%2F%2Flaughing-cookbook.herokuapp.com%2F)
-![GitHub last commit](https://img.shields.io/github/last-commit/asdub/laughing-cookbook)
+![GitHub contributors](https://img.shields.io/github/contributors-anon/asdub/improved-telegram)
+![GitHub top language](https://img.shields.io/github/languages/top/asdub/improved-telegram)
+![GitHub language count](https://img.shields.io/website?url=https%3A%2F%2Fimproved-design-asdub.herokuapp.com%2F)
+![GitHub last commit](https://img.shields.io/github/last-commit/asdub/improved-telegram)
 
-**A live version of this project can be found [here]()**
+**A live version of this project can be found [here](https://img.shields.io/website?url=https%3A%2F%2Fimproved-design-asdub.herokuapp.com%2F)**
 
 You can use the following admin account for backend access: 
 
 
 *Admin User*\
-User: -
-Pass: -
+User: asdub
+Pass: hashb7790
 
-<img src="" width="150" alt="Improved Design on Mobile" />
+*Standard User*\
+User: laryta
+Pass: hashb7795
+
+<img src="https://github.com/asdub/improved-telegram/blob/master/readme/screenshots/iphone_mockup.png" width="150" alt="Improved Design on Mobile" />
 
 
 ### Project Description
 This project was made as part of the Code Institute Full Stack Development Course. 
 
 I have created an app to promote the services of a freelance designer. 
-Allowing users to submit requests and receive a quote for freelance design work. 
+Allowing users to purchase custom design services. 
+Specifically illustrations/ artwork. 
 
-Users can also explore the designers portfolio of completed work. 
-An administration dashboard gives an overview of orders and allows the designer to submit completed artwork.  
+Users can select from a variety of services, select and enter their desired customistations. 
+The user has the option of creating a profile to keep all their orders in one places and view or download their artwork. 
+In addition, users receive email notifications regarding the status of their order. 
 
-<img src="-" alt="Improved Design on Desktop"/>
+Site admins can add, edit or delete services. 
+And also complete user orders by uploading completed artwork. 
 
+<img src="https://github.com/asdub/improved-telegram/blob/master/readme/screenshots/laptop_mockup.png" width="150" alt="Improved Design on Mobile" alt="Improved Design on Desktop"/>
 
 
 ## Contents 

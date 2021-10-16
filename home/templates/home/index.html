@@ -30,7 +30,8 @@
                 <p class="text-white font-weight-bold">A selection of out most recent work..</p>
             </div>
             <div class="our-work-layout">
-            {% for image in images|slice:12 %}
+            <!-- Display and set number of recent artworks to display -->
+            {% for image in images|slice:8 %}
                 <div class="our-work-item">
                     <img src="{{ image.image.url }}" alt="Our Work">
                 </div>
