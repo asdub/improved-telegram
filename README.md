@@ -246,7 +246,7 @@ Additonal css media quiries have been included to ensure a consistent experience
 
 
 ### App Flow
-*App Flow Diagram*
+*App Flow Diagram*\
 <img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/flow.drawio.png" width="400" alt="App Flow Diagram"/>
 
 
@@ -278,5 +278,5 @@ The apps functionality is explored in further detail in the [Features](#features
 As this app uses the Django web framework , the included default object-relational mapping layer (ORM) is used. 
 Django uses SQLite by default Heroku Postgres in production. 
 
-*Database Schema Overview*
+*Database Schema Overview*\
 <img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/db_schema.png" alt="Database Schema Diagram"/>
