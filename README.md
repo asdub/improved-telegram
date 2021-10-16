@@ -22,7 +22,7 @@ Pass: hashb7795
 
 
 ### Project Description
-This project was made as part of the Code Institute Full Stack Development Course. 
+This is the final project for my software development diploma.
 
 I have created an app to promote the services of a freelance designer. 
 Allowing users to purchase custom design services. 
@@ -280,3 +280,14 @@ Django uses SQLite by default Heroku Postgres in production.
 
 *Database Schema Overview*\
 <img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/db_schema.png" alt="Database Schema Diagram"/>
+
+Data is organised around 5 core apps, the models associated with these apps are detailed below. 
+The diagram above displays the replationships betwen these models. 
+
+|  App    |  Model                                      | 
+| :---:   | :-----------------------------------------: |
+| Home    |  Images                                     |
+| Checkout|  UserProfile, Product, Order, OrderLineItem |
+| Bag     |  Product                                    |
+| Products|  Order, Image, Product, Category            |
+| Profile |  Order, Image, UserProfile                  |
