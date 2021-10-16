@@ -183,25 +183,23 @@ A limited palette of colours was used throughout the app.
 **There are four colours used in total throughout the app.**
 
 Purple - *#6b63ff*\
-![Purple](https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/#6b63ff.png "Purple - #6b63ff")
+![Purple](https://github.com/asdub/improved-telegram/blob/main/readme/colours/6b63ff.png "Purple - #6b63ff")
 
 Grey - *#555555*\
-![Grey](https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/#555555.png "Grey - #555555")
+![Grey](https://github.com/asdub/improved-telegram/blob/main/readme/colours/555555.png "Grey - #555555")
 
 Black - *#000000*\
-![Black](https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/#000000.png "Black - #000000")
+![Black](https://github.com/asdub/improved-telegram/blob/main/readme/colurs/000000.png "Black - #000000")
 
 White - *#ffffff*\
-![Whtie](https://github.com/asdub/improved-telegram/blob/main/readme/colours/#ffffff.png "White - #ffffff")
+![Whtie](https://github.com/asdub/improved-telegram/blob/main/readme/colours/ffffff.png "White - #ffffff")
 
 
 ### Wireframes 
 
-![Desktop Wireframe](https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/desktop_home_wire.png "Wireframes")
-
-![Tablet Wireframe](https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/tablet_product_wire.png "Wireframes")
-
-![Mobile Wireframe](https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/mobile_account_wire.png "Wireframes")
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/desktop_home_wire.png" width="450" alt="Wireframes" />
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/tablet_products_wire.png" width="250" alt="Wireframes" />
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/mobile_account_wire.png" width="250" alt="Wireframes" />
 
 Mock Ups were completed for desktop, tablet & mobile devices. 
 
@@ -223,10 +221,9 @@ All primary icons in this project are from [Noun Project](https://thenounproject
 With secondary icons from [Font Awesome](https://fontawesome.com/).
 
 The following SVG icons have been used throughout the app:\
-<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_checkout.svg" height="90" alt="Noun Project Icons"/>
-<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_person.svg" height="90" alt="Noun Project Icons"/>
-<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_search.svg" height="90" alt="Noun Project Icons"/>
-<img style="filter: invert(100%);" src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_thumbs_up.svg" height="90" alt="Noun Project Icons"/>
+<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_checkout.svg" height="60" alt="Noun Project Icons"/>
+<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_person.svg" height="60" alt="Noun Project Icons"/>
+<img src="https://github.com/asdub/improved-telegram/blob/main/static/img/noun_search.svg" height="60" alt="Noun Project Icons"/>
 
 
 ### Illustrations
