@@ -201,7 +201,7 @@ Black - *#000000*\
 <img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/tablet_products_wire.png" width="200" alt="Wireframes" />
 <img src="https://github.com/asdub/improved-telegram/blob/main/readme/wireframes/mobile_account_wire.png" width="150" alt="Wireframes" />
 
-Mock Ups were completed for desktop, tablet & mobile devices. 
+Wireframes were completed for desktop, tablet & mobile devices. 
 
 
 ### Typography
@@ -217,7 +217,7 @@ Only one font is in use:\
 
 ### Iconography
 
-All primary icons in this project are from [Noun Project](https://thenounproject.com/).
+All primary icons in this project are from [Noun Project](https://thenounproject.com/).\
 With secondary icons from [Font Awesome](https://fontawesome.com/).
 
 The following SVG icons have been used throughout the app:\
@@ -244,3 +244,30 @@ Which is fully responsive. Bootstrap uses a 12 column grid system for layout.
 The app renders in three layouts for mobile, tablet and desktop. 
 Additonal css media quiries have been included to ensure a consistent experience accross device types. 
 
+
+### App Flow
+*App Flow Diagram*
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/flow.drawio.png" alt="App Flow Diagram"/>
+
+
+Users will initially land at */home*, a single page scroller container a work/ portfoilio section display the 8th most recent completed customer artworks.
+And also an about and social contact section.
+A large header (in all views) with dropdown navigation allows the user to quickly searh, access account facilities and order bag. Dropdown menus allow the users to navigate to individual services, all services, or can sort the services by price, rating and type. 
+Home contains a hero banner with a large CTA. Taking the user to an all services view.
+
+Selecting a service takes the user to a detailed view. And features the customisation options available to the user. 
+The user can add a service to their order from here. A toast notification will prompt the user to 'View their orders' where they can access their order bag. Or from the shopping card icon within the header. 
+
+In the order bag view, the user can review their orders and cusomistations. See their item and total pricing. 
+And also a breakdown of their cusomistation costs. A user can amend order quantities and remove items. 
+A user can proceed to checkout/ payment from here. 
+
+The checkout view displays an order summary, a customer form and payment facilities. 
+Once the user completes their transaction, they are directed to on order success view, which details the order just made. 
+A user will also receive an automated email confirming their order.  
+
+A site administrator has access to a management view where they can add new products and check pending orders. 
+An admin can access the complete customer order functionality from here. An admin is displayed an overview of the customer can order. They can upload the customer artwork, once the admin selects complete - the customer will receice an email confirming their artwork is available to download and has been shipped. The email contains a link to view and download the artwork. 
+If the user has an account setup they can view their historical orders and artowrk (if complete). 
+
+The apps functionality is explored in further detail in the [Features](#features) section below. 
