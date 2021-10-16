@@ -486,9 +486,9 @@ The following Django dependencies apply to this app:
 #### Deploy on Heroku
 Deploying the app on heroku is very straightforward. 
 
-**Heroku Setup**
 
 *Initial Heroku Setup*
+
 Go to [Heroku](https://dashboard.heroku.com/) and login or create an account. 
 
 1. Click on 'new' in the top right corner and then create app. 
@@ -499,6 +499,7 @@ Go to [Heroku](https://dashboard.heroku.com/) and login or create an account.
 
 
 *Database Migration*
+
 Back in the apps settings.py, the database settings need to be updated.
 > Locate the default 'DATABASE' settings, and replace with:
  ```
@@ -555,6 +556,7 @@ Next you will need to run migrations.
 6. In the main apps settings.py, add the Heroku apps URL to 'Allowed Hosts', also include 'localhost'.
 
 *Heroku Setup Continued*
+
 6. Login into Heroku CLI with:
     ```
     heroku login -i
