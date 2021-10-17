@@ -675,7 +675,7 @@ WC3 CSS Validator found 1 error & 38 warnings:
 ### Google Lighthouse
 
 #### Initial Test
-![Lighthouse Results](https://github.com/asdub/laughing-cookbook/blob/main/readme/screenshots/lighthouse_results_a.png "Lighthouse Results")
+![Lighthouse Results](https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/lighthouse_results_a.png "Lighthouse Results")
 
 **Performance**\
 Issues reported, 
@@ -700,7 +700,7 @@ Issues reported,
 1. [Performance] The images in question are SVG's which do have heights and widths set!? [ ]
 2. [Best Practices] Links to cross-origin destinations are unsafe - added  rel="noreferrer" to external links [x]
 3. [Accessibility] Left colours as they are - I feel the contrast is perfectly sufficient [ ]
-3. [Accessibility] Alt attrs missing from social media links - Added attributes  [x]
+3. [Accessibility] Alt attrs missing from social media links - Adding alt attributes caused W3C errors  [ ]
 4. [SEO] Added meta tags [x]
 Several other errors are present relating to external scripts (Stripe & Jquery)
 
