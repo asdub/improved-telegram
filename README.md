@@ -707,7 +707,7 @@ Issues reported,
 
 
 #### Re Test
-![Lighthouse Retest Results](https://github.com/asdub/improved-telegram/blob/main/readme/screenshoots/lighthouse_results_b.png "Lighthouse Retest")
+![Lighthouse Retest Results](https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/lighthouse_results_b.png "Lighthouse Retest")
 
 Results now seem to be at an acceptable level. 
 In furture versions SEO would be the priority to score highter in. 
@@ -716,13 +716,51 @@ In furture versions SEO would be the priority to score highter in.
 ## Manual Testing 
 
 ### Testing Documentation
-Testing documentation can be found [here](https://github.com/asdub/improved-telegram/blob/main/readme/test/TESTME.md)
+Testing documentation can be found [here](https://github.com/asdub/improved-telegram/blob/main/readme/test/TESTING.md)
 
 ### User Stories testing
 
-#### User Stories
+#### New User Stories
+##### General
+- I want the app purpose to be obvious or easy to figure out.
+- I want to view recent artworks purchased by other users.
+- I want to know about the service provider before purchase.
+##### Services
+- I want to view all available services.
+- I want detailed information on each service. 
+- I want the ability to search for services by keyword.
+- I want to customise each service. 
+##### Managing Services
+- I want to update my order quantities. 
+- I want to remove items from my order.
+- I want to see the total cost of each order item. 
+- I want to see a breakdown of customisation costs. 
+##### Checkout/ Payments
+- I want a simple payment process. 
+- I want to know of any issues with payment. 
+- I want to see payment confirmation and a summary of my order. 
+##### Order Success
+- I want to know when my order is available. 
+- I want to easily access my order. 
 
-##### New User Stories
+
+#### Returning & Regular User Stories
+- I want to view my order history. 
+- I want to view the status of my order. 
+- I want to view or download my order artwork. 
+- I want to update my delivery address.
+- I want to be easily able to login, log out and manage my account (password reset etc.)
+- I would like the ability to also delete my own recipes. 
+
+
+#### Site Owner/ Admin Stories
+- I would like to add a service. 
+- I would like to edit a service.
+- I would like to delete a service. 
+- I would like to see pending user orders. 
+- I would like to complete a user order:
+    - with the ability to upload user ordered artwork. 
+    - and notify a customer when artwork is available. 
 
 
 
