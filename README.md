@@ -707,9 +707,9 @@ Issues reported,
 
 
 #### Re Test
-![Lighthouse Retest Results](https://github.com/asdub/improved-telegram/blob/main/readme/lighthouse_results_b.png "Lighthouse Retest")
+![Lighthouse Retest Results](https://github.com/asdub/improved-telegram/blob/main/readme/screenshoots/lighthouse_results_b.png "Lighthouse Retest")
 
-Results seem to be at an acceptable level. 
+Results now seem to be at an acceptable level. 
 In furture versions SEO would be the priority to score highter in. 
 
 
