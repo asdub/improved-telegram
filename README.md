@@ -706,6 +706,12 @@ Issues reported,
 *Several other errors are present relating to external scripts (Stripe & Jquery)*
 
 
+#### Re Test
+![Lighthouse Retest Results](https://github.com/asdub/improved-telegram/blob/main/readme/lighthouse_results_b.png "Lighthouse Retest")
+
+Results seem to be at an acceptable level. 
+In furture versions SEO would be the priority to score highter in. 
+
 
 ## Manual Testing 
 
