@@ -742,6 +742,7 @@ An about section is located on the home page, also accessed from the nav menu.
 
 **I want to view all available services**\
 <img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_4.png" width="300" alt="User Story 4" />
+
 A 'View all Services' option is available in the menu - ALl home CTA's also direct the user to this view
 
 **I want detailed information on each service**\
