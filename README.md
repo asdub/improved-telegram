@@ -706,6 +706,19 @@ Issues reported,
 
 
 
+## Manual Testing 
+
+### Testing Documentation
+Testing documentation can be found [here](https://github.com/asdub/improved-telegram/blob/main/readme/test/TESTME.md)
+
+### User Stories testing
+
+#### User Stories
+
+##### New User Stories
+
+
+
 
 
 
