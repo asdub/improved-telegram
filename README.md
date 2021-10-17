@@ -701,8 +701,8 @@ Issues reported,
 2. [Best Practices] Links to cross-origin destinations are unsafe - added  rel="noreferrer" to external links [x]
 3. [Accessibility] Left colours as they are - I feel the contrast is perfectly sufficient [ ]
 3. [Accessibility] Alt attrs missing from social media links - Adding alt attributes caused W3C errors  [ ]
-4. [SEO] Added meta tags [x]
-Several other errors are present relating to external scripts (Stripe & Jquery)
+4. [SEO] Added meta tags [x]\
+*Several other errors are present relating to external scripts (Stripe & Jquery)*
 
 
 
