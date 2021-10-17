@@ -145,8 +145,6 @@ With this in mind the design and layout has been considered to appeal to all age
 - I want to view the status of my order. 
 - I want to view or download my order artwork. 
 - I want to update my delivery address.
-- I want to be easily able to login, log out and manage my account (password reset etc.)
-- I would like the ability to also delete my own recipes. 
 
 
 #### Site Owner/ Admin Stories
@@ -721,35 +719,44 @@ Testing documentation can be found [here](https://github.com/asdub/improved-tele
 ### User Stories testing
 
 #### New User Stories
+
 ##### General
-**I want the app purpose to be obvious or easy to figure out.**
+
+**I want the app purpose to be obvious or easy to figure out.**\
 <img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_1.png" width="300" alt="User Story 1" />
+
 A large hero banned indicates the purpose of the app on the home page. 
 
-**I want to view recent artworks purchased by other users.**
+**I want to view recent artworks purchased by other users.**\
 <img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_2.png" width="300" alt="User Story 2" />
+
 Completed user artwokr is displayed in a responsive grid on the home page
 
-**I want to know about the service provider before purchase.**
+**I want to know about the service provider before purchase.**\
 <img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_3.png" width="300" alt="User Story 3" />
+
 An about section is located on the home page, also accessed from the nav menu. 
 
 
 ##### Services
-**I want to view all available services**
-<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_4.png" width="300" alt="User Story 4" />
-a 'View all Services' option is available in the menu - ALl home CTA's also direct the user to this view
 
-**I want detailed information on each service**
+**I want to view all available services**\
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_4.png" width="300" alt="User Story 4" />
+A 'View all Services' option is available in the menu - ALl home CTA's also direct the user to this view
+
+**I want detailed information on each service**\
 <img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_5.png" width="300" alt="User Story 5" />
+
 A detailed view is available for each service/ product.
 
-**I want the ability to search for services by keyword.**
+**I want the ability to search for services by keyword.**\
 <img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_6.png" width="300" alt="User Story 6" />
+
 Search functionality is available in the sites header, accessible from anywhere in the site - on any screen size. 
 
-**I want to customise each service.**
+**I want to customise each service.**\
 <img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_7.png" width="200" alt="User Story 7" />
+
 User customisation fields are available on each product.
 
 ##### Managing Services
@@ -757,26 +764,37 @@ User customisation fields are available on each product.
 - I want to remove items from my order.
 - I want to see the total cost of each order item. 
 - I want to see a breakdown of customisation costs. 
-<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_8.png" width="200" alt="User Story 8" />
+
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_8.png" width="500" alt="User Story 8" />
+
 These user stories are achieved in the order/ bag view. A user can manage their order from here.  
 
 ##### Checkout/ Payments
 - I want a simple payment process. 
 - I want to know of any issues with payment. 
 - I want to see payment confirmation and a summary of my order. 
+
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_9.png" width="500" alt="User Story 9" />
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_10.png" width="500" alt="User Story 10" />
+
+The payment process is very straightforward, and takes place all within the app. A toast notification will appear if there is a payment issue and also when an order is successfully processed. 
+
 ##### Order Success
-- I want to know when my order is available. 
-- I want to easily access my order. 
+**I want to know when my order is available. & I want to easily access my order.**
+A user will receive an email confirmation when the place their order. Once the order is completed by an admin, they will receive an additional email confirming this containing a link to their completed artwork. 
 
 
 #### Returning & Regular User Stories
-- I want to view my order history. 
+
+- I want to view my order history
 - I want to view the status of my order. 
 - I want to view or download my order artwork. 
 - I want to update my delivery address.
-- I want to be easily able to login, log out and manage my account (password reset etc.)
-- I would like the ability to also delete my own recipes. 
 
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_11.png" width="500" alt="User Story 11" />
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_12.png" width="500" alt="User Story 12" />
+
+These stories are achieved in the Profile and artwork views. 
 
 #### Site Owner/ Admin Stories
 - I would like to add a service. 
@@ -787,7 +805,10 @@ These user stories are achieved in the order/ bag view. A user can manage their 
     - with the ability to upload user ordered artwork. 
     - and notify a customer when artwork is available. 
 
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_13.png" width="500" alt="User Story 13" />
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_14.png" width="500" alt="User Story 14" />
 
+These are achived in the Management & Complete Order views. A customer is notified by email when an order is completed, which contains a link to view their artowrk. 
 
 ## Known Bugs
     ** There is an issue with changing order quantities in the bag view with multiple items, only the first item is affected.
