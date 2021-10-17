@@ -436,7 +436,7 @@ In conjunction with the streamlined registration process, I would like to collec
 - **[CSS3](https://www.w3schools.com/css/)**
 - **[Javascript](https://www.javascript.com/)**
 - **[Python](https://www.python.org/)**
-- **[Django template language](https://docs.djangoproject.com/en/3.2/ref/templates/language/)** (templating language)
+- **[Django template language](https://docs.djangoproject.com/en/3.2/ref/templates/language/)**
 
 
 ### Django
@@ -722,19 +722,44 @@ Testing documentation can be found [here](https://github.com/asdub/improved-tele
 
 #### New User Stories
 ##### General
-- I want the app purpose to be obvious or easy to figure out.
-- I want to view recent artworks purchased by other users.
-- I want to know about the service provider before purchase.
+**I want the app purpose to be obvious or easy to figure out.**
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_1.png" width="300" alt="User Story 1" />
+A large hero banned indicates the purpose of the app on the home page. 
+
+**I want to view recent artworks purchased by other users.**
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_2.png" width="300" alt="User Story 2" />
+Completed user artwokr is displayed in a responsive grid on the home page
+
+**I want to know about the service provider before purchase.**
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_3.png" width="300" alt="User Story 3" />
+An about section is located on the home page, also accessed from the nav menu. 
+
+
 ##### Services
-- I want to view all available services.
-- I want detailed information on each service. 
-- I want the ability to search for services by keyword.
-- I want to customise each service. 
+**I want to view all available services**
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_4.png" width="300" alt="User Story 4" />
+a 'View all Services' option is available in the menu - ALl home CTA's also direct the user to this view
+
+**I want detailed information on each service**
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_5.png" width="300" alt="User Story 5" />
+A detailed view is available for each service/ product.
+
+**I want the ability to search for services by keyword.**
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_6.png" width="300" alt="User Story 6" />
+Search functionality is available in the sites header, accessible from anywhere in the site - on any screen size. 
+
+**I want to customise each service.**
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_7.png" width="200" alt="User Story 7" />
+User customisation fields are available on each product.
+
 ##### Managing Services
-- I want to update my order quantities. 
+- I want to update my order quantities
 - I want to remove items from my order.
 - I want to see the total cost of each order item. 
 - I want to see a breakdown of customisation costs. 
+<img src="https://github.com/asdub/improved-telegram/blob/main/readme/screenshots/user_story_8.png" width="200" alt="User Story 8" />
+These user stories are achieved in the order/ bag view. A user can manage their order from here.  
+
 ##### Checkout/ Payments
 - I want a simple payment process. 
 - I want to know of any issues with payment. 
@@ -764,7 +789,20 @@ Testing documentation can be found [here](https://github.com/asdub/improved-tele
 
 
 
+## Known Bugs
+    ** There is an issue with changing order quantities in the bag view with multiple items, only the first item is affected.
+    ** The sort dropdown on the all services/ product view is currecly not working. However, this functionality is working if accessed via the nav menu dropdown. 
+    
 
+## Credits 
+https://docs.djangoproject.com/en/3.2/
+
+https://getbootstrap.com/
+
+I referred to the Code Institutes course material for the functionality aspects of this app. 
+Full credit: https://github.com/Code-Institute-Solutions/boutique_ado_v1/
+This credit applies app wide. 
+    
 
 
 
