@@ -697,11 +697,12 @@ Issues reported,
 
 
 #### Steps taken 
-1. [Performance] The images in question are SVG's which do have heights and widths set!? [ ]
-2. [Best Practices] Links to cross-origin destinations are unsafe - added  rel="noreferrer" to external links [x]
-3. [Accessibility] Left colours as they are - I feel the contrast is perfectly sufficient [ ]
-3. [Accessibility] Alt attrs missing from social media links - Adding alt attributes caused W3C errors  [ ]
-4. [SEO] Added meta tags [x]\
+- [Performance] The images in question are SVG's which do have heights and widths set!? [ ]
+- [Best Practices] Links to cross-origin destinations are unsafe - added  rel="noreferrer" to external links [x]
+- [Best Practices]  Vulnerabilities due to jQuery version - updated to latest [x]
+- [Accessibility] Left colours as they are - I feel the contrast is perfectly sufficient [ ]
+- [Accessibility] Alt attrs missing from social media links - Adding alt attributes caused W3C errors  [ ]
+- [SEO] Added meta tags [x]\
 *Several other errors are present relating to external scripts (Stripe & Jquery)*
 
 
