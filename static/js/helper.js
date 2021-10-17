@@ -1,3 +1,4 @@
+// Not currently in use
 const csrftoken = Cookies.get('csrftoken');
 console.log(csrftoken)
 
