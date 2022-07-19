@@ -22,7 +22,6 @@ Pass: hashb7795
 
 
 ### Project Description
-This is the final project for my software development diploma.
 
 I have created an app to promote the services of a freelance designer. 
 Allowing users to purchase custom design services. 
